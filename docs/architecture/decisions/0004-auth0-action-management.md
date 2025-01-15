@@ -18,7 +18,8 @@ When managing actions, you must decide whether to use the dashboard or the Auth0
 
 We will use Terraform to manage the action 'scaffold'  alongside the tenant's configuration. The function body will live in a separate repository.
 
-<img src="./imgs/auth0-action-management-1.png" width="45%" alt="Terraform pulling action code" title="Terraform pulling action code">
+
+<img src="./imgs/auth0-action-management-1.svg" width="45%" alt="Terraform pulling action code" title="Terraform pulling action code">
 
 The action scaffold will consist of everything except the function body. It includes secrets, triggers, and dependencies. To retreive data from an external resource we should be able to use terraforms http datasource:
 
