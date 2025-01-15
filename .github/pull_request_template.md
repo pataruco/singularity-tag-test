@@ -14,8 +14,6 @@
 - [ ] Tests
 - [ ] Documentation
 
-## Giff
+## GIF
 
-<!-- Introduce your giph here -->
-
-![this is fine](https://media.giphy.com/media/QMHoU66sBXqqLqYvGO/giphy.gif)
+![]()

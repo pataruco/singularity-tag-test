@@ -15,11 +15,33 @@ We need a consistent and reliable process for merging code changes into our main
 We will adopt the following pull request strategy:
 
 - Template: All pull requests must be created using a standardized template. This template will include sections for:
+
+```md
+## Tickets
+
+- resolve #
+
+## Description
+
+- What this PR does
+- How to run it locally
+- How to manually test it
+
+## Checklist
+
+- [ ] Tests
+- [ ] Documentation
+
+## GIF
+
+![]()
+```
+
 - Review: At least one code review is required from a qualified engineer before a pull request can be merged.
 
 - Main Branch Protection: The main branch will be protected with the following safeguards:
-  - Required Reviews: No merges are allowed without the required number of approvals.
-    -Status Checks: All required CI/CD pipelines (e.g., unit tests, integration tests, security scans) must pass successfully before a merge can be performed.
+- Required Reviews: No merges are allowed without the required number of approvals.
+- Status Checks: All required CI/CD pipelines (e.g., unit tests, integration tests, security scans) must pass successfully before a merge can be performed.
 
 ## Consequences
 
