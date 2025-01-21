@@ -17,3 +17,7 @@ adr new Name of the architecture decision
 ```
 
 That will create a new ADR as a markdown file in the `architecture/decisions` directory following the order of the last ADR created.
+
+## Monorepo
+
+For monorepo tooling, please read the documentation [here](./monorepo.md)

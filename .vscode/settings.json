@@ -1,0 +1,7 @@
+{
+  "[dotenv]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp",
+    "editor.formatOnSave": true
+  },
+  "nxConsole.nxWorkspacePath": ""
+}
