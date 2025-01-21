@@ -6,9 +6,11 @@ Date: 2025-01-14
 
 Accepted
 
+Amended by [6. pull request merges](0006-pull-request-merges.md)
+
 ## Context
 
-Ccommit messages may vary wildly in format and clarity, making it difficult to:
+Commit messages may vary wildly in format and clarity, making it difficult to:
 
 - Understand the nature of changes at a glance
 - Automate release notes and changelogs
