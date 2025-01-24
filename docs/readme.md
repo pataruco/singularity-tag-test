@@ -21,3 +21,7 @@ That will create a new ADR as a markdown file in the `architecture/decisions` di
 ## Monorepo
 
 For monorepo tooling, please read the documentation [here](./monorepo.md)
+
+## Coding Guidelines
+
+For coding guidelines, please read the documentation [here](coding-guidenlines.md)
