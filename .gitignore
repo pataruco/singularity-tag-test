@@ -1,6 +1,7 @@
 # General
 .env
 dist
+.idea
 
 # JavaScript / TypeScript
 node_modules

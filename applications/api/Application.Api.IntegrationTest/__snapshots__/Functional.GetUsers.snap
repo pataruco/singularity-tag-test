@@ -1,0 +1,14 @@
+﻿{
+  "data": {
+    "users": [
+      {
+        "name": "Martin",
+        "id": 0
+      },
+      {
+        "name": "Greg",
+        "id": 0
+      }
+    ]
+  }
+}
