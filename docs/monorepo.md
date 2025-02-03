@@ -1,5 +1,11 @@
 # Monorepo tooling
 
+## CLI tooling required for local development
+The following CLI tools are required for local development:
+- `docker`
+- `dotnet`
+
+## Build system
 We are using [Nx](https://nx.dev/) for monorepo tooling with the [@nx-dotnet/core](https://www.nx-dotnet.com/) and [@nx/js](https://nx.dev/nx-api/js) plugins.
 
 In the root of this monorepo we have the Nx manifest (`nx.json`) that is declaring which plugins and task configurations we can use.
@@ -25,7 +31,6 @@ Example:
   "projectType": "application" /*Sets the type (application or library)*/,
   "sourceRoot": "applications/api/app",
   "tags": [],
-  "// targets": "to see all targets run: nx show project api-app --web",
   "targets": {}
 }
 ```

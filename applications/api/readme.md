@@ -2,7 +2,7 @@
 
 ## Overview
 
-This directory contains the .NET projects associated with the Singularity GraphQL API.
+This directory contains the .NET projects associated with the Customer Graph API which is a GraphQL API.
 
 The API is currently attached to an in memory database which stores `User` entities, the API features CRUD operations for interacting with these entities.
 
@@ -22,7 +22,23 @@ In order to deploy the API locally, run the following command:
 pnpm nx serve Application.Api
 ```
 
-The GraphQL API will be available via the following URL `http://localhost:5095/graphql`, if you navigate to this address in a browser there will be an interactive UI for making GraphQL queries and mutations.
+The GraphQL API will be available via the following URL http://localhost:5095/graphql, if you navigate to this address in a browser there will be an interactive UI for making GraphQL queries and mutations.
+
+## Deploying API in a container
+
+First build the container image using the following commmand
+
+```
+pnpm nx build-container CustomerGraphApi
+```
+
+Then serve the container using the following command:
+
+```
+pnpm nx serve-container CustomerGraphApi
+```
+
+The API should be available at http://localhost:8080/graphql
 
 ## Testing
 
