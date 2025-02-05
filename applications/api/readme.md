@@ -9,6 +9,7 @@ The API is currently attached to an in memory database which stores `User` entit
 ### Code structure
 
 The code for the API is organised into a number of .NET projects:
+
 - `Application.Api` - Contains the API startup file and GraphQL associated resources.
 - `Application.Api.IntegrationTest` - Contains tests for the GraphQL API.
 - `Application.Core` - Contains services for business logic associated with interacting with external services/infrastructure
@@ -18,6 +19,7 @@ The code for the API is organised into a number of .NET projects:
 ## Deploying the API locally
 
 In order to deploy the API locally, run the following command:
+
 ```
 pnpm nx serve Application.Api
 ```
@@ -34,7 +36,7 @@ pnpm nx build-container CustomerGraphApi
 
 Then serve the container using the following command:
 
-```
+```sh
 pnpm nx serve-container CustomerGraphApi
 ```
 
@@ -43,6 +45,7 @@ The API should be available at http://localhost:8080/graphql
 ## Testing
 
 For testing, this project uses NUnit, Moq and Snapshooter. In order to run the tests via the CLI, run the following command:
-```
+
+```sh
 pnpm nx test Application.Api.IntegrationTest
 ```
