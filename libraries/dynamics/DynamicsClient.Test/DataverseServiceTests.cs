@@ -62,7 +62,7 @@ public class DataverseServiceTests
         whoAmIResponse.Results["OrganizationId"] = expectedOrganizationId;
         whoAmIResponse.Results["UserId"] = expectedUserId;
 
-        _serviceClientMock.Setup(sc => sc.ExecuteAsync(It.IsAny<WhoAmIRequest>()))
+        _serviceClientMock.Setup(sc => sc.ExecuteAsync(It.IsAny<WhoAmIRequest>(), It.IsAny<CancellationToken>()))
             .ReturnsAsync(whoAmIResponse);
 
         // Act
@@ -84,7 +84,7 @@ public class DataverseServiceTests
         _tokenProviderMock.Setup(ts => ts.GetAccessToken(It.IsAny<string>()))
             .ReturnsAsync(expectedToken);
 
-        _serviceClientMock.Setup(sc => sc.ExecuteAsync(It.IsAny<WhoAmIRequest>()))
+        _serviceClientMock.Setup(sc => sc.ExecuteAsync(It.IsAny<WhoAmIRequest>(), It.IsAny<CancellationToken>()))
             .ThrowsAsync(new Exception("Service client failed"));
 
         // Act & Assert
