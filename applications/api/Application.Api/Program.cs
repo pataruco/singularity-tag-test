@@ -1,6 +1,6 @@
 using Application.Api.Queries;
-using Application.Core.Services.Interfaces;
 using Application.Core.Services;
+using Application.Core.Services.Interfaces;
 using Application.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,7 +13,7 @@ builder
     .AddGraphQLServer()
     .AddQueryType<Query>()
     .AddMutationType<Mutation>();
-    
+
 var app = builder.Build();
 
 app.UseRouting();

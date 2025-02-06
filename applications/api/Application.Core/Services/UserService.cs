@@ -1,6 +1,6 @@
 
-using Application.Domain.Entities;
 using Application.Core.Services.Interfaces;
+using Application.Domain.Entities;
 using Application.Infrastructure.Data;
 
 namespace Application.Core.Services;
@@ -26,7 +26,7 @@ public class UserService(UserDbContext context) : IUserService
         await context.SaveChangesAsync();
         return user;
     }
-    
+
     public async Task<User> UpdateUser(int id, UserDTO input)
     {
         var user = await context.Users.FindAsync(id);
@@ -40,7 +40,7 @@ public class UserService(UserDbContext context) : IUserService
 
         return user;
     }
-    
+
     public async Task<int> DeleteUser(int id)
     {
         var user = await context.Users.FindAsync(id);

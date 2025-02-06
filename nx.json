@@ -1,5 +1,18 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "defaultBase": "main",
-  "plugins": ["@nx-dotnet/core", "@nx/js"]
+  "plugins": [
+    {
+      "plugin": "@nx-dotnet/core",
+      "exclude": [
+        "#TODO:  must change once access to the keyvault is resolved",
+        "libraries/dynamics/DynamicsClient.Integration/**",
+        "libraries/dynamics/DynamicsClient.Test/**"
+      ],
+      "options": {
+        "targetName": "test"
+      }
+    },
+    "@nx/js"
+  ]
 }

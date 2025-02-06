@@ -1,5 +1,5 @@
-using Application.Domain.Entities;
 using Application.Core.Services.Interfaces;
+using Application.Domain.Entities;
 
 namespace Application.Api.Queries;
 

@@ -1,5 +1,5 @@
-using Application.Domain.Entities;
 using Application.Core.Services.Interfaces;
+using Application.Domain.Entities;
 
 namespace Application.Api.Queries;
 
@@ -15,7 +15,7 @@ public class Mutation
         return await userService.UpdateUser(id, user);
     }
 
-    public async Task<int> DeleteUser(int id,[Service] IUserService userService)
+    public async Task<int> DeleteUser(int id, [Service] IUserService userService)
     {
         return await userService.DeleteUser(id);
     }

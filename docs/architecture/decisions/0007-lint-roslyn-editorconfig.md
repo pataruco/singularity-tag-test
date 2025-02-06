@@ -1,10 +1,10 @@
 # 7. lint-roslyn-editorconfig
 
-Date: 2025-01-23
+Date: 2025-02-05
 
 ## Status
 
-Proposed
+Accepted
 
 ## Context
 
@@ -19,7 +19,6 @@ Use Roslyn for linting rules and editor config to share settings.
 Roslyn is the default C# compiler for .NET and can lint code style on the fly. It is compatible with [editorconfig](https://editorconfig.org/), a project that aims to allow for "consistent coding styles for multiple developers working on the same project across various editors and IDEs."
 
 Using a `.editorconfig` file, you can set the [severity](https://learn.microsoft.com/en-us/visualstudio/code-quality/use-roslyn-analyzers?view=vs-2022) for individual rules, groups of rules and globally.
-
 
 ## Consequences
 

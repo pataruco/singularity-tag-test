@@ -20,7 +20,7 @@ public class ConfidentialClientApplicationAdapter : IConfidentialClientApplicati
             .WithClientSecret(_options.ClientSecret)
             .WithAuthority(new Uri($"{_options.AuthorityDomain}{_options.TenantId}"))
             .Build();
-        
+
         return await confidentialClient.AcquireTokenForClient(scopes).ExecuteAsync(cancellationToken);
     }
 }

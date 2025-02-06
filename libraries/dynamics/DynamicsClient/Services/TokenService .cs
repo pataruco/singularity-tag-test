@@ -28,7 +28,7 @@ public class TokenService : ITokenService, IDisposable
     public async Task<AuthenticationResult> GetAccessTokenAsync(CancellationToken cancellationToken = default)
     {
         await _semaphore.WaitAsync(cancellationToken);
-        
+
         try
         {
             if (!string.IsNullOrWhiteSpace(_cachedToken?.AccessToken) && DateTimeOffset.UtcNow < _cachedToken.ExpiresOn)
@@ -36,7 +36,7 @@ public class TokenService : ITokenService, IDisposable
                 _logger.LogInformation("Returning cached token.");
                 return _cachedToken;
             }
-            
+
             var scopes = new[] { $"{_options.BaseUrl}/.default" };
 
             _cachedToken = await _clientApplicationAdapter.AcquireTokenForClientAsync(scopes, cancellationToken);

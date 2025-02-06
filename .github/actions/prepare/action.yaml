@@ -1,0 +1,26 @@
+name: Prepare monorepo tooling
+description: Set Node and .NET dependencies
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@v4
+      with:
+        run_install: false
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 22.13.0
+        cache: pnpm
+
+    - name: Install dot net
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.0
+    # TODO: add Nx cache in Azure storage: https://nx.dev/nx-api/powerpack-azure-cache
+
+    - name: Install Node dependencies 📦
+      shell: bash
+      run: pnpm install
+
+    - name: Derive appropriate SHAs for base and head for `nx affected` commands
+      uses: nrwl/nx-set-shas@v4
