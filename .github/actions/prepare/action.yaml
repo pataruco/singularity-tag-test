@@ -21,6 +21,3 @@ runs:
     - name: Install Node dependencies 📦
       shell: bash
       run: pnpm install
-
-    - name: Derive appropriate SHAs for base and head for `nx affected` commands
-      uses: nrwl/nx-set-shas@v4

@@ -1,0 +1,42 @@
+name: Integration
+run-name: ${{github.actor}} is running integration
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/integration.yaml
+      - applications/**/*
+      - libraries/**/*
+
+jobs:
+  test:
+    name: All tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛎️ Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🧰 Prepare monorepo tooling
+        uses: ./.github/actions/prepare
+
+      - name: 🧪 All tests
+        id: all-tests
+        run: pnpm nx run-many -t test --output-style static
+
+      - name: 📨 Post message results in just-group-platform-prs Slack channel
+        uses: slackapi/slack-github-action@v2.0.0
+        if: always() && steps.all-tests.conclusion == 'failure'
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: incoming-webhook
+          payload: |
+            text: "*Integration test*: ${{ job.status }}\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            blocks:
+              - type: "section"
+                text:
+                  type: "mrkdwn"
+                  text: "🛑 🧪 Integration tests: ${{ job.status }}\n${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
