@@ -1,0 +1,32 @@
+using Application.Api.Types;
+using Application.Domain.Entities;
+
+namespace Application.Api.IntegrationTest.Types;
+
+public class CustomerTypeTests
+{
+    [Test]
+    public void CustomerType_PopulatesFieldsCorrectlyFromCustomerObject()
+    {
+        // arrange
+        Customer customer = new()
+        {
+            UserId = Guid.NewGuid().ToString(),
+            ContactId = Guid.NewGuid().ToString(),
+            FirstName = "John",
+            LastName = "Doe",
+            Email = "john.doe@gmail.com",
+        };
+
+        // act
+        var res = new CustomerType(customer);
+
+        // assert
+        Assert.That(res.Id, Is.EqualTo(customer.UserId));
+        Assert.That(res.UserId, Is.EqualTo(customer.UserId));
+        Assert.That(res.ContactId, Is.EqualTo(customer.ContactId));
+        Assert.That(res.FirstName, Is.EqualTo(customer.FirstName));
+        Assert.That(res.LastName, Is.EqualTo(customer.LastName));
+        Assert.That(res.Email, Is.EqualTo(customer.Email));
+    }
+}

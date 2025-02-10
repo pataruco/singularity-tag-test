@@ -1,0 +1,19 @@
+﻿{
+  "errors": [
+    {
+      "message": "Only one type of ID can be specified in input.",
+      "locations": [
+        {
+          "line": 1,
+          "column": 3
+        }
+      ],
+      "path": [
+        "customer"
+      ]
+    }
+  ],
+  "data": {
+    "customer": null
+  }
+}

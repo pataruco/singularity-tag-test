@@ -15,6 +15,7 @@ public class Schema
             .AddGraphQLServer()
             .AddQueryType<Query>()
             .AddMutationType<Mutation>()
+            .AddGlobalObjectIdentification()
             .BuildSchemaAsync();
 
         schema.ToString().MatchSnapshot();
