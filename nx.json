@@ -4,11 +4,6 @@
   "plugins": [
     {
       "plugin": "@nx-dotnet/core",
-      "exclude": [
-        "#TODO:  must change once access to the keyvault is resolved",
-        "libraries/dynamics/DynamicsClient.Integration/**",
-        "libraries/dynamics/DynamicsClient.Test/**"
-      ],
       "options": {
         "targetName": "test"
       }

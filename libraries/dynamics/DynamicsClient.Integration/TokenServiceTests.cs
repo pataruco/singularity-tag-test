@@ -1,6 +1,5 @@
 ﻿
 using Libraries.Dynamics.DynamicsClient.Extensions;
-using Libraries.Dynamics.DynamicsClient.Models;
 using Libraries.Dynamics.DynamicsClient.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,6 +8,7 @@ using Moq;
 
 namespace Libraries.Dynamics.DynamicsClient.Integration.Tests;
 
+[Ignore("Will reinstate once Dynamics instance setup")]
 public class TokenServiceTests
 {
     private ITokenService _tokenService;
@@ -21,7 +21,7 @@ public class TokenServiceTests
             .SetBasePath(TestContext.CurrentContext.TestDirectory) // Ensure the correct path
             .AddJsonFile("AppSettings.json", optional: false, reloadOnChange: true)
             .Build();
-        
+
         _loggerMock = new Mock<ILogger<TokenService>>();
 
         var serviceCollection = new ServiceCollection();

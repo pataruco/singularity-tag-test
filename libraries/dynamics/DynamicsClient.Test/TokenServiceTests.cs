@@ -58,12 +58,12 @@ public class TokenServiceTests
         var cachedToken = new AuthenticationResult("access-token", false, "id-token",
             DateTimeOffset.UtcNow.AddMinutes(5), DateTimeOffset.UtcNow.AddMinutes(5), "tenant-id",
             account.Object, "username", ["scope"], Guid.NewGuid());
-        
+
         _tokenService.GetType()
             .GetField("_cachedToken",
                 System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
             .SetValue(_tokenService, cachedToken);
-        
+
         // Act
         var result = await _tokenService.GetAccessTokenAsync();
 
@@ -97,7 +97,7 @@ public class TokenServiceTests
 
         // Assert
         Assert.That(result, Is.EqualTo(newToken));
-        
+
         _loggerMock.Verify(
             x => x.Log(
                 LogLevel.Information,
@@ -121,7 +121,7 @@ public class TokenServiceTests
             .GetField("_cachedToken",
                 System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
             .SetValue(_tokenService, cachedToken);
-        
+
         var newToken = new AuthenticationResult("new-access-token", false, "id-token",
             DateTimeOffset.UtcNow.AddMinutes(5), DateTimeOffset.UtcNow.AddMinutes(5), "tenant-id",
             account.Object, "username", ["scope"], Guid.NewGuid());
@@ -135,7 +135,7 @@ public class TokenServiceTests
 
         // Assert
         Assert.That(result, Is.EqualTo(newToken));
-        
+
         _loggerMock.Verify(
             x => x.Log(
                 LogLevel.Information,
@@ -170,7 +170,8 @@ public class TokenServiceTests
     [Test]
     public void Constructor_ThrowsArgumentNullException_WhenOptionsIsNull()
     {
-        Assert.Throws<ArgumentNullException>(() => new TokenService(null, _clientApplicationAdapterMock.Object, _loggerMock.Object));
+        Assert.Throws<ArgumentNullException>(() =>
+            new TokenService(null, _clientApplicationAdapterMock.Object, _loggerMock.Object));
     }
 
     [Test]
@@ -182,7 +183,8 @@ public class TokenServiceTests
     [Test]
     public void Constructor_ThrowsArgumentNullException_WhenLoggerIsNull()
     {
-        Assert.Throws<ArgumentNullException>(() => new TokenService(_optionsMock.Object, _clientApplicationAdapterMock.Object, null));
+        Assert.Throws<ArgumentNullException>(() =>
+            new TokenService(_optionsMock.Object, _clientApplicationAdapterMock.Object, null));
     }
 
     [Test]
@@ -191,7 +193,8 @@ public class TokenServiceTests
         var invalidOptions = new DynamicsOptions(); // Missing required properties
         _optionsMock.Setup(o => o.Value).Returns(invalidOptions);
 
-        Assert.Throws<ArgumentException>(() => new TokenService(_optionsMock.Object, _clientApplicationAdapterMock.Object, _loggerMock.Object));
+        Assert.Throws<ArgumentException>(() =>
+            new TokenService(_optionsMock.Object, _clientApplicationAdapterMock.Object, _loggerMock.Object));
     }
 
     [Test]

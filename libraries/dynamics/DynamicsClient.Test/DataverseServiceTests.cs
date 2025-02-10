@@ -42,7 +42,8 @@ public class DataverseServiceTests
                 It.IsAny<Func<string, Task<string>>>(), It.IsAny<bool>(), It.IsAny<ILogger<DataverseService>>()))
             .Returns(_serviceClientMock.Object);
 
-        _dataverseService = new DataverseService(_serviceClientFactoryMock.Object, _tokenProviderMock.Object, _loggerMock.Object, _optionsMock.Object);
+        _dataverseService = new DataverseService(_serviceClientFactoryMock.Object, _tokenProviderMock.Object,
+            _loggerMock.Object, _optionsMock.Object);
     }
 
     [Test]
@@ -56,7 +57,7 @@ public class DataverseServiceTests
 
         _tokenProviderMock.Setup(ts => ts.GetAccessToken(It.IsAny<string>()))
             .ReturnsAsync(expectedToken);
-        
+
         var whoAmIResponse = new WhoAmIResponse();
         whoAmIResponse.Results["BusinessUnitId"] = expectedBusinessUnitId;
         whoAmIResponse.Results["OrganizationId"] = expectedOrganizationId;
