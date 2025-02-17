@@ -1,6 +1,5 @@
 ﻿schema {
   query: Query
-  mutation: Mutation
 }
 
 "The node interface is implemented by entities that have a global unique identifier."
@@ -17,35 +16,18 @@ type Customer implements Node {
   lastName: String
 }
 
-type Mutation {
-  createUser(user: UserDTOInput!): User! @cost(weight: "10")
-  updateUser(id: Int! user: UserDTOInput!): User! @cost(weight: "10")
-  deleteUser(id: Int!): Int! @cost(weight: "10")
-}
-
 type Query {
   "Fetches an object given its ID."
   node("ID of the object." id: ID!): Node @cost(weight: "10")
   "Lookup nodes by a list of IDs."
   nodes("The list of node IDs." ids: [ID!]!): [Node]! @cost(weight: "10")
-  user(id: Int!): User
-  users: [User!]! @cost(weight: "10")
   customer(where: CustomerWhereUniqueInput!): Customer
-}
-
-type User {
-  id: Int!
-  name: String!
 }
 
 input CustomerWhereUniqueInput {
   id: ID
   userId: ID
   contactId: ID
-}
-
-input UserDTOInput {
-  name: String!
 }
 
 "The purpose of the `cost` directive is to define a `weight` for GraphQL types, fields, and arguments. Static analysis can use these weights when calculating the overall cost of a query or response."

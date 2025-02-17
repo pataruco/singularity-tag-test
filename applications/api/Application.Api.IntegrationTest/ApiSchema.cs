@@ -14,7 +14,6 @@ public class Schema
         var schema = new ServiceCollection()
             .AddGraphQLServer()
             .AddQueryType<Query>()
-            .AddMutationType<Mutation>()
             .AddGlobalObjectIdentification()
             .BuildSchemaAsync();
 

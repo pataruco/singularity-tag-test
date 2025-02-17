@@ -4,7 +4,7 @@
 
 This directory contains the .NET projects associated with the Customer Graph API which is a GraphQL API.
 
-The API is currently attached to an in memory database which stores `User` entities, the API features CRUD operations for interacting with these entities.
+The API is currently attached to an in memory database which stores `Customer` entities.
 
 ### Code structure
 
