@@ -4,15 +4,15 @@ using Application.Infrastructure.Interfaces;
 
 namespace Application.Core.Services;
 
-public class CustomerService(IRepository<Customer> customerRepository) : ICustomerService
+public class CustomerService(ICustomerRepository customerRepository) : ICustomerService
 {
     public Customer? GetByUserId(string id)
     {
-        return customerRepository.GetById(id);
+        return customerRepository.GetByAuth0Id(id);
     }
 
-    public Customer? GetByContactId(string id)
+    public Customer? GetByContactId(Guid id)
     {
-        return customerRepository.Get().FirstOrDefault(x => x.ContactId == id);
+        return customerRepository.GetById(id);
     }
 }

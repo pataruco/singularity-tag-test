@@ -1,12 +1,13 @@
 using Application.Api.Enums;
 using Application.Api.Exceptions;
 using Application.Api.Structs;
+using Application.Domain.Entities;
 
 namespace Application.Api.Inputs;
 
 public class CustomerWhereUniqueInput
 {
-    [ID]
+    [ID(nameof(Customer))]
     public string? Id { get; set; }
 
     [GraphQLType(typeof(IdType))]

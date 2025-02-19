@@ -1,4 +1,5 @@
 using Application.Api.Enums;
+using Application.Api.Exceptions;
 using Application.Api.Inputs;
 using Application.Api.Types;
 using Application.Core.Services.Interfaces;
@@ -16,12 +17,17 @@ public class Query
 
         switch (idToQuery.Type)
         {
-            case CustomerIdType.GraphQLNode:
             case CustomerIdType.User:
                 result = customerService.GetByUserId(idToQuery.Value);
                 break;
+            case CustomerIdType.GraphQLNode:
             case CustomerIdType.Contact:
-                result = customerService.GetByContactId(idToQuery.Value);
+                Guid.TryParse(idToQuery.Value, out Guid id);
+                if (id == Guid.Empty)
+                {
+                    throw new InvalidInputException("Invalid GUID provided.");
+                }
+                result = customerService.GetByContactId(id);
                 break;
         }
 

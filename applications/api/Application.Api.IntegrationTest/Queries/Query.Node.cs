@@ -17,6 +17,7 @@ namespace Application.Api.IntegrationTest.Queries
         private Mock<ICustomerService> _mockCustomerService;
         private IRequestExecutorBuilder _requestExecutor;
         private Customer _customer;
+        private Guid _customerId;
 
         [SetUp]
         public void Setup()
@@ -28,10 +29,11 @@ namespace Application.Api.IntegrationTest.Queries
                 .AddGlobalObjectIdentification()
                 .AddErrorFilter<CustomErrorFilter>()
                 .AddQueryType<Query>();
+            _customerId = Guid.Parse("cab0c96e-7acc-4edf-8d4e-abfc3aa7c8cf");
             _customer = new Customer
             {
                 UserId = "44248471-13bc-44ad-bc62-c0e07c4cfbbd",
-                ContactId = "cab0c96e-7acc-4edf-8d4e-abfc3aa7c8cf",
+                ContactId = _customerId,
                 FirstName = "John",
                 LastName = "Doe",
                 Email = "john.doe@gmail.com",
@@ -39,12 +41,11 @@ namespace Application.Api.IntegrationTest.Queries
         }
 
         [Test]
-        public async Task Node_GetCustomerReturnsCustomerIfFound()
+        public async Task Node_GetCustomerThrowsWhenIdProvidedThatIsNotAnEncodedGuid()
         {
             // arrange
             var query =
-                $"{{ node (id: \"Q3VzdG9tZXI6NDQyNDg0NzEtMTNiYy00NGFkLWJjNjItYzBlMDdjNGNmYmJk\"){{ ...on Customer {{ id, userId, contactId, firstName, lastName, email }} }} }}";
-            _mockCustomerService.Setup(mock => mock.GetByUserId(It.IsAny<string>())).Returns(_customer);
+                $"{{ node (id: \"Q3VzdG9tZXI6Y2FiMGM5NmUtN2FjYy00ZWRmLThkNGUtYWJmYzNhYTdjOGN\"){{ ... on Customer {{ id }} }} }}";
 
             // act
             var result = await _requestExecutor.ExecuteRequestAsync(
@@ -52,7 +53,23 @@ namespace Application.Api.IntegrationTest.Queries
 
             // assert
             result.ToJson().MatchSnapshot();
-            _mockCustomerService.Verify(mock => mock.GetByUserId(It.Is<string>(val => val == "44248471-13bc-44ad-bc62-c0e07c4cfbbd")), Times.Once);
+        }
+
+        [Test]
+        public async Task Node_GetCustomerReturnsCustomerIfFound()
+        {
+            // arrange
+            var query =
+                $"{{ node (id: \"Q3VzdG9tZXI6Y2FiMGM5NmUtN2FjYy00ZWRmLThkNGUtYWJmYzNhYTdjOGNm\"){{ ...on Customer {{ id, userId, contactId, firstName, lastName, email }} }} }}";
+            _mockCustomerService.Setup(mock => mock.GetByContactId(It.IsAny<Guid>())).Returns(_customer);
+
+            // act
+            var result = await _requestExecutor.ExecuteRequestAsync(
+                query);
+
+            // assert
+            result.ToJson().MatchSnapshot();
+            _mockCustomerService.Verify(mock => mock.GetByContactId(It.Is<Guid>(val => val == _customerId)), Times.Once);
         }
 
         [Test]
@@ -60,8 +77,8 @@ namespace Application.Api.IntegrationTest.Queries
         {
             // arrange
             var query =
-                $"{{ node (id: \"Q3VzdG9tZXI6NDQyNDg0NzEtMTNiYy00NGFkLWJjNjItYzBlMDdjNGNmYmJk\"){{ ...on Customer {{ id, userId, contactId, firstName, lastName, email }} }} }}";
-            _mockCustomerService.Setup(mock => mock.GetByUserId(It.IsAny<string>())).Returns((Customer?)null);
+                $"{{ node (id: \"Q3VzdG9tZXI6Y2FiMGM5NmUtN2FjYy00ZWRmLThkNGUtYWJmYzNhYTdjOGNm\"){{ ...on Customer {{ id, userId, contactId, firstName, lastName, email }} }} }}";
+            _mockCustomerService.Setup(mock => mock.GetByContactId(It.IsAny<Guid>())).Returns((Customer?)null);
 
             // act
             var result = await _requestExecutor.ExecuteRequestAsync(
@@ -69,7 +86,7 @@ namespace Application.Api.IntegrationTest.Queries
 
             // assert
             result.ToJson().MatchSnapshot();
-            _mockCustomerService.Verify(mock => mock.GetByUserId(It.Is<string>(val => val == "44248471-13bc-44ad-bc62-c0e07c4cfbbd")), Times.Once);
+            _mockCustomerService.Verify(mock => mock.GetByContactId(It.Is<Guid>(val => val == _customerId)), Times.Once);
         }
     }
 }

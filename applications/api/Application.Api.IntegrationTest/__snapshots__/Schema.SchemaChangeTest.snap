@@ -9,7 +9,7 @@ interface Node {
 
 type Customer implements Node {
   id: ID!
-  userId: ID!
+  userId: ID
   contactId: ID!
   email: String!
   firstName: String

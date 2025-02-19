@@ -16,6 +16,7 @@ public class Query_GetCustomer
     private Mock<ICustomerService> _mockCustomerService;
     private IRequestExecutorBuilder _requestExecutor;
     private Customer _customer;
+    private Guid _customerId;
 
     [SetUp]
     public void Setup()
@@ -26,10 +27,11 @@ public class Query_GetCustomer
             .AddGraphQLServer()
             .AddErrorFilter<CustomErrorFilter>()
             .AddQueryType<Query>();
+        _customerId = Guid.Parse("cab0c96e-7acc-4edf-8d4e-abfc3aa7c8cf");
         _customer = new Customer
         {
             UserId = "44248471-13bc-44ad-bc62-c0e07c4cfbbd",
-            ContactId = "cab0c96e-7acc-4edf-8d4e-abfc3aa7c8cf",
+            ContactId = _customerId,
             FirstName = "John",
             LastName = "Doe",
             Email = "john.doe@gmail.com",
@@ -74,12 +76,11 @@ public class Query_GetCustomer
     }
 
     [Test]
-    public async Task Customer_ReturnsWhenOnlyIdProvided()
+    public async Task Customer_ThrowsWhenIdProvidedThatIsNotAGuid()
     {
         // arrange
         var query =
-            $"{{ customer (where: {{ id: \"Id\" }}){{ id, userId, contactId, firstName, lastName, email }} }}";
-        _mockCustomerService.Setup(mock => mock.GetByUserId(It.IsAny<string>())).Returns(_customer);
+            $"{{ customer (where: {{ id: \"test\" }}){{ id }} }}";
 
         // act
         var result = await _requestExecutor.ExecuteRequestAsync(
@@ -87,7 +88,38 @@ public class Query_GetCustomer
 
         // assert
         result.ToJson().MatchSnapshot();
-        _mockCustomerService.Verify(mock => mock.GetByUserId(It.Is<string>(val => val == "Id")), Times.Once);
+    }
+
+    [Test]
+    public async Task Customer_ThrowsWhenContactIdProvidedThatIsNotAGuid()
+    {
+        // arrange
+        var query =
+            $"{{ customer (where: {{ contactId: \"test\" }}){{ id }} }}";
+
+        // act
+        var result = await _requestExecutor.ExecuteRequestAsync(
+            query);
+
+        // assert
+        result.ToJson().MatchSnapshot();
+    }
+
+    [Test]
+    public async Task Customer_ReturnsWhenOnlyIdProvided()
+    {
+        // arrange
+        var query =
+            $"{{ customer (where: {{ id: \"{_customerId}\" }}){{ id, userId, contactId, firstName, lastName, email }} }}";
+        _mockCustomerService.Setup(mock => mock.GetByContactId(It.IsAny<Guid>())).Returns(_customer);
+
+        // act
+        var result = await _requestExecutor.ExecuteRequestAsync(
+            query);
+
+        // assert
+        result.ToJson().MatchSnapshot();
+        _mockCustomerService.Verify(mock => mock.GetByContactId(It.Is<Guid>(val => val == _customerId)), Times.Once);
     }
 
     [Test]
@@ -113,8 +145,8 @@ public class Query_GetCustomer
     {
         // arrange
         var query =
-            $"{{ customer (where: {{ contactId: \"Contact\" }}){{ id, userId, contactId, firstName, lastName, email }} }}";
-        _mockCustomerService.Setup(mock => mock.GetByContactId(It.IsAny<string>())).Returns(_customer);
+            $"{{ customer (where: {{ contactId: \"{_customerId}\" }}){{ id, userId, contactId, firstName, lastName, email }} }}";
+        _mockCustomerService.Setup(mock => mock.GetByContactId(It.IsAny<Guid>())).Returns(_customer);
 
         // act
         var result = await _requestExecutor.ExecuteRequestAsync(
@@ -122,7 +154,7 @@ public class Query_GetCustomer
 
         // assert
         result.ToJson().MatchSnapshot();
-        _mockCustomerService.Verify(mock => mock.GetByContactId(It.Is<string>(val => val == "Contact")), Times.Once);
+        _mockCustomerService.Verify(mock => mock.GetByContactId(It.Is<Guid>(val => val == _customerId)), Times.Once);
     }
 
     [Test]
@@ -146,8 +178,8 @@ public class Query_GetCustomer
     {
         // arrange
         var query =
-            $"{{ customer (where: {{ contactId: \"Contact\" }}){{ id, userId, contactId, firstName, lastName, email }} }}";
-        _mockCustomerService.Setup(mock => mock.GetByContactId(It.IsAny<string>())).Returns((Customer?)null);
+            $"{{ customer (where: {{ contactId: \"{_customerId}\" }}){{ id, userId, contactId, firstName, lastName, email }} }}";
+        _mockCustomerService.Setup(mock => mock.GetByContactId(It.IsAny<Guid>())).Returns((Customer?)null);
 
         // act
         var result = await _requestExecutor.ExecuteRequestAsync(

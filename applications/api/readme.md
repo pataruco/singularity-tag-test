@@ -4,7 +4,7 @@
 
 This directory contains the .NET projects associated with the Customer Graph API which is a GraphQL API.
 
-The API is currently attached to an in memory database which stores `Customer` entities.
+The API is attached to Microsoft Dataverse for interacting with `Contact` entities and returning `Customer` entities.
 
 ### Code structure
 
@@ -15,6 +15,10 @@ The code for the API is organised into a number of .NET projects:
 - `Application.Core` - Contains services for business logic associated with interacting with external services/infrastructure
 - `Application.Domain` - Contains domain objects/entities
 - `Application.Infrastructure`- Contains classes for external infrastructure/database (e.g. `DbContext`)
+
+## AppSettings
+
+In order for the API to connect to the Dataverse CRM, you will need to populate the `DynamicsClient` options section of the `Applications.Api/appsettings.json` file with valid values. We intend for these values to be stored in key vault at a later date for ease of use.
 
 ## Deploying the API locally
 
@@ -44,8 +48,8 @@ The API should be available at http://localhost:8080/graphql
 
 ## Testing
 
-For testing, this project uses NUnit, Moq and Snapshooter. In order to run the tests via the CLI, run the following command:
+For testing, this project uses NUnit, Moq and Snapshooter. In order to run the tests via the CLI, run the following command from the root directory where the `singularity.sln` exists:
 
 ```sh
-pnpm nx test Application.Api.IntegrationTest
+dotnet test
 ```

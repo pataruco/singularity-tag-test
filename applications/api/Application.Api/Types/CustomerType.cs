@@ -1,3 +1,4 @@
+using Application.Api.Exceptions;
 using Application.Core.Services.Interfaces;
 using Application.Domain.Entities;
 using System.Diagnostics.CodeAnalysis;
@@ -9,9 +10,8 @@ namespace Application.Api.Types;
 public class CustomerType
 {
     public required string Id { get; set; }
-    [GraphQLNonNullType]
     [GraphQLType(typeof(IdType))]
-    public required string UserId { get; set; }
+    public string? UserId { get; set; }
     [GraphQLNonNullType]
     [GraphQLType(typeof(IdType))]
     public required string ContactId { get; set; }
@@ -22,9 +22,9 @@ public class CustomerType
     [SetsRequiredMembers]
     public CustomerType(Customer customer)
     {
-        Id = customer.UserId;
+        Id = customer.ContactId.ToString();
         UserId = customer.UserId;
-        ContactId = customer.ContactId;
+        ContactId = customer.ContactId.ToString();
         Email = customer.Email;
         FirstName = customer.FirstName;
         LastName = customer.LastName;
@@ -32,7 +32,13 @@ public class CustomerType
 
     public static CustomerType? Get(string id, ICustomerService customerService)
     {
-        Customer? customer = customerService.GetByUserId(id);
+        Guid.TryParse(id, out Guid validId);
+        if (validId == Guid.Empty)
+        {
+            throw new InvalidInputException("Invalid GUID provided.");
+        }
+
+        Customer? customer = customerService.GetByContactId(validId);
 
         if (customer == null)
         {

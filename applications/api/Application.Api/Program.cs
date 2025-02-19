@@ -5,12 +5,16 @@ using Application.Core.Services.Interfaces;
 using Application.Domain.Entities;
 using Application.Infrastructure.Interfaces;
 using Application.Infrastructure.Repositories;
+using Application.Infrastructure.Transformers;
+using Libraries.Dynamics.DynamicsClient.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder
     .Services
-    .AddSingleton<IRepository<Customer>, CustomerRepository>()
+    .AddDynamicsClient(builder.Configuration)
+    .AddScoped<CustomerTransformer>()
+    .AddScoped<ICustomerRepository, CustomerRepository>()
     .AddScoped<ICustomerService, CustomerService>()
     .AddGraphQLServer()
     .AddQueryType<Query>()

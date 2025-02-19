@@ -4,5 +4,5 @@ public interface IRepository<T>
 {
     IList<T> Get();
 
-    T? GetById(string id);
+    T? GetById(Guid id);
 }

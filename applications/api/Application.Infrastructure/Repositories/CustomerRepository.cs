@@ -1,47 +1,44 @@
 using Application.Domain.Entities;
 using Application.Infrastructure.Interfaces;
+using Application.Infrastructure.Transformers;
+using Libraries.Dynamics.DynamicsClient;
+using Libraries.Dynamics.DynamicsClient.Factories;
 
 namespace Application.Infrastructure.Repositories;
 
-public class CustomerRepository : IRepository<Customer>
+public class CustomerRepository : ICustomerRepository
 {
-    List<Customer> _customers;
-
-    public CustomerRepository()
+    private readonly DataverseContext _context;
+    private readonly CustomerTransformer _customerTransformer;
+    public CustomerRepository(IDataverseContextFactory dataverseContextFactory, CustomerTransformer customerCustomerTransformer)
     {
-        _customers = new List<Customer>();
-        _customers.Add(new Customer()
-        {
-            UserId = "1",
-            ContactId = "1.1",
-            FirstName = "John",
-            LastName = "Doe",
-            Email = "john.doe@gmail.com",
-        });
-        _customers.Add(new Customer()
-        {
-            UserId = "2",
-            ContactId = "2.1",
-            FirstName = "John",
-            LastName = "Foe",
-            Email = "john.foe@gmail.com",
-        });
-        _customers.Add(new Customer()
-        {
-            UserId = "3",
-            ContactId = "3.1",
-            FirstName = "John",
-            LastName = "Moe",
-            Email = "john.moe@gmail.com",
-        });
+        _context = dataverseContextFactory.CreateDataverseContext();
+        _customerTransformer = customerCustomerTransformer;
     }
     public IList<Customer> Get()
     {
-        return _customers;
+        throw new NotImplementedException();
     }
 
-    public Customer? GetById(string id)
+    public Customer? GetByAuth0Id(string id)
     {
-        return _customers.FirstOrDefault(entity => entity.UserId == id);
+        Contact? contact = _context.ContactSet.SingleOrDefault(entity => entity.New_Auth0Id == id);
+        if (contact == null)
+        {
+            return null;
+        }
+
+        return _customerTransformer.FromContact(contact);
+    }
+
+    public Customer? GetById(Guid id)
+    {
+        Contact? contact = _context.ContactSet.SingleOrDefault(entity => entity.Id == id);
+        if (contact == null)
+        {
+            return null;
+        }
+
+        return _customerTransformer.FromContact(contact);
     }
 }
