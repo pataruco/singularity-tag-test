@@ -1,7 +1,9 @@
 using Application.Api.Enums;
 using Application.Api.Exceptions;
+using Application.Api.Helpers;
 using Application.Api.Structs;
 using Application.Domain.Entities;
+using Application.Domain.Models;
 
 namespace Application.Api.Inputs;
 
@@ -16,11 +18,18 @@ public class CustomerWhereUniqueInput
     [GraphQLType(typeof(IdType))]
     public string? ContactId { get; set; }
 
+    public CustomerId ToCustomerId()
+    {
+        // Piggybacking off the existing validation logic in GetIdToQuery()
+        _ = this.GetIdToQuery();
+        return CustomerHelper.MapToCustomerId(this);
+    }
+
     public CustomerIdStruct GetIdToQuery()
     {
         CustomerIdStruct? idToQuery = null;
 
-        if (!String.IsNullOrEmpty(Id))
+        if (!string.IsNullOrEmpty(Id))
         {
             idToQuery = new CustomerIdStruct()
             {
@@ -29,7 +38,7 @@ public class CustomerWhereUniqueInput
             };
         }
 
-        if (!String.IsNullOrEmpty(UserId))
+        if (!string.IsNullOrEmpty(UserId))
         {
             if (idToQuery != null)
             {
@@ -42,7 +51,7 @@ public class CustomerWhereUniqueInput
             };
         }
 
-        if (!String.IsNullOrEmpty(ContactId))
+        if (!string.IsNullOrEmpty(ContactId))
         {
             if (idToQuery != null)
             {

@@ -1,0 +1,16 @@
+﻿{
+  "errors": [
+    {
+      "message": "Expected a `Name`-token, but found a `LeftBrace`-token.",
+      "locations": [
+        {
+          "line": 2,
+          "column": 27
+        }
+      ],
+      "extensions": {
+        "code": "HC0014"
+      }
+    }
+  ]
+}

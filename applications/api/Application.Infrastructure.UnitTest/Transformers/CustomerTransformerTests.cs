@@ -28,14 +28,118 @@ public class CustomerTransformerTests
             EmailAddress1 = "john.doe@gmail.com",
             New_Auth0Id = "random_id"
         };
-        var transformer = new CustomerTransformer();
 
         // act
-        var result = transformer.FromContact(contact);
+        var result = CustomerTransformer.FromContact(contact);
 
         // assert
         var serializedResult = JsonConvert.SerializeObject(result);
         var serializedExpectedResult = JsonConvert.SerializeObject(expectedCustomer);
+        Assert.That(serializedResult, Is.EqualTo(serializedExpectedResult));
+    }
+
+    [Test]
+    public void MergeCustomerToMutableContact_UpdatesMutableFields_WhenCustomerFieldsAreNotNull()
+    {
+        // arrange
+        var contact = new Contact()
+        {
+            Salutation = "Mr.",
+            FirstName = "John",
+            LastName = "Doe"
+        };
+        var customer = new Customer()
+        {
+            ContactId = Guid.NewGuid(),
+            Email = "jane.smith@example.com",
+            Salutation = "Dr.",
+            FirstName = "Jane",
+            LastName = "Smith"
+        };
+
+        var expectedContact = new Contact()
+        {
+            Salutation = "Dr.",
+            FirstName = "Jane",
+            LastName = "Smith"
+        };
+
+        // act
+        var result = CustomerTransformer.MergeCustomerToMutableContact(contact, customer);
+
+        // assert
+        var serializedResult = JsonConvert.SerializeObject(result);
+        var serializedExpectedResult = JsonConvert.SerializeObject(expectedContact);
+        Assert.That(serializedResult, Is.EqualTo(serializedExpectedResult));
+    }
+
+    [Test]
+    public void MergeCustomerToMutableContact_DoesNotUpdateFields_WhenCustomerFieldsAreNull()
+    {
+        // arrange
+        var contact = new Contact()
+        {
+            Salutation = "Mr.",
+            FirstName = "John",
+            LastName = "Doe"
+        };
+        var customer = new Customer()
+        {
+            ContactId = Guid.NewGuid(),
+            Email = "john.doe@example.com",
+            Salutation = null,
+            FirstName = null,
+            LastName = null
+        };
+
+        var expectedContact = new Contact()
+        {
+            Salutation = "Mr.",
+            FirstName = "John",
+            LastName = "Doe"
+        };
+
+        // act
+        var result = CustomerTransformer.MergeCustomerToMutableContact(contact, customer);
+
+        // assert
+        var serializedResult = JsonConvert.SerializeObject(result);
+        var serializedExpectedResult = JsonConvert.SerializeObject(expectedContact);
+        Assert.That(serializedResult, Is.EqualTo(serializedExpectedResult));
+    }
+
+    [Test]
+    public void MergeCustomerToMutableContact_PartiallyUpdatesFields_WhenSomeCustomerFieldsAreNull()
+    {
+        // arrange
+        var contact = new Contact()
+        {
+            Salutation = "Ms.",
+            FirstName = "Alice",
+            LastName = "Johnson"
+        };
+        var customer = new Customer()
+        {
+            ContactId = Guid.NewGuid(),
+            Email = "alice.johnson@example.com",
+            Salutation = null,
+            FirstName = "Alicia",
+            LastName = null
+        };
+
+        var expectedContact = new Contact()
+        {
+            Salutation = "Ms.",
+            FirstName = "Alicia",
+            LastName = "Johnson"
+        };
+
+        // act
+        var result = CustomerTransformer.MergeCustomerToMutableContact(contact, customer);
+
+        // assert
+        var serializedResult = JsonConvert.SerializeObject(result);
+        var serializedExpectedResult = JsonConvert.SerializeObject(expectedContact);
         Assert.That(serializedResult, Is.EqualTo(serializedExpectedResult));
     }
 }

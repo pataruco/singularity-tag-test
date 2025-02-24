@@ -5,6 +5,7 @@
 This directory contains the .NET projects associated with the Customer Graph API which is a GraphQL API.
 
 The API is attached to Microsoft Dataverse for interacting with `Contact` entities and returning `Customer` entities.
+The API is also attached to Microsoft Dataverse for interacting with `Contact` entities and returning `Customer` entities.
 
 ### Code structure
 

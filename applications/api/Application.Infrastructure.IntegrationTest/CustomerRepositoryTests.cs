@@ -1,7 +1,6 @@
 using Application.Domain.Entities;
 using Application.Infrastructure.Interfaces;
 using Application.Infrastructure.Repositories;
-using Application.Infrastructure.Transformers;
 using Libraries.Dynamics.DynamicsClient;
 using Libraries.Dynamics.DynamicsClient.Extensions;
 using Libraries.Dynamics.DynamicsClient.Factories;
@@ -42,6 +41,7 @@ public class CustomerRepositoryTests
         _contact.LastName = "Doe";
         _contact.EmailAddress1 = "john.doe@gmail.com";
         _contact.New_Auth0Id = $"email|{_contact.EmailAddress1}";
+        _contact.Salutation = "Mr.";
 
         _context.AddObject(_contact);
         _context.SaveChanges();
@@ -52,7 +52,8 @@ public class CustomerRepositoryTests
             LastName = _contact.LastName,
             Email = _contact.EmailAddress1,
             UserId = _contact.New_Auth0Id,
-            ContactId = _contact.Id
+            ContactId = _contact.Id,
+            Salutation = _contact.Salutation
         };
 
         // Created a mocked IDataverseContextFactory to return the already instantiated context 
@@ -60,7 +61,7 @@ public class CustomerRepositoryTests
         var mockDataverseContextFactory = new Mock<IDataverseContextFactory>();
         mockDataverseContextFactory.Setup(f => f.CreateDataverseContext()).Returns(_context);
 
-        _customerRepository = new CustomerRepository(mockDataverseContextFactory.Object, new CustomerTransformer());
+        _customerRepository = new CustomerRepository(mockDataverseContextFactory.Object);
     }
 
     [Test]
@@ -116,6 +117,34 @@ public class CustomerRepositoryTests
 
         // assert
         Assert.That(customer, Is.Null);
+    }
+
+    [Test]
+    public void Update_UpdatesCustomerDetails()
+    {
+        // arrange
+        var updatedCustomer = new Customer()
+        {
+            ContactId = _contact.Id,
+            FirstName = "Jane",
+            LastName = "Smith",
+            Email = "jane.smith@gmail.com",
+            UserId = "New_UserId",
+            Salutation = "Ms."
+        };
+
+        // act
+        _customerRepository.Update(updatedCustomer);
+        var customer = _customerRepository.GetById(_contact.Id);
+
+        // assert
+        Assert.That(customer.FirstName, Is.EqualTo(updatedCustomer.FirstName));
+        Assert.That(customer.LastName, Is.EqualTo(updatedCustomer.LastName));
+        Assert.That(customer.Salutation, Is.EqualTo(updatedCustomer.Salutation));
+
+        // These should not be updated
+        Assert.That(customer.Email, Is.Not.EqualTo(updatedCustomer.Email));
+        Assert.That(customer.UserId, Is.Not.EqualTo(updatedCustomer.UserId));
     }
 
     [OneTimeTearDown]

@@ -6,15 +6,10 @@ using Libraries.Dynamics.DynamicsClient.Factories;
 
 namespace Application.Infrastructure.Repositories;
 
-public class CustomerRepository : ICustomerRepository
+public class CustomerRepository(IDataverseContextFactory dataverseContextFactory) : ICustomerRepository
 {
-    private readonly DataverseContext _context;
-    private readonly CustomerTransformer _customerTransformer;
-    public CustomerRepository(IDataverseContextFactory dataverseContextFactory, CustomerTransformer customerCustomerTransformer)
-    {
-        _context = dataverseContextFactory.CreateDataverseContext();
-        _customerTransformer = customerCustomerTransformer;
-    }
+    private readonly DataverseContext _context = dataverseContextFactory.CreateDataverseContext();
+
     public IList<Customer> Get()
     {
         throw new NotImplementedException();
@@ -28,7 +23,7 @@ public class CustomerRepository : ICustomerRepository
             return null;
         }
 
-        return _customerTransformer.FromContact(contact);
+        return CustomerTransformer.FromContact(contact);
     }
 
     public Customer? GetById(Guid id)
@@ -39,6 +34,21 @@ public class CustomerRepository : ICustomerRepository
             return null;
         }
 
-        return _customerTransformer.FromContact(contact);
+        return CustomerTransformer.FromContact(contact);
+    }
+
+    public void Update(Customer entity)
+    {
+        Contact? contact = _context.ContactSet.SingleOrDefault(c => c.ContactId == entity.ContactId);
+        if (contact == null)
+        {
+            return;
+        }
+
+        // TODO: Do we need to worry about race conditions here, i.e. changes made directly in CRM?
+        contact = CustomerTransformer.MergeCustomerToMutableContact(contact, entity);
+
+        _context.UpdateObject(contact);
+        _context.SaveChanges();
     }
 }

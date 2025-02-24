@@ -1,0 +1,13 @@
+﻿{
+  "data": {
+    "updateOneCustomer": {
+      "id": "Q3VzdG9tZXI6Y2FiMGM5NmUtN2FjYy00ZWRmLThkNGUtYWJmYzNhYTdjOGNm",
+      "userId": "idp_123abc321",
+      "contactId": "cab0c96e-7acc-4edf-8d4e-abfc3aa7c8cf",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@gmail.com",
+      "salutation": "Nickname"
+    }
+  }
+}

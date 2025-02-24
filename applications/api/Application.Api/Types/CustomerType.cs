@@ -16,6 +16,7 @@ public class CustomerType
     [GraphQLType(typeof(IdType))]
     public required string ContactId { get; set; }
     public required string Email { get; set; }
+    public string? Salutation { get; set; }
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
 
@@ -26,6 +27,7 @@ public class CustomerType
         UserId = customer.UserId;
         ContactId = customer.ContactId.ToString();
         Email = customer.Email;
+        Salutation = customer.Salutation;
         FirstName = customer.FirstName;
         LastName = customer.LastName;
     }

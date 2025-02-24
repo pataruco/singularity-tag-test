@@ -1,0 +1,19 @@
+﻿{
+  "errors": [
+    {
+      "message": "Invalid GUID provided for Id.",
+      "locations": [
+        {
+          "line": 1,
+          "column": 12
+        }
+      ],
+      "path": [
+        "updateOneCustomer"
+      ]
+    }
+  ],
+  "data": {
+    "updateOneCustomer": null
+  }
+}

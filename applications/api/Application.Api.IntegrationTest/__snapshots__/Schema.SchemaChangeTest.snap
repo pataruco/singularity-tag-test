@@ -1,5 +1,6 @@
 ﻿schema {
   query: Query
+  mutation: Mutation
 }
 
 "The node interface is implemented by entities that have a global unique identifier."
@@ -12,8 +13,13 @@ type Customer implements Node {
   userId: ID
   contactId: ID!
   email: String!
+  salutation: String
   firstName: String
   lastName: String
+}
+
+type Mutation {
+  updateOneCustomer(where: CustomerWhereUniqueInput! input: CustomerInput!): Customer
 }
 
 type Query {
@@ -22,6 +28,10 @@ type Query {
   "Lookup nodes by a list of IDs."
   nodes("The list of node IDs." ids: [ID!]!): [Node]! @cost(weight: "10")
   customer(where: CustomerWhereUniqueInput!): Customer
+}
+
+input CustomerInput {
+  salutation: String
 }
 
 input CustomerWhereUniqueInput {

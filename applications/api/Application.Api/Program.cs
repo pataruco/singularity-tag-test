@@ -1,10 +1,13 @@
 using Application.Api.Filters;
 using Application.Api.Queries;
+using Application.Core.Commands;
+using Application.Core.Commands.Customer;
 using Application.Core.Services;
 using Application.Core.Services.Interfaces;
 using Application.Infrastructure.Interfaces;
 using Application.Infrastructure.Repositories;
 using Application.Infrastructure.Transformers;
+using FluentValidation;
 using Libraries.Dynamics.DynamicsClient.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,14 +19,19 @@ if (builder.Environment.IsDevelopment())
     builder.Configuration.AddEnvironmentVariables();
 }
 
+var configuration = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .Build();
 builder
     .Services
-    .AddDynamicsClient(builder.Configuration)
-    .AddScoped<CustomerTransformer>()
     .AddScoped<ICustomerRepository, CustomerRepository>()
     .AddScoped<ICustomerService, CustomerService>()
+    .AddScoped<ICommandHandler<UpdateCustomerCommand>, UpdateCustomerCommandHandler>()
+    .AddScoped<IValidator<UpdateCustomerCommand>, UpdateCustomerCommandValidator>()
+    .AddDynamicsClient(configuration)
     .AddGraphQLServer()
     .AddQueryType<Query>()
+    .AddMutationType<Mutation>()
     .AddGlobalObjectIdentification()
     .AddErrorFilter<CustomErrorFilter>();
 
