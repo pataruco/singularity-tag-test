@@ -1,0 +1,17 @@
+{
+    "name": "auth0-post-login-trigger",
+    "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "sourceRoot": "applications/auth0-post-login-trigger",
+    "tags": [],
+    "targets": {
+        "test:coverage": {
+          "executor": "nx:run-commands",
+          "options": {
+            "cwd": "applications/auth0-post-login-trigger",
+            "command": "pnpm test:coverage"
+          }
+        }
+    }
+  }
+  

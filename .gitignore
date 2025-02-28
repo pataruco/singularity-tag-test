@@ -5,6 +5,7 @@ dist
 
 # JavaScript / TypeScript
 node_modules
+coverage/
 
 # Secrets
 .env
