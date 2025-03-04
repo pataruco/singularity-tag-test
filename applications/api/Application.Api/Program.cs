@@ -6,7 +6,6 @@ using Application.Core.Services;
 using Application.Core.Services.Interfaces;
 using Application.Infrastructure.Interfaces;
 using Application.Infrastructure.Repositories;
-using Application.Infrastructure.Transformers;
 using FluentValidation;
 using Libraries.Dynamics.DynamicsClient.Extensions;
 
@@ -19,16 +18,13 @@ if (builder.Environment.IsDevelopment())
     builder.Configuration.AddEnvironmentVariables();
 }
 
-var configuration = new ConfigurationBuilder()
-    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-    .Build();
 builder
     .Services
     .AddScoped<ICustomerRepository, CustomerRepository>()
     .AddScoped<ICustomerService, CustomerService>()
     .AddScoped<ICommandHandler<UpdateCustomerCommand>, UpdateCustomerCommandHandler>()
     .AddScoped<IValidator<UpdateCustomerCommand>, UpdateCustomerCommandValidator>()
-    .AddDynamicsClient(configuration)
+    .AddDynamicsClient(builder.Configuration)
     .AddGraphQLServer()
     .AddQueryType<Query>()
     .AddMutationType<Mutation>()
