@@ -1,0 +1,27 @@
+name: Dynamics Integration
+run-name: ${{github.actor}} is running integration for Dynamics solutions
+
+on:
+  workflow_call:
+    outputs:
+      solutions:
+        description: All the solutions in the repository
+        value: ${{ jobs.get-existing-solutions.outputs.solutions }}
+
+jobs:
+  get-existing-solutions:
+    name: Get existing solutions
+    runs-on: ubuntu-latest
+
+    outputs:
+      solutions: ${{ steps.get-solutions.outputs.solutions }}
+
+    steps:
+      - name: 🛎️ Checkout
+        uses: actions/checkout@v4
+
+      - name: 🧪 Get existing solutions
+        id: get-solutions
+        run: |
+            solutions=$(ls -d solutions/* | xargs -n 1 basename | jq -cnR '[inputs | select(length>0)]')
+            echo "solutions=$solutions" >> $GITHUB_OUTPUT

@@ -1,0 +1,102 @@
+name: Deploy solutions to the next environment
+# Export solution form an environment as managed,
+# upload the solution to GitHub artifacts and deploy to the TEST Power Platform environment
+
+on:
+  workflow_call:
+    inputs:
+      dynamics-client-id:
+        description: 'Client ID for the service principal'
+        type: string
+        required: true
+      azure-tenant-id:
+        description: 'Tenant ID'
+        type: string
+        required: true
+
+    secrets:
+      source-env-url:
+        required: true
+      target-env-url:
+        required: true
+      dynamics-client-secret:
+        required: true
+  
+env: 
+  SOLUTION_SHIPPING_FOLDER: 'out/ship/'
+  SOLUTION_RELEASE_FOLDER: 'out/release/'
+
+jobs:
+  get-all-solutions:
+    uses: ./.github/workflows/get-existing-solutions.yaml
+
+  export-solutions-as-managed:
+    name: Export solutions as managed
+    runs-on: ubuntu-latest
+    needs: get-all-solutions
+
+    strategy:
+      matrix:
+        solution-name: ${{ fromJson(needs.get-all-solutions.outputs.solutions) }}
+
+    steps:
+    - name: 🛎️ Checkout
+      uses: actions/checkout@v4
+
+    - name: 🧰 Prepare Power Platform actions
+      uses: ./.github/actions/prepare-powerplatform-actions
+    
+    - name: 📤 Export solution as managed
+      uses: microsoft/powerplatform-actions/export-solution@v1
+      with:
+        environment-url: ${{ secrets.source-env-url }}
+        app-id: ${{ inputs.dynamics-client-id }}
+        client-secret: ${{ secrets.dynamics-client-secret }} 
+        tenant-id: ${{ inputs.azure-tenant-id }}
+        solution-name: ${{ matrix.solution-name }}
+        managed: true
+        solution-output-file: ${{ env.SOLUTION_SHIPPING_FOLDER }}/${{ matrix.solution-name }}_managed.zip
+
+    - name: 📤 Upload the ready to ship solution to Github artifact store
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ matrix.solution-name }}_managed_${{ github.sha }}
+        path: ${{ env.SOLUTION_SHIPPING_FOLDER }}/
+        if-no-files-found: error
+
+  import-solutions-to-test:
+    name: Import solutions to TEST
+    needs: 
+      - export-solutions-as-managed
+      - get-all-solutions
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      max-parallel: 1 # Power Apps cannot handle multiple concurrent imports
+      matrix:
+        solution-name: ${{ fromJson(needs.get-all-solutions.outputs.solutions) }}
+
+    steps:
+    - name: 🛎️ Checkout
+      uses: actions/checkout@v4
+
+    - name: 🧰 Prepare Power Platform actions
+      uses: ./.github/actions/prepare-powerplatform-actions
+  
+    - name: Fetch the ready to ship solution from Github artifact store
+      uses: actions/download-artifact@v4
+      with:
+        name: ${{ matrix.solution-name }}_managed_${{ github.sha }}
+        path: ${{ env.SOLUTION_RELEASE_FOLDER }}
+
+    - name: 📥 Import solution to TEST env
+      uses: microsoft/powerplatform-actions/import-solution@v1
+      with:
+        environment-url: ${{ secrets.target-env-url }}
+        app-id: ${{ inputs.dynamics-client-id }}
+        client-secret: ${{ secrets.dynamics-client-secret }}
+        tenant-id: ${{ inputs.azure-tenant-id }}
+        solution-file: ${{ env.SOLUTION_RELEASE_FOLDER }}/${{ matrix.solution-name }}_managed.zip
+        force-overwrite: true
+        publish-changes: true

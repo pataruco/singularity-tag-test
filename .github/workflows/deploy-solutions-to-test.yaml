@@ -1,0 +1,23 @@
+name: Deploy solutions to TEST
+run-name: ${{github.actor}} is deploying solutions as managed to the TEST environment
+# Export solution from an environment as managed,
+# upload the solution to the GitHub artifacts and deploy to the TEST Power Platform environment
+
+on:
+  workflow_dispatch:
+  
+env: 
+  SOLUTION_SHIPPING_FOLDER: 'out/ship/'
+  SOLUTION_RELEASE_FOLDER: 'out/release/'
+
+jobs:
+  deploy-solutions-to-test:
+    name: Deploy solutions to TEST
+    uses: ./.github/workflows/deploy-solutions-to-next-env.yaml
+    with:
+      dynamics-client-id: ${{ vars.DYNAMICS_CLIENT_ID_NONPROD }}
+      azure-tenant-id: ${{ vars.AZURE_TENANT_ID }}
+    secrets:
+      source-env-url: ${{ secrets.DYNAMICS_DEV_ENVIRONMENT_URL }}
+      target-env-url: ${{ secrets.DYNAMICS_TEST_ENVIRONMENT_URL }}
+      dynamics-client-secret: ${{ secrets.DYNAMICS_CLIENT_SECRET_NONPROD }}
