@@ -418,7 +418,6 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-
-
+# NX
 .nx/cache
 .nx/workspace-data
