@@ -1,0 +1,14 @@
+name: Hydrate feature development environment
+run-name: ${{github.actor}} is importing all solutions to feature development environment
+# Import existing solutions to the feature development environment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  import-all-solutions-to-feature-environment:
+    name: Import all solutions to feature env
+    uses: ./.github/workflows/import-all-solutions-as-unmanaged.yaml
+    secrets:
+      environment-url: ${{ secrets.DYNAMICS_FEATUREDEV_ENVIRONMENT_URL }}
+      dynamics-client-secret: ${{ secrets.DYNAMICS_CLIENT_SECRET_NONPROD }}

@@ -1,0 +1,49 @@
+name: Import solution as unmanaged
+description: Import solution as unmanaged from the repo to a Power Platform environment
+
+inputs:
+  solution-name:
+    description: 'Name of the solution to import'
+    required: true
+  environment-url:
+    description: 'URL of the target Power Platform environment'
+    required: true
+  client-id:
+    description: 'Client ID for the app registration'
+    required: true
+  client-secret:
+    description: 'Client secret for the app registration'
+    required: true
+  tenant-id:
+    description: 'Azure Tenant ID'
+    required: true
+  solutions-folder:
+    description: 'Folder containing the solutions in the repository'
+    required: false
+    default: 'solutions'
+  outbound-folder:
+    description: 'Folder for staging the packed solution'
+    required: false
+    default: 'outbound'
+
+runs:
+  using: composite
+
+  steps:
+    - name: 📦 Pack solution
+      uses: microsoft/powerplatform-actions/pack-solution@v1
+      with:
+        solution-folder: ${{ inputs.solutions-folder }}/${{ inputs.solution-name }}
+        solution-file: ${{ inputs.outbound-folder }}/${{ inputs.solution-name }}.zip
+        solution-type: Unmanaged
+
+    - name: 📥 Import solution as unmanaged
+      uses: microsoft/powerplatform-actions/import-solution@v1
+      with:
+        environment-url: ${{ inputs.environment-url }}
+        app-id: ${{ inputs.client-id }}
+        client-secret: ${{ inputs.client-secret }}
+        tenant-id: ${{ inputs.tenant-id }}
+        solution-file: ${{ inputs.outbound-folder }}/${{ inputs.solution-name }}.zip
+        force-overwrite: true
+        publish-changes: true

@@ -1,0 +1,40 @@
+name: Import all solutions as unmanaged
+# Import all solutions as unmanaged from the repo to the target Power Platform environment
+
+on:
+  workflow_call:
+    secrets:
+      environment-url:
+        required: true
+      dynamics-client-secret:
+        required: true
+
+jobs:
+  get-all-solutions:
+    uses: ./.github/workflows/get-existing-solutions.yaml
+
+  hydrate-environment:
+    name: Hydrate environment
+    runs-on: ubuntu-latest
+    needs: get-all-solutions
+
+    strategy:
+      max-parallel: 1 # Power Apps cannot handle multiple concurrent imports
+      matrix:
+        solution-name: ${{ fromJson(needs.get-all-solutions.outputs.solutions) }}
+
+    steps:
+      - name: 🛎️ Checkout
+        uses: actions/checkout@v4
+
+      - name: 🧰 Prepare Power Platform actions
+        uses: ./.github/actions/prepare-powerplatform-actions
+
+      - name: 💧 Hydrate environment
+        uses: ./.github/actions/import-solution-as-unmanaged
+        with:
+          environment-url: ${{ secrets.environment-url }}
+          solution-name: ${{ matrix.solution-name }}
+          client-id: ${{ vars.DYNAMICS_CLIENT_ID_NONPROD }}
+          client-secret: ${{ secrets.dynamics-client-secret }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
