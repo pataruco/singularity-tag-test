@@ -11,6 +11,9 @@ jobs:
   get-applications-to-build:
     name: Get applications to build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
     outputs:
       applications: ${{ steps.get-applications.outputs.applications }}
     steps:

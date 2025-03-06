@@ -10,7 +10,7 @@
       },
       "dependsOn": ["build-container"],
       "metadata": {
-        "description": "Run Customer GraphQl API local container"
+        "description": "Run Customer API local container"
       }
     },
     "build-container": {
@@ -20,7 +20,7 @@
       },
       "dependsOn": ["build"],
       "metadata": {
-        "description": "Build Customer GraphQl API in a local container"
+        "description": "Build Customer API in a local container"
       }
     },
     "build": {
@@ -34,7 +34,7 @@
         }
       },
       "metadata": {
-        "description": "Build Customer GraphQl API in the root ./dist folder"
+        "description": "Build Customer API in the root ./dist folder"
       }
     }
   }
