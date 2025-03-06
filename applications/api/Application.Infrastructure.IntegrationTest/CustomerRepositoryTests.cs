@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 
 namespace Application.Infrastructure.IntegrationTest;
 
+[TestFixture]
 [Ignore("Will reinstate once Dynamics instance setup")]
 public class CustomerRepositoryTests
 {

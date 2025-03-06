@@ -28,6 +28,7 @@ type Query {
   "Lookup nodes by a list of IDs."
   nodes("The list of node IDs." ids: [ID!]!): [Node]! @cost(weight: "10")
   customer(where: CustomerWhereUniqueInput!): Customer
+  test(request: HelloRequestInput!): String! @cost(weight: "10")
 }
 
 input CustomerInput {
@@ -38,6 +39,10 @@ input CustomerWhereUniqueInput {
   id: ID
   userId: ID
   contactId: ID
+}
+
+input HelloRequestInput {
+  name: String
 }
 
 "The purpose of the `cost` directive is to define a `weight` for GraphQL types, fields, and arguments. Static analysis can use these weights when calculating the overall cost of a query or response."

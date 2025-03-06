@@ -1,0 +1,28 @@
+{
+  "name": "next-best-action-api",
+  "projectType": "application",
+  "sourceRoot": "applications/nba",
+  "tags": [],
+  "targets": {
+    "serve-container": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker run -p 8081:5053 nba-api:latest"
+      },
+      "dependsOn": ["build-container"]
+    },
+    "build-container": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "docker build . --tag nba-api:latest -f ./applications/nba/Dockerfile"
+      },
+      "dependsOn": ["build"]
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nx build Application.Nba.Api"
+      }
+    }
+  }
+}

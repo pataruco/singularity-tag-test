@@ -18,6 +18,7 @@ if (builder.Environment.IsDevelopment())
     builder.Configuration.AddEnvironmentVariables();
 }
 
+
 builder
     .Services
     .AddScoped<ICustomerRepository, CustomerRepository>()

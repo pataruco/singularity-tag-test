@@ -17,7 +17,6 @@ public class Schema
             .AddMutationType<Mutation>()
             .AddGlobalObjectIdentification()
             .BuildSchemaAsync();
-
         schema.ToString().MatchSnapshot();
     }
 }
