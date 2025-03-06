@@ -1,0 +1,66 @@
+name: Build and push image(s) to Azure Container Registry
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - applications/**/*
+      - '!applications/auth0-post-login-trigger/**/*'
+      - libraries/**/*
+jobs:
+  get-applications-to-build:
+    name: Get applications to build
+    runs-on: ubuntu-latest
+    outputs:
+      applications: ${{ steps.get-applications.outputs.applications }}
+    steps:
+      - name: 🛎️ Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: 🧰 Prepare monorepo tooling
+        uses: ./.github/actions/prepare
+
+      - name: 🔍 Get affected files
+        uses: ./.github/actions/get-affected-files
+
+      - name: 🏗️ Get applications to build
+        id: get-applications
+        run: |
+          applications=$(pnpm nx show projects --json --affected --type app)
+          echo "applications=$applications" >> $GITHUB_OUTPUT
+
+  build-and-push:
+    name: Build and push application
+    runs-on: self-hosted-cdp
+    needs: get-applications-to-build
+    strategy:
+      fail-fast: true
+      max-parallel: 3 # We have a limited number of runners
+      matrix:
+        application: ${{ fromJson(needs.get-applications-to-build.outputs.applications) }}
+    env:
+      DOTNET_INSTALL_DIR: './.dotnet'
+    steps:
+      - name: 🛎️ Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: 🧰 Prepare monorepo tooling
+        uses: ./.github/actions/prepare
+
+      - name: 🏗️ Build ${{ matrix.application }}
+        run: pnpm nx build ${{ matrix.application }} --configuration=production
+
+      - name: 📦 Build and push to Azure Container Registry
+        uses: ./.github/actions/build-and-push
+        env:
+          SERVICE_PRINCIPAL: ${{ secrets.SERVICE_PRINCIPAL }}
+          SERVICE_PRINCIPAL_PASSWORD: ${{ secrets.SERVICE_PRINCIPAL_PASSWORD }}
+          ACR_TENANT_ID: ${{ secrets.ACR_TENANT_ID }}
+          ACR_SUBSCRIPTION: ${{ secrets.ACR_SUBSCRIPTION }}
+          ACR_REGISTRY: ${{ secrets.ACR_REGISTRY }}
+          SELF_HOSTED_CDP_RUNNER_ROOT: ${{ vars.SELF_HOSTED_CDP_RUNNER_ROOT }}
+        with:
+          application: ${{ matrix.application }}

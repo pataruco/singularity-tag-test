@@ -1,0 +1,25 @@
+name: Build and push to Azure Container Registry
+description: Build images in the self-hosted-cdp runner and push it to Azure Container Registry
+inputs:
+  application:
+    required: true
+    description: name of Nx application project
+  version:
+    required: false
+    description: used as part of the image tag ({application}}:{{version}})
+    default: latest
+
+runs:
+  using: composite
+  steps:
+    - name: 📦 Build and push to Azure Container Registry
+      shell: bash
+      run: |
+        APPLICATION_ROOT=$(pnpm nx show project ${{ inputs.application }} --json | jq -r .root)
+        az login --service-principal -u $SERVICE_PRINCIPAL -p $SERVICE_PRINCIPAL_PASSWORD --tenant $ACR_TENANT_ID
+        az account set --subscription $ACR_SUBSCRIPTION
+        az acr task run -n jst-acrtask-build-push-tf -r $ACR_REGISTRY --file acr-task.yaml \
+            --context $SELF_HOSTED_CDP_RUNNER_ROOT \
+            --set version=${{ inputs.version }} \
+            --set imagelocation=universe-customer-data-platform/${{ inputs.application }} \
+            --set dockerfile=./$APPLICATION_ROOT/Dockerfile

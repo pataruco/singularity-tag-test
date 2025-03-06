@@ -1,4 +1,4 @@
-name: Prepare monorepo tooling
+name: Prepare monorepo tooling for GitHub runners
 description: Set Node and .NET dependencies
 runs:
   using: composite
@@ -9,7 +9,7 @@ runs:
 
     - uses: actions/setup-node@v4
       with:
-        node-version: 22.13.0
+        node-version-file: './.nvmrc'
         cache: pnpm
 
     - name: Install dot net

@@ -1,27 +1,40 @@
 {
-  "name": "CustomerGraphApi",
+  "name": "customer-api",
   "projectType": "application",
   "sourceRoot": "applications/api",
-  "tags": [],
   "targets": {
     "serve-container": {
       "executor": "nx:run-commands",
       "options": {
         "command": "docker run -p 8080:5095 customer-graph-api:latest"
       },
-      "dependsOn": ["build-container"]
+      "dependsOn": ["build-container"],
+      "metadata": {
+        "description": "Run Customer GraphQl API local container"
+      }
     },
     "build-container": {
       "executor": "nx:run-commands",
       "options": {
         "command": "docker build . --tag customer-graph-api:latest -f ./applications/api/Dockerfile"
       },
-      "dependsOn": ["build"]
+      "dependsOn": ["build"],
+      "metadata": {
+        "description": "Build Customer GraphQl API in a local container"
+      }
     },
     "build": {
       "executor": "nx:run-commands",
       "options": {
         "command": "nx build Application.Api"
+      },
+      "configurations": {
+        "production": {
+          "command": "nx run Application.Api:build:production"
+        }
+      },
+      "metadata": {
+        "description": "Build Customer GraphQl API in the root ./dist folder"
       }
     }
   }

@@ -25,3 +25,7 @@ For monorepo tooling, please read the documentation [here](./monorepo.md)
 ## Coding Guidelines
 
 For coding guidelines, please read the documentation [here](coding-guidenlines.md)
+
+## CI/DC
+
+For continous integration and continous deployment, please read the documentation [here](./ci-cd.md)
