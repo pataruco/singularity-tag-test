@@ -18,9 +18,9 @@
     <AdjustCasingForEnumOptions>true</AdjustCasingForEnumOptions>
     <AttributeBlacklist />
     <BuilderSettingsJsonRelativePath>builderSettings.json</BuilderSettingsJsonRelativePath>
-    <CamelCaseClassNames>true</CamelCaseClassNames>
+    <CamelCaseClassNames>false</CamelCaseClassNames>
     <CamelCaseCustomWords />
-    <CamelCaseMemberNames>true</CamelCaseMemberNames>
+    <CamelCaseMemberNames>false</CamelCaseMemberNames>
     <CamelCaseNamesDictionaryRelativePath>DLaB.EarlyBoundGeneratorV2\DLaB.Dictionary.txt</CamelCaseNamesDictionaryRelativePath>
     <CleanupCrmSvcUtilLocalOptionSets>false</CleanupCrmSvcUtilLocalOptionSets>
     <CreateOneFilePerAction>true</CreateOneFilePerAction>
@@ -38,17 +38,17 @@ contact</EntitiesWhitelist>
     <GenerateAllOptionSetLabelMetadata>false</GenerateAllOptionSetLabelMetadata>
     <GenerateAttributeNameConsts>true</GenerateAttributeNameConsts>
     <GenerateAnonymousTypeConstructor>true</GenerateAnonymousTypeConstructor>
-    <GenerateConstructorsSansLogicalName>true</GenerateConstructorsSansLogicalName>
+    <GenerateConstructorsSansLogicalName>false</GenerateConstructorsSansLogicalName>
     <GenerateEntityRelationships>true</GenerateEntityRelationships>
     <GenerateEnumProperties>true</GenerateEnumProperties>
     <GenerateGlobalOptionSets>false</GenerateGlobalOptionSets>
-    <GenerateINotifyPattern>false</GenerateINotifyPattern>
+    <GenerateINotifyPattern>true</GenerateINotifyPattern>
     <GenerateOptionSetMetadataAttribute>true</GenerateOptionSetMetadataAttribute>
     <GenerateTypesAsInternal>false</GenerateTypesAsInternal>
     <GroupLocalOptionSetsByEntity>false</GroupLocalOptionSetsByEntity>
     <GroupMessageRequestWithResponse>true</GroupMessageRequestWithResponse>
     <InvalidCSharpNamePrefix>_</InvalidCSharpNamePrefix>
-    <MakeAllFieldsEditable>false</MakeAllFieldsEditable>
+    <MakeAllFieldsEditable>true</MakeAllFieldsEditable>
     <MakeReadonlyFieldsEditable>false</MakeReadonlyFieldsEditable>
     <MakeResponseActionsEditable>true</MakeResponseActionsEditable>
     <LocalOptionSetFormat>{0}_{1}</LocalOptionSetFormat>
@@ -117,7 +117,7 @@ VoiceMail</TokenCapitalizationOverrides>
   <NamingService>DLaB.ModelBuilderExtensions.NamingService,DLaB.ModelBuilderExtensions</NamingService>
   <OptionSetsTypesFolder>OptionSets</OptionSetsTypesFolder>
   <Namespace>Libraries.Dynamics.DynamicsClient</Namespace>
-  <ServiceContextName>DataverseContext</ServiceContextName>
+  <ServiceContextName>UniverseContext</ServiceContextName>
   <SuppressGeneratedCodeAttribute>true</SuppressGeneratedCodeAttribute>
   <SettingsVersion>2.2024.11.8</SettingsVersion>
   <UpdateBuilderSettingsJson>true</UpdateBuilderSettingsJson>

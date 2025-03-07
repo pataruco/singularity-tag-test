@@ -16,7 +16,7 @@ namespace Libraries.Dynamics.DynamicsClient
 	/// Power Pages Languages
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum PowerPageLanguages
+	public enum powerpagelanguages
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]

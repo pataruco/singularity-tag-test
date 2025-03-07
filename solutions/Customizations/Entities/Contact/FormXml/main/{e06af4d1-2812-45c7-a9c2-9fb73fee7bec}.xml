@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{e06af4d1-2812-45c7-a9c2-9fb73fee7bec}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <footer id="{5e886f7b-9f19-4234-be61-3eb9641a7f66}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows></rows>
+      </footer>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Contact for Multisession experience" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Default Multisession experience Contact form." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -32,16 +32,16 @@ public class CustomerRepositoryTests
         serviceCollection.AddDynamicsClient(configuration);
         var serviceProvider = serviceCollection.BuildServiceProvider();
 
-        var contextFactory = serviceProvider.GetRequiredService<IDataverseContextFactory>();
+        var contextFactory = serviceProvider.GetRequiredService<IContextFactory<DataverseContext>>();
 
         // Setup contact in dataverse
-        _context = contextFactory.CreateDataverseContext();
+        _context = contextFactory.CreateContext();
 
         _contact = new Contact();
         _contact.FirstName = "John";
         _contact.LastName = "Doe";
-        _contact.EmailAddress1 = "john.doe@gmail.com";
-        _contact.New_Auth0Id = $"email|{_contact.EmailAddress1}";
+        _contact.EMailAddress1 = "john.doe@gmail.com";
+        _contact.universe_Auth0ID = $"email|{_contact.EMailAddress1}";
         _contact.Salutation = "Mr.";
 
         _context.AddObject(_contact);
@@ -51,16 +51,16 @@ public class CustomerRepositoryTests
         {
             FirstName = _contact.FirstName,
             LastName = _contact.LastName,
-            Email = _contact.EmailAddress1,
-            UserId = _contact.New_Auth0Id,
+            Email = _contact.EMailAddress1,
+            UserId = _contact.universe_Auth0ID,
             ContactId = _contact.Id,
             Salutation = _contact.Salutation
         };
 
         // Created a mocked IDataverseContextFactory to return the already instantiated context 
         // when our CustomerRepository we want to test is ran.
-        var mockDataverseContextFactory = new Mock<IDataverseContextFactory>();
-        mockDataverseContextFactory.Setup(f => f.CreateDataverseContext()).Returns(_context);
+        var mockDataverseContextFactory = new Mock<IContextFactory<DataverseContext>>();
+        mockDataverseContextFactory.Setup(f => f.CreateContext()).Returns(_context);
 
         _customerRepository = new CustomerRepository(mockDataverseContextFactory.Object);
     }
@@ -100,7 +100,7 @@ public class CustomerRepositoryTests
     public void GetByAuth0Id_ReturnsCustomerIfNotNull()
     {
         // act
-        var customer = _customerRepository.GetByAuth0Id(_contact.New_Auth0Id);
+        var customer = _customerRepository.GetByAuth0Id(_contact.universe_Auth0ID);
 
         // assert
         var serializedCustomer = JsonConvert.SerializeObject(customer);
@@ -114,7 +114,7 @@ public class CustomerRepositoryTests
     public void GetByAuth0Id_ReturnsNullIfCustomerDoesNotExist()
     {
         // act
-        var customer = _customerRepository.GetByAuth0Id("non_existant_auth0_id");
+        var customer = _customerRepository.GetByAuth0Id("non_existent_auth0_id");
 
         // assert
         Assert.That(customer, Is.Null);

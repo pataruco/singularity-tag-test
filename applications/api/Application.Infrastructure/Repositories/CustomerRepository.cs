@@ -6,9 +6,9 @@ using Libraries.Dynamics.DynamicsClient.Factories;
 
 namespace Application.Infrastructure.Repositories;
 
-public class CustomerRepository(IDataverseContextFactory dataverseContextFactory) : ICustomerRepository
+public class CustomerRepository(IContextFactory<DataverseContext> contextFactory) : ICustomerRepository
 {
-    private readonly DataverseContext _context = dataverseContextFactory.CreateDataverseContext();
+    private readonly DataverseContext _context = contextFactory.CreateContext();
 
     public IList<Customer> Get()
     {
@@ -17,7 +17,7 @@ public class CustomerRepository(IDataverseContextFactory dataverseContextFactory
 
     public Customer? GetByAuth0Id(string id)
     {
-        Contact? contact = _context.ContactSet.SingleOrDefault(entity => entity.New_Auth0Id == id);
+        Contact? contact = _context.ContactSet.SingleOrDefault(entity => entity.universe_Auth0ID == id);
         if (contact == null)
         {
             return null;

@@ -1,0 +1,11 @@
+<customapiresponseproperty uniquename="contactId">
+  <description default="contactId">
+    <label description="contactId" languagecode="1033" />
+  </description>
+  <displayname default="contactId">
+    <label description="contactId" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <name>contactId</name>
+  <type>12</type>
+</customapiresponseproperty>

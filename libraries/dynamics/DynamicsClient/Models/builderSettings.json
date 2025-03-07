@@ -9,8 +9,8 @@
     "addOptionSetMetadataAttribute": true,
     "adjustCasingForEnumOptions": true,
     "builderSettingsJsonRelativePath": "builderSettings.json",
-    "camelCaseClassNames": true,
-    "camelCaseMemberNames": true,
+    "camelCaseClassNames": false,
+    "camelCaseMemberNames": false,
     "camelCaseNamesDictionaryRelativePath": "DLaB.EarlyBoundGeneratorV2\\DLaB.Dictionary.txt",
     "cleanupCrmSvcUtilLocalOptionSets": false,
     "createOneFilePerMessage": true,
@@ -21,7 +21,7 @@
     "generateAllOptionSetLabelMetadata": false,
     "generateAttributeNameConsts": true,
     "generateAnonymousTypeConstructor": true,
-    "generateConstructorsSansLogicalName": true,
+    "generateConstructorsSansLogicalName": false,
     "generateEntityRelationships": true,
     "generateOptionSetProperties": false,
     "generateOptionSetMetadataAttribute": true,
@@ -31,7 +31,7 @@
     "includeCommandLine": false,
     "invalidCSharpNamePrefix": "_",
     "localOptionSetFormat": "{0}_{1}",
-    "makeAllFieldsEditable": false,
+    "makeAllFieldsEditable": true,
     "makeReadonlyFieldsEditable": false,
     "makeReferenceTypesNullable": false,
     "makeResponseMessagesEditable": true,
@@ -105,7 +105,7 @@
   "namespace": "Libraries.Dynamics.DynamicsClient",
   "namingService": "DLaB.ModelBuilderExtensions.NamingService,DLaB.ModelBuilderExtensions",
   "optionSetsTypesFolder": "OptionSets",
-  "serviceContextName": "DataverseContext",
+  "serviceContextName": "UniverseContext",
   "suppressGeneratedCodeAttribute": true,
-  "suppressINotifyPattern": true
+  "suppressINotifyPattern": false
 }

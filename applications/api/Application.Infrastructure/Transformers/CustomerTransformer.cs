@@ -13,8 +13,8 @@ namespace Application.Infrastructure.Transformers
                 FirstName = contact.FirstName,
                 LastName = contact.LastName,
                 ContactId = contact.Id,
-                Email = contact.EmailAddress1,
-                UserId = contact.New_Auth0Id
+                Email = contact.EMailAddress1,
+                UserId = contact.universe_Auth0ID
             };
         }
 

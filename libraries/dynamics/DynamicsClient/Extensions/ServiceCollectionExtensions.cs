@@ -18,7 +18,7 @@ namespace Libraries.Dynamics.DynamicsClient.Extensions
             services.AddSingleton<ITokenProvider, TokenProvider>();
             services.AddScoped<IDataverseService, DataverseService>();
             services.AddScoped<IServiceClientFactory, ServiceClientFactory>();
-            services.AddScoped<IDataverseContextFactory, DataverseContextFactory>();
+            services.AddScoped<IContextFactory<DataverseContext>, DataverseContextFactory>();
             return services;
         }
     }

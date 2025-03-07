@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery unmodified="1">
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{ef26335d-6f4e-e611-80be-0024e8469fb9}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="fullname" select="1" preview="1" icon="1">
+        <row name="result" id="contactid">
+          <cell name="fullname" width="150" />
+          <cell name="parentcustomerid" width="115" />
+          <cell name="msdyn_contactkpiitem.msdyn_relationshiphealthscorestate" width="260" disableSorting="1" imageproviderfunctionname="loadkpihealthscore" imageproviderwebresource="$webresource:msdyn_/HealthWidget/Scripts/HealthWidget.minified.js" />
+          <cell name="msdyn_contactkpiitem.msdyn_relationshiphealthtrend" width="160" disableSorting="1" imageproviderfunctionname="loadrelationshiphealthtrend" imageproviderwebresource="$webresource:msdyn_/HealthWidget/Scripts/HealthWidget.minified.js" />
+          <cell name="emailaddress1" width="100" disableSorting="1" />
+          <cell name="msdyn_contactkpiitem.msdyn_timespentbyteam_calculated" width="136" disableSorting="1" />
+          <cell name="msdyn_contactkpiitem.msdyn_timespentbycustomer_calculated" width="180" disableSorting="1" />
+          <cell name="msdyn_contactkpiitem.msdyn_acilastupdatetimestamp" width="175" disableSorting="1" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="contact">
+          <attribute name="fullname" />
+          <attribute name="parentcustomerid" />
+          <attribute name="emailaddress1" />
+          <order attribute="fullname" descending="false" />
+          <filter type="and">
+            <condition attribute="ownerid" operator="eq-userid" />
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <link-entity alias="msdyn_contactkpiitem" name="msdyn_contactkpiitem" from="msdyn_contactkpiitemid" to="msdyn_contactkpiid" link-type="outer" visible="false">
+            <attribute name="msdyn_relationshiphealthscorestate" />
+            <attribute name="msdyn_relationshiphealthtrend" />
+            <attribute name="msdyn_timespentbyteam_calculated" />
+            <attribute name="msdyn_timespentbycustomer_calculated" />
+            <attribute name="msdyn_acilastupdatetimestamp" />
+          </link-entity>
+          <attribute name="contactid" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="My Active Contacts by Relationship" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

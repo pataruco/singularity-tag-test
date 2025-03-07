@@ -16,7 +16,7 @@ namespace Libraries.Dynamics.DynamicsClient
 	/// Consent level for contact
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum MsGdPr_GdPr_Consent_Option_Set
+	public enum msgdpr_gdpr_Consent_option_set
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]

@@ -25,8 +25,8 @@ public class CustomerTransformerTests
             Id = guid,
             FirstName = "John",
             LastName = "Doe",
-            EmailAddress1 = "john.doe@gmail.com",
-            New_Auth0Id = "random_id"
+            EMailAddress1 = "john.doe@gmail.com",
+            universe_Auth0ID = "random_id"
         };
 
         // act

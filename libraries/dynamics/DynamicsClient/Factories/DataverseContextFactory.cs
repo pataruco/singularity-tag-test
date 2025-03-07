@@ -6,7 +6,7 @@ using Microsoft.PowerPlatform.Dataverse.Client;
 
 namespace Libraries.Dynamics.DynamicsClient.Factories
 {
-    public class DataverseContextFactory : IDataverseContextFactory
+    public class DataverseContextFactory : IContextFactory<DataverseContext>
     {
         private readonly IOrganizationServiceAsync2 _serviceClient;
         public DataverseContextFactory(IServiceClientFactory serviceClientFactory, ITokenProvider tokenProvider, ILogger<DataverseContext> logger,
@@ -16,7 +16,8 @@ namespace Libraries.Dynamics.DynamicsClient.Factories
             var baseUrl = options?.Value.BaseUrl ?? throw new ArgumentNullException(nameof(options));
             _serviceClient = serviceClientFactory.CreateServiceClient(new Uri(baseUrl), tokenProvider.GetAccessToken, true, _logger);
         }
-        public DataverseContext CreateDataverseContext()
+
+        public DataverseContext CreateContext()
         {
             return new DataverseContext(_serviceClient);
         }

@@ -1,0 +1,12 @@
+<customapirequestparameter uniquename="email">
+  <description default="email">
+    <label description="email" languagecode="1033" />
+  </description>
+  <displayname default="email">
+    <label description="email" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isoptional>0</isoptional>
+  <name>email</name>
+  <type>10</type>
+</customapirequestparameter>

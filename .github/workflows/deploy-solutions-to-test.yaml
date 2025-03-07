@@ -18,6 +18,6 @@ jobs:
       dynamics-client-id: ${{ vars.DYNAMICS_CLIENT_ID_NONPROD }}
       azure-tenant-id: ${{ vars.AZURE_TENANT_ID }}
     secrets:
-      source-env-url: ${{ secrets.DYNAMICS_DEV_ENVIRONMENT_URL }}
-      target-env-url: ${{ secrets.DYNAMICS_TEST_ENVIRONMENT_URL }}
+      source-env-url: ${{ vars.DYNAMICS_DEV_ENVIRONMENT_URL }}
+      target-env-url: ${{ vars.DYNAMICS_TEST_ENVIRONMENT_URL }}
       dynamics-client-secret: ${{ secrets.DYNAMICS_CLIENT_SECRET_NONPROD }}

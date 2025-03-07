@@ -10,5 +10,5 @@ jobs:
     name: Import all solutions to feature env
     uses: ./.github/workflows/import-all-solutions-as-unmanaged.yaml
     secrets:
-      environment-url: ${{ secrets.DYNAMICS_FEATUREDEV_ENVIRONMENT_URL }}
+      environment-url: ${{ vars.DYNAMICS_FEATUREDEV_ENVIRONMENT_URL }}
       dynamics-client-secret: ${{ secrets.DYNAMICS_CLIENT_SECRET_NONPROD }}

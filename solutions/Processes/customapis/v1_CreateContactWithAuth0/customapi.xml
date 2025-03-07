@@ -1,0 +1,18 @@
+<customapi uniquename="v1_CreateContactWithAuth0">
+  <allowedcustomprocessingsteptype>0</allowedcustomprocessingsteptype>
+  <bindingtype>0</bindingtype>
+  <description default="Create Contact With Auth0">
+    <label description="Create Contact With Auth0" languagecode="1033" />
+  </description>
+  <displayname default="Create Contact With Auth0">
+    <label description="Create Contact With Auth0" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isfunction>0</isfunction>
+  <isprivate>0</isprivate>
+  <name>CreateContactWithAuth0</name>
+  <plugintypeid>
+    <plugintypeexportkey>2005dcd7-2b98-4a2c-929d-fd7af60e145e</plugintypeexportkey>
+  </plugintypeid>
+  <workflowsdkstepenabled>0</workflowsdkstepenabled>
+</customapi>

@@ -13,7 +13,7 @@ namespace Libraries.Dynamics.DynamicsClient
 	
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum MSeVTmGt_NoOrYes
+	public enum msevtmgt_nooryes
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]

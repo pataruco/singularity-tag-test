@@ -284,7 +284,7 @@ namespace Libraries.Dynamics.DynamicsClient
 	/// Indicate buying influence using label
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_Msdyn_DecisionInfluenceTag
+	public enum Contact_msdyn_decisioninfluencetag
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -308,7 +308,7 @@ namespace Libraries.Dynamics.DynamicsClient
 	/// For Internal Use only
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_Msdyn_OrgChangeStatus
+	public enum Contact_msdyn_orgchangestatus
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -448,7 +448,7 @@ namespace Libraries.Dynamics.DynamicsClient
 	/// Status of the contact.
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum Contact_StateCode
+	public enum contact_statecode
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -493,7 +493,7 @@ namespace Libraries.Dynamics.DynamicsClient
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
 	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("contact")]
-	public partial class Contact : Microsoft.Xrm.Sdk.Entity
+	public partial class Contact : Microsoft.Xrm.Sdk.Entity, System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	{
 		
 		/// <summary>
@@ -501,22 +501,22 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// </summary>
 		public partial class Fields
 		{
-			public const string Account_Primary_Contact = "Account_Primary_Contact";
+			public const string account_primary_contact = "account_primary_contact";
 			public const string AccountId = "accountid";
 			public const string AccountIdName = "accountidname";
 			public const string AccountIdYomiName = "accountidyominame";
 			public const string AccountRoleCode = "accountrolecode";
-			public const string AccountRoleCodename = "accountrolecodename";
+			public const string AccountRoleCodeName = "accountrolecodename";
 			public const string Address1_AddressId = "address1_addressid";
 			public const string Address1_AddressTypeCode = "address1_addresstypecode";
-			public const string Address1_AddressTypeCodename = "address1_addresstypecodename";
+			public const string Address1_AddressTypeCodeName = "address1_addresstypecodename";
 			public const string Address1_City = "address1_city";
 			public const string Address1_Composite = "address1_composite";
 			public const string Address1_Country = "address1_country";
 			public const string Address1_County = "address1_county";
 			public const string Address1_Fax = "address1_fax";
 			public const string Address1_FreightTermsCode = "address1_freighttermscode";
-			public const string Address1_FreightTermsCodename = "address1_freighttermscodename";
+			public const string Address1_FreightTermsCodeName = "address1_freighttermscodename";
 			public const string Address1_Latitude = "address1_latitude";
 			public const string Address1_Line1 = "address1_line1";
 			public const string Address1_Line2 = "address1_line2";
@@ -524,26 +524,26 @@ namespace Libraries.Dynamics.DynamicsClient
 			public const string Address1_Longitude = "address1_longitude";
 			public const string Address1_Name = "address1_name";
 			public const string Address1_PostalCode = "address1_postalcode";
-			public const string Address1_PostofficeBox = "address1_postofficebox";
+			public const string Address1_PostOfficeBox = "address1_postofficebox";
 			public const string Address1_PrimaryContactName = "address1_primarycontactname";
 			public const string Address1_ShippingMethodCode = "address1_shippingmethodcode";
-			public const string Address1_ShippingMethodCodename = "address1_shippingmethodcodename";
+			public const string Address1_ShippingMethodCodeName = "address1_shippingmethodcodename";
 			public const string Address1_StateOrProvince = "address1_stateorprovince";
 			public const string Address1_Telephone1 = "address1_telephone1";
 			public const string Address1_Telephone2 = "address1_telephone2";
 			public const string Address1_Telephone3 = "address1_telephone3";
-			public const string Address1_UpsZone = "address1_upszone";
-			public const string Address1_UtcOffset = "address1_utcoffset";
+			public const string Address1_UPSZone = "address1_upszone";
+			public const string Address1_UTCOffset = "address1_utcoffset";
 			public const string Address2_AddressId = "address2_addressid";
 			public const string Address2_AddressTypeCode = "address2_addresstypecode";
-			public const string Address2_AddressTypeCodename = "address2_addresstypecodename";
+			public const string Address2_AddressTypeCodeName = "address2_addresstypecodename";
 			public const string Address2_City = "address2_city";
 			public const string Address2_Composite = "address2_composite";
 			public const string Address2_Country = "address2_country";
 			public const string Address2_County = "address2_county";
 			public const string Address2_Fax = "address2_fax";
 			public const string Address2_FreightTermsCode = "address2_freighttermscode";
-			public const string Address2_FreightTermsCodename = "address2_freighttermscodename";
+			public const string Address2_FreightTermsCodeName = "address2_freighttermscodename";
 			public const string Address2_Latitude = "address2_latitude";
 			public const string Address2_Line1 = "address2_line1";
 			public const string Address2_Line2 = "address2_line2";
@@ -551,26 +551,26 @@ namespace Libraries.Dynamics.DynamicsClient
 			public const string Address2_Longitude = "address2_longitude";
 			public const string Address2_Name = "address2_name";
 			public const string Address2_PostalCode = "address2_postalcode";
-			public const string Address2_PostofficeBox = "address2_postofficebox";
+			public const string Address2_PostOfficeBox = "address2_postofficebox";
 			public const string Address2_PrimaryContactName = "address2_primarycontactname";
 			public const string Address2_ShippingMethodCode = "address2_shippingmethodcode";
-			public const string Address2_ShippingMethodCodename = "address2_shippingmethodcodename";
+			public const string Address2_ShippingMethodCodeName = "address2_shippingmethodcodename";
 			public const string Address2_StateOrProvince = "address2_stateorprovince";
 			public const string Address2_Telephone1 = "address2_telephone1";
 			public const string Address2_Telephone2 = "address2_telephone2";
 			public const string Address2_Telephone3 = "address2_telephone3";
-			public const string Address2_UpsZone = "address2_upszone";
-			public const string Address2_UtcOffset = "address2_utcoffset";
+			public const string Address2_UPSZone = "address2_upszone";
+			public const string Address2_UTCOffset = "address2_utcoffset";
 			public const string Address3_AddressId = "address3_addressid";
 			public const string Address3_AddressTypeCode = "address3_addresstypecode";
-			public const string Address3_AddressTypeCodename = "address3_addresstypecodename";
+			public const string Address3_AddressTypeCodeName = "address3_addresstypecodename";
 			public const string Address3_City = "address3_city";
 			public const string Address3_Composite = "address3_composite";
 			public const string Address3_Country = "address3_country";
 			public const string Address3_County = "address3_county";
 			public const string Address3_Fax = "address3_fax";
 			public const string Address3_FreightTermsCode = "address3_freighttermscode";
-			public const string Address3_FreightTermsCodename = "address3_freighttermscodename";
+			public const string Address3_FreightTermsCodeName = "address3_freighttermscodename";
 			public const string Address3_Latitude = "address3_latitude";
 			public const string Address3_Line1 = "address3_line1";
 			public const string Address3_Line2 = "address3_line2";
@@ -578,53 +578,53 @@ namespace Libraries.Dynamics.DynamicsClient
 			public const string Address3_Longitude = "address3_longitude";
 			public const string Address3_Name = "address3_name";
 			public const string Address3_PostalCode = "address3_postalcode";
-			public const string Address3_PostofficeBox = "address3_postofficebox";
+			public const string Address3_PostOfficeBox = "address3_postofficebox";
 			public const string Address3_PrimaryContactName = "address3_primarycontactname";
 			public const string Address3_ShippingMethodCode = "address3_shippingmethodcode";
-			public const string Address3_ShippingMethodCodename = "address3_shippingmethodcodename";
+			public const string Address3_ShippingMethodCodeName = "address3_shippingmethodcodename";
 			public const string Address3_StateOrProvince = "address3_stateorprovince";
 			public const string Address3_Telephone1 = "address3_telephone1";
 			public const string Address3_Telephone2 = "address3_telephone2";
 			public const string Address3_Telephone3 = "address3_telephone3";
-			public const string Address3_UpsZone = "address3_upszone";
-			public const string Address3_UtcOffset = "address3_utcoffset";
-			public const string AdX_ConfirmRemovePassword = "adx_confirmremovepassword";
-			public const string AdX_ConfirmRemovePasswordName = "adx_confirmremovepasswordname";
-			public const string AdX_CreatedByIpAddress = "adx_createdbyipaddress";
-			public const string AdX_CreatedByUsername = "adx_createdbyusername";
-			public const string AdX_Identity_AccessFailedCount = "adx_identity_accessfailedcount";
-			public const string AdX_Identity_EmailAddress1Confirmed = "adx_identity_emailaddress1confirmed";
-			public const string AdX_Identity_EmailAddress1ConfirmedName = "adx_identity_emailaddress1confirmedname";
-			public const string AdX_Identity_LastSuccessfulLogin = "adx_identity_lastsuccessfullogin";
-			public const string AdX_Identity_LocalLoginDisabled = "adx_identity_locallogindisabled";
-			public const string AdX_Identity_LocalLoginDisabledName = "adx_identity_locallogindisabledname";
-			public const string AdX_Identity_LockoutEnabled = "adx_identity_lockoutenabled";
-			public const string AdX_Identity_LockoutEnabledName = "adx_identity_lockoutenabledname";
-			public const string AdX_Identity_LockoutEndDate = "adx_identity_lockoutenddate";
-			public const string AdX_Identity_LogOnEnabled = "adx_identity_logonenabled";
-			public const string AdX_Identity_LogOnEnabledName = "adx_identity_logonenabledname";
-			public const string AdX_Identity_MobilePhoneConfirmed = "adx_identity_mobilephoneconfirmed";
-			public const string AdX_Identity_MobilePhoneConfirmedName = "adx_identity_mobilephoneconfirmedname";
-			public const string AdX_Identity_NewPassword = "adx_identity_newpassword";
-			public const string AdX_Identity_PasswordHash = "adx_identity_passwordhash";
-			public const string AdX_Identity_SecurityStamp = "adx_identity_securitystamp";
-			public const string AdX_Identity_TwoFactorEnabled = "adx_identity_twofactorenabled";
-			public const string AdX_Identity_TwoFactorEnabledName = "adx_identity_twofactorenabledname";
-			public const string AdX_Identity_Username = "adx_identity_username";
-			public const string AdX_ModifiedByIpAddress = "adx_modifiedbyipaddress";
-			public const string AdX_ModifiedByUsername = "adx_modifiedbyusername";
-			public const string AdX_OrganizationName = "adx_organizationname";
-			public const string AdX_PreferredLcId = "adx_preferredlcid";
-			public const string AdX_ProfileAlert = "adx_profilealert";
-			public const string AdX_ProfileAlertDate = "adx_profilealertdate";
-			public const string AdX_ProfileAlertInstructions = "adx_profilealertinstructions";
-			public const string AdX_ProfileAlertName = "adx_profilealertname";
-			public const string AdX_ProfileIsAnonymous = "adx_profileisanonymous";
-			public const string AdX_ProfileIsAnonymousName = "adx_profileisanonymousname";
-			public const string AdX_ProfileLastActivity = "adx_profilelastactivity";
-			public const string AdX_ProfileModifiedOn = "adx_profilemodifiedon";
-			public const string AdX_PublicProfileCopy = "adx_publicprofilecopy";
-			public const string AdX_TimeZone = "adx_timezone";
+			public const string Address3_UPSZone = "address3_upszone";
+			public const string Address3_UTCOffset = "address3_utcoffset";
+			public const string adx_ConfirmRemovePassword = "adx_confirmremovepassword";
+			public const string adx_confirmremovepasswordName = "adx_confirmremovepasswordname";
+			public const string Adx_CreatedByIPAddress = "adx_createdbyipaddress";
+			public const string Adx_CreatedByUsername = "adx_createdbyusername";
+			public const string adx_identity_accessfailedcount = "adx_identity_accessfailedcount";
+			public const string adx_identity_emailaddress1confirmed = "adx_identity_emailaddress1confirmed";
+			public const string adx_identity_emailaddress1confirmedName = "adx_identity_emailaddress1confirmedname";
+			public const string adx_identity_lastsuccessfullogin = "adx_identity_lastsuccessfullogin";
+			public const string adx_identity_locallogindisabled = "adx_identity_locallogindisabled";
+			public const string adx_identity_locallogindisabledName = "adx_identity_locallogindisabledname";
+			public const string adx_identity_lockoutenabled = "adx_identity_lockoutenabled";
+			public const string adx_identity_lockoutenabledName = "adx_identity_lockoutenabledname";
+			public const string adx_identity_lockoutenddate = "adx_identity_lockoutenddate";
+			public const string adx_identity_logonenabled = "adx_identity_logonenabled";
+			public const string adx_identity_logonenabledName = "adx_identity_logonenabledname";
+			public const string adx_identity_mobilephoneconfirmed = "adx_identity_mobilephoneconfirmed";
+			public const string adx_identity_mobilephoneconfirmedName = "adx_identity_mobilephoneconfirmedname";
+			public const string adx_identity_newpassword = "adx_identity_newpassword";
+			public const string adx_identity_passwordhash = "adx_identity_passwordhash";
+			public const string adx_identity_securitystamp = "adx_identity_securitystamp";
+			public const string adx_identity_twofactorenabled = "adx_identity_twofactorenabled";
+			public const string adx_identity_twofactorenabledName = "adx_identity_twofactorenabledname";
+			public const string adx_identity_username = "adx_identity_username";
+			public const string Adx_ModifiedByIPAddress = "adx_modifiedbyipaddress";
+			public const string Adx_ModifiedByUsername = "adx_modifiedbyusername";
+			public const string Adx_OrganizationName = "adx_organizationname";
+			public const string adx_preferredlcid = "adx_preferredlcid";
+			public const string adx_profilealert = "adx_profilealert";
+			public const string adx_profilealertdate = "adx_profilealertdate";
+			public const string adx_profilealertinstructions = "adx_profilealertinstructions";
+			public const string adx_profilealertName = "adx_profilealertname";
+			public const string Adx_ProfileIsAnonymous = "adx_profileisanonymous";
+			public const string adx_profileisanonymousName = "adx_profileisanonymousname";
+			public const string Adx_ProfileLastActivity = "adx_profilelastactivity";
+			public const string adx_profilemodifiedon = "adx_profilemodifiedon";
+			public const string adx_PublicProfileCopy = "adx_publicprofilecopy";
+			public const string Adx_TimeZone = "adx_timezone";
 			public const string Aging30 = "aging30";
 			public const string Aging30_Base = "aging30_base";
 			public const string Aging60 = "aging60";
@@ -636,16 +636,16 @@ namespace Libraries.Dynamics.DynamicsClient
 			public const string AnnualIncome_Base = "annualincome_base";
 			public const string AssistantName = "assistantname";
 			public const string AssistantPhone = "assistantphone";
-			public const string Birthdate = "birthdate";
+			public const string BirthDate = "birthdate";
 			public const string Business2 = "business2";
 			public const string BusinessCard = "businesscard";
 			public const string BusinessCardAttributes = "businesscardattributes";
 			public const string Callback = "callback";
 			public const string ChildrensNames = "childrensnames";
 			public const string Company = "company";
-			public const string Contact_Customer_Accounts = "contact_customer_accounts";
-			public const string ReferencingContact_Customer_Contacts = "contact_customer_contacts";
-			public const string ReferencingContact_Master_Contact = "contact_master_contact";
+			public const string contact_customer_accounts = "contact_customer_accounts";
+			public const string Referencingcontact_customer_contacts = "contact_customer_contacts";
+			public const string Referencingcontact_master_contact = "contact_master_contact";
 			public const string ContactId = "contactid";
 			public const string Id = "contactid";
 			public const string CreatedBy = "createdby";
@@ -663,19 +663,19 @@ namespace Libraries.Dynamics.DynamicsClient
 			public const string CreditOnHold = "creditonhold";
 			public const string CreditOnHoldName = "creditonholdname";
 			public const string CustomerSizeCode = "customersizecode";
-			public const string CustomerSizeCodename = "customersizecodename";
+			public const string CustomerSizeCodeName = "customersizecodename";
 			public const string CustomerTypeCode = "customertypecode";
-			public const string CustomerTypeCodename = "customertypecodename";
+			public const string CustomerTypeCodeName = "customertypecodename";
 			public const string DefaultPriceLevelId = "defaultpricelevelid";
 			public const string DefaultPriceLevelIdName = "defaultpricelevelidname";
 			public const string Department = "department";
 			public const string Description = "description";
-			public const string DoNotBulkEmail = "donotbulkemail";
-			public const string DoNotBulkEmailName = "donotbulkemailname";
+			public const string DoNotBulkEMail = "donotbulkemail";
+			public const string DoNotBulkEMailName = "donotbulkemailname";
 			public const string DoNotBulkPostalMail = "donotbulkpostalmail";
 			public const string DoNotBulkPostalMailName = "donotbulkpostalmailname";
-			public const string DoNotEmail = "donotemail";
-			public const string DoNotEmailName = "donotemailname";
+			public const string DoNotEMail = "donotemail";
+			public const string DoNotEMailName = "donotemailname";
 			public const string DoNotFax = "donotfax";
 			public const string DoNotFaxName = "donotfaxname";
 			public const string DoNotPhone = "donotphone";
@@ -683,21 +683,21 @@ namespace Libraries.Dynamics.DynamicsClient
 			public const string DoNotPostalMail = "donotpostalmail";
 			public const string DoNotPostalMailName = "donotpostalmailname";
 			public const string DoNotSendMarketingMaterialName = "donotsendmarketingmaterialname";
-			public const string DoNotSendMm = "donotsendmm";
+			public const string DoNotSendMM = "donotsendmm";
 			public const string EducationCode = "educationcode";
-			public const string EducationCodename = "educationcodename";
-			public const string EmailAddress1 = "emailaddress1";
-			public const string EmailAddress2 = "emailaddress2";
-			public const string EmailAddress3 = "emailaddress3";
+			public const string EducationCodeName = "educationcodename";
+			public const string EMailAddress1 = "emailaddress1";
+			public const string EMailAddress2 = "emailaddress2";
+			public const string EMailAddress3 = "emailaddress3";
 			public const string EmployeeId = "employeeid";
 			public const string EntityImage = "entityimage";
 			public const string EntityImage_Timestamp = "entityimage_timestamp";
-			public const string EntityImage_Url = "entityimage_url";
+			public const string EntityImage_URL = "entityimage_url";
 			public const string EntityImageId = "entityimageid";
-			public const string ExchangerAte = "exchangerate";
+			public const string ExchangeRate = "exchangerate";
 			public const string ExternalUserIdentifier = "externaluseridentifier";
 			public const string FamilyStatusCode = "familystatuscode";
-			public const string FamilyStatusCodename = "familystatuscodename";
+			public const string FamilyStatusCodeName = "familystatuscodename";
 			public const string Fax = "fax";
 			public const string FirstName = "firstname";
 			public const string FollowEmail = "followemail";
@@ -705,21 +705,23 @@ namespace Libraries.Dynamics.DynamicsClient
 			public const string FtpSiteUrl = "ftpsiteurl";
 			public const string FullName = "fullname";
 			public const string GenderCode = "gendercode";
-			public const string GenderCodename = "gendercodename";
+			public const string GenderCodeName = "gendercodename";
 			public const string GovernmentId = "governmentid";
 			public const string HasChildrenCode = "haschildrencode";
-			public const string HasChildrenCodename = "haschildrencodename";
+			public const string HasChildrenCodeName = "haschildrencodename";
 			public const string Home2 = "home2";
 			public const string ImportSequenceNumber = "importsequencenumber";
-			public const string IsBackOfficeCustomer = "isbackofficecustomer";
-			public const string IsBackOfficeCustomerName = "isbackofficecustomername";
+			public const string IsAutoCreate = "isautocreate";
+			public const string IsBackofficeCustomer = "isbackofficecustomer";
+			public const string IsBackofficeCustomerName = "isbackofficecustomername";
+			public const string IsPrivate = "isprivate";
 			public const string IsPrivateName = "isprivatename";
 			public const string JobTitle = "jobtitle";
 			public const string LastName = "lastname";
 			public const string LastOnHoldTime = "lastonholdtime";
 			public const string LastUsedInCampaign = "lastusedincampaign";
 			public const string LeadSourceCode = "leadsourcecode";
-			public const string LeadSourceCodename = "leadsourcecodename";
+			public const string LeadSourceCodeName = "leadsourcecodename";
 			public const string ManagerName = "managername";
 			public const string ManagerPhone = "managerphone";
 			public const string MarketingOnly = "marketingonly";
@@ -741,71 +743,72 @@ namespace Libraries.Dynamics.DynamicsClient
 			public const string ModifiedOnBehalfBy = "modifiedonbehalfby";
 			public const string ModifiedOnBehalfByName = "modifiedonbehalfbyname";
 			public const string ModifiedOnBehalfByYomiName = "modifiedonbehalfbyyominame";
-			public const string MSa_Contact_ManagingPartner = "msa_contact_managingpartner";
-			public const string MSa_ManagingPartnerId = "msa_managingpartnerid";
-			public const string MsA_ManagingPartnerIdName = "msa_managingpartneridname";
-			public const string MsA_ManagingPartnerIdYomiName = "msa_managingpartneridyominame";
-			public const string Msdyn_ContactKPiId = "msdyn_contactkpiid";
-			public const string Msdyn_ContactKPiIdName = "msdyn_contactkpiidname";
-			public const string Msdyn_DecisionInfluenceTag = "msdyn_decisioninfluencetag";
-			public const string Msdyn_DecisionInfluenceTagName = "msdyn_decisioninfluencetagname";
-			public const string Msdyn_DisableWebTracking = "msdyn_disablewebtracking";
-			public const string Msdyn_DisableWebTrackingName = "msdyn_disablewebtrackingname";
-			public const string Msdyn_GdPrOptOut = "msdyn_gdproptout";
-			public const string Msdyn_GdPrOptOutName = "msdyn_gdproptoutname";
-			public const string Msdyn_IsAssistantInorgChart = "msdyn_isassistantinorgchart";
-			public const string Msdyn_IsAssistantInorgChartName = "msdyn_isassistantinorgchartname";
-			public const string Msdyn_IsMinor = "msdyn_isminor";
-			public const string Msdyn_IsMinorName = "msdyn_isminorname";
-			public const string Msdyn_IsMinorWithParentalConsent = "msdyn_isminorwithparentalconsent";
-			public const string Msdyn_IsMinorWithParentalConsentName = "msdyn_isminorwithparentalconsentname";
-			public const string Msdyn_OrgChangeStatus = "msdyn_orgchangestatus";
-			public const string Msdyn_OrgChangeStatusName = "msdyn_orgchangestatusname";
-			public const string Msdyn_PortalTermsAgreementDate = "msdyn_portaltermsagreementdate";
-			public const string Msdyn_PrimaryTimeZone = "msdyn_primarytimezone";
-			public const string MsdynCrm_ContactId = "msdyncrm_contactid";
-			public const string MsdynCrm_ContactIdName = "msdyncrm_contactidname";
-			public const string MsdynCrm_CustomerJourneyId = "msdyncrm_customerjourneyid";
-			public const string MsdynCrm_CustomerJourneyIdName = "msdyncrm_customerjourneyidname";
-			public const string MsdynCrm_EmailId = "msdyncrm_emailid";
-			public const string MsdynCrm_EmailIdName = "msdyncrm_emailidname";
-			public const string MsdynCrm_Insights_Placeholder = "msdyncrm_insights_placeholder";
-			public const string MsdynCrm_MarketingFormId = "msdyncrm_marketingformid";
-			public const string MsdynCrm_MarketingFormIdName = "msdyncrm_marketingformidname";
-			public const string MsdynCrm_MarketingFormSubmissionDatePrecise = "msdyncrm_marketingformsubmissiondateprecise";
-			public const string MsdynCrm_MarketingPageId = "msdyncrm_marketingpageid";
-			public const string MsdynCrm_MarketingPageIdName = "msdyncrm_marketingpageidname";
-			public const string MsdynCrm_RememberMe = "msdyncrm_rememberme";
-			public const string MsdynCrm_RememberMeName = "msdyncrm_remembermename";
-			public const string MsdynCrm_SegmentMemberId = "msdyncrm_segmentmemberid";
-			public const string MsdynCrm_SegmentMemberIdName = "msdyncrm_segmentmemberidname";
-			public const string MsDynMkt_CustomerJourneyId = "msdynmkt_customerjourneyid";
-			public const string MsDynMkt_CustomerJourneyIdName = "msdynmkt_customerjourneyidname";
-			public const string MsDynMkt_EmailId = "msdynmkt_emailid";
-			public const string MsDynMkt_EmailIdName = "msdynmkt_emailidname";
-			public const string MsDynMkt_MarketingFormId = "msdynmkt_marketingformid";
-			public const string MsDynMkt_MarketingFormIdName = "msdynmkt_marketingformidname";
-			public const string MSeVTmGt_AAdObjectId = "msevtmgt_aadobjectid";
-			public const string MSeVTmGt_ContactId = "msevtmgt_contactid";
-			public const string MSeVTmGt_ContactIdName = "msevtmgt_contactidname";
-			public const string MSeVTmGt_OriginatingEventId = "msevtmgt_originatingeventid";
-			public const string MSeVTmGt_OriginatingEventIdName = "msevtmgt_originatingeventidname";
-			public const string MsGdPr_ConsentChangeSourceFormId = "msgdpr_consentchangesourceformid";
-			public const string MsGdPr_ConsentChangeSourceForMidName = "msgdpr_consentchangesourceformidname";
-			public const string ReferencingMsGdPr_Contact_MsGdPr_GdPrParent = "msgdpr_contact_msgdpr_gdprparent";
-			public const string MsGdPr_DoNotTrack = "msgdpr_donottrack";
-			public const string MsGdPr_DoNotTrackName = "msgdpr_donottrackname";
-			public const string MsGdPr_GdPrConsent = "msgdpr_gdprconsent";
-			public const string MsGdPr_GdPrConsentName = "msgdpr_gdprconsentname";
-			public const string MsGdPr_GdPrIsChild = "msgdpr_gdprischild";
-			public const string MsGdPr_GdPrIsChildName = "msgdpr_gdprischildname";
-			public const string MsGdPr_GdPrParentId = "msgdpr_gdprparentid";
-			public const string MsGdPr_GdPrParentIdName = "msgdpr_gdprparentidname";
-			public const string MsGdPr_GdPrParentIdYomiName = "msgdpr_gdprparentidyominame";
-			public const string MsPp_UserPreferredLcId = "mspp_userpreferredlcid";
-			public const string MsPp_UserPreferredLcIdName = "mspp_userpreferredlcidname";
-			public const string New_Auth0Id = "new_auth0id";
-			public const string Nickname = "nickname";
+			public const string msa_contact_managingpartner = "msa_contact_managingpartner";
+			public const string msa_managingpartnerid = "msa_managingpartnerid";
+			public const string msa_managingpartneridName = "msa_managingpartneridname";
+			public const string msa_managingpartneridYomiName = "msa_managingpartneridyominame";
+			public const string msdyn_contactkpiid = "msdyn_contactkpiid";
+			public const string msdyn_contactkpiidName = "msdyn_contactkpiidname";
+			public const string msdyn_decisioninfluencetag = "msdyn_decisioninfluencetag";
+			public const string msdyn_decisioninfluencetagName = "msdyn_decisioninfluencetagname";
+			public const string msdyn_disablewebtracking = "msdyn_disablewebtracking";
+			public const string msdyn_disablewebtrackingName = "msdyn_disablewebtrackingname";
+			public const string msdyn_gdproptout = "msdyn_gdproptout";
+			public const string msdyn_gdproptoutName = "msdyn_gdproptoutname";
+			public const string msdyn_isassistantinorgchart = "msdyn_isassistantinorgchart";
+			public const string msdyn_isassistantinorgchartName = "msdyn_isassistantinorgchartname";
+			public const string msdyn_isminor = "msdyn_isminor";
+			public const string msdyn_isminorName = "msdyn_isminorname";
+			public const string msdyn_isminorwithparentalconsent = "msdyn_isminorwithparentalconsent";
+			public const string msdyn_isminorwithparentalconsentName = "msdyn_isminorwithparentalconsentname";
+			public const string msdyn_orgchangestatus = "msdyn_orgchangestatus";
+			public const string msdyn_orgchangestatusName = "msdyn_orgchangestatusname";
+			public const string msdyn_portaltermsagreementdate = "msdyn_portaltermsagreementdate";
+			public const string msdyn_PrimaryTimeZone = "msdyn_primarytimezone";
+			public const string msdyn_segmentid = "msdyn_segmentid";
+			public const string msdyn_segmentidName = "msdyn_segmentidname";
+			public const string msdyncrm_ContactId = "msdyncrm_contactid";
+			public const string msdyncrm_ContactIdName = "msdyncrm_contactidname";
+			public const string msdyncrm_customerjourneyid = "msdyncrm_customerjourneyid";
+			public const string msdyncrm_customerjourneyidName = "msdyncrm_customerjourneyidname";
+			public const string msdyncrm_emailid = "msdyncrm_emailid";
+			public const string msdyncrm_emailidName = "msdyncrm_emailidname";
+			public const string msdyncrm_insights_placeholder = "msdyncrm_insights_placeholder";
+			public const string msdyncrm_marketingformid = "msdyncrm_marketingformid";
+			public const string msdyncrm_marketingformidName = "msdyncrm_marketingformidname";
+			public const string msdyncrm_marketingformsubmissiondateprecise = "msdyncrm_marketingformsubmissiondateprecise";
+			public const string msdyncrm_marketingpageid = "msdyncrm_marketingpageid";
+			public const string msdyncrm_marketingpageidName = "msdyncrm_marketingpageidname";
+			public const string msdyncrm_rememberMe = "msdyncrm_rememberme";
+			public const string msdyncrm_remembermeName = "msdyncrm_remembermename";
+			public const string msdyncrm_SegmentMemberId = "msdyncrm_segmentmemberid";
+			public const string msdyncrm_SegmentMemberIdName = "msdyncrm_segmentmemberidname";
+			public const string msdynmkt_customerjourneyid = "msdynmkt_customerjourneyid";
+			public const string msdynmkt_customerjourneyidName = "msdynmkt_customerjourneyidname";
+			public const string msdynmkt_emailid = "msdynmkt_emailid";
+			public const string msdynmkt_emailidName = "msdynmkt_emailidname";
+			public const string msdynmkt_marketingformid = "msdynmkt_marketingformid";
+			public const string msdynmkt_marketingformidName = "msdynmkt_marketingformidname";
+			public const string msevtmgt_aadobjectid = "msevtmgt_aadobjectid";
+			public const string msevtmgt_ContactId = "msevtmgt_contactid";
+			public const string msevtmgt_ContactIdName = "msevtmgt_contactidname";
+			public const string msevtmgt_originatingeventid = "msevtmgt_originatingeventid";
+			public const string msevtmgt_originatingeventidName = "msevtmgt_originatingeventidname";
+			public const string msgdpr_consentchangesourceformId = "msgdpr_consentchangesourceformid";
+			public const string msgdpr_consentchangesourceformIdName = "msgdpr_consentchangesourceformidname";
+			public const string Referencingmsgdpr_contact_msgdpr_gdprparent = "msgdpr_contact_msgdpr_gdprparent";
+			public const string msgdpr_donottrack = "msgdpr_donottrack";
+			public const string msgdpr_donottrackName = "msgdpr_donottrackname";
+			public const string msgdpr_gdprconsent = "msgdpr_gdprconsent";
+			public const string msgdpr_gdprconsentName = "msgdpr_gdprconsentname";
+			public const string msgdpr_gdprischild = "msgdpr_gdprischild";
+			public const string msgdpr_gdprischildName = "msgdpr_gdprischildname";
+			public const string msgdpr_GDPRParentId = "msgdpr_gdprparentid";
+			public const string msgdpr_GDPRParentIdName = "msgdpr_gdprparentidname";
+			public const string msgdpr_GDPRParentIdYomiName = "msgdpr_gdprparentidyominame";
+			public const string mspp_userpreferredlcid = "mspp_userpreferredlcid";
+			public const string mspp_userpreferredlcidName = "mspp_userpreferredlcidname";
+			public const string NickName = "nickname";
 			public const string NumberOfChildren = "numberofchildren";
 			public const string OnHoldTime = "onholdtime";
 			public const string OriginatingLeadId = "originatingleadid";
@@ -829,13 +832,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			public const string ParticipatesInWorkflow = "participatesinworkflow";
 			public const string ParticipatesInWorkflowName = "participatesinworkflowname";
 			public const string PaymentTermsCode = "paymenttermscode";
-			public const string PaymentTermsCodename = "paymenttermscodename";
+			public const string PaymentTermsCodeName = "paymenttermscodename";
 			public const string PreferredAppointmentDayCode = "preferredappointmentdaycode";
-			public const string PreferredAppointmentDayCodename = "preferredappointmentdaycodename";
+			public const string PreferredAppointmentDayCodeName = "preferredappointmentdaycodename";
 			public const string PreferredAppointmentTimeCode = "preferredappointmenttimecode";
-			public const string PreferredAppointmentTimeCodename = "preferredappointmenttimecodename";
+			public const string PreferredAppointmentTimeCodeName = "preferredappointmenttimecodename";
 			public const string PreferredContactMethodCode = "preferredcontactmethodcode";
-			public const string PreferredContactMethodCodename = "preferredcontactmethodcodename";
+			public const string PreferredContactMethodCodeName = "preferredcontactmethodcodename";
 			public const string PreferredEquipmentId = "preferredequipmentid";
 			public const string PreferredEquipmentIdName = "preferredequipmentidname";
 			public const string PreferredServiceId = "preferredserviceid";
@@ -844,22 +847,22 @@ namespace Libraries.Dynamics.DynamicsClient
 			public const string PreferredSystemUserIdName = "preferredsystemuseridname";
 			public const string PreferredSystemUserIdYomiName = "preferredsystemuseridyominame";
 			public const string ProcessId = "processid";
-			public const string ReferencedContact_Customer_Contacts = "ReferencedContact_Customer_Contacts";
-			public const string ReferencedContact_Master_Contact = "ReferencedContact_Master_Contact";
-			public const string ReferencedMsGdPr_Contact_MsGdPr_GdPrParent = "ReferencedMsGdPr_Contact_MsGdPr_GdPrParent";
+			public const string Referencedcontact_customer_contacts = "Referencedcontact_customer_contacts";
+			public const string Referencedcontact_master_contact = "Referencedcontact_master_contact";
+			public const string Referencedmsgdpr_contact_msgdpr_gdprparent = "Referencedmsgdpr_contact_msgdpr_gdprparent";
 			public const string Salutation = "salutation";
 			public const string ShippingMethodCode = "shippingmethodcode";
-			public const string ShippingMethodCodename = "shippingmethodcodename";
-			public const string SlaId = "slaid";
-			public const string SlaInvokedId = "slainvokedid";
-			public const string SlaInvokedIdName = "slainvokedidname";
-			public const string SlaName = "slaname";
+			public const string ShippingMethodCodeName = "shippingmethodcodename";
+			public const string SLAId = "slaid";
+			public const string SLAInvokedId = "slainvokedid";
+			public const string SLAInvokedIdName = "slainvokedidname";
+			public const string SLAName = "slaname";
 			public const string SpousesName = "spousesname";
 			public const string StageId = "stageid";
 			public const string StateCode = "statecode";
-			public const string StateCodename = "statecodename";
+			public const string StateCodeName = "statecodename";
 			public const string StatusCode = "statuscode";
-			public const string StatusCodename = "statuscodename";
+			public const string StatusCodeName = "statuscodename";
 			public const string SubscriptionId = "subscriptionid";
 			public const string Suffix = "suffix";
 			public const string TeamsFollowed = "teamsfollowed";
@@ -867,38 +870,23 @@ namespace Libraries.Dynamics.DynamicsClient
 			public const string Telephone2 = "telephone2";
 			public const string Telephone3 = "telephone3";
 			public const string TerritoryCode = "territorycode";
-			public const string TerritoryCodename = "territorycodename";
+			public const string TerritoryCodeName = "territorycodename";
 			public const string TimeSpentByMeOnEmailAndMeetings = "timespentbymeonemailandmeetings";
 			public const string TimeZoneRuleVersionNumber = "timezoneruleversionnumber";
 			public const string TransactionCurrencyId = "transactioncurrencyid";
 			public const string TransactionCurrencyIdName = "transactioncurrencyidname";
 			public const string TraversedPath = "traversedpath";
-			public const string UtcConversionTimeZoneCode = "utcconversiontimezonecode";
+			public const string universe_Auth0ID = "universe_auth0id";
+			public const string UTCConversionTimeZoneCode = "utcconversiontimezonecode";
 			public const string VersionNumber = "versionnumber";
-			public const string WebsiteUrl = "websiteurl";
+			public const string WebSiteUrl = "websiteurl";
 			public const string YomiFirstName = "yomifirstname";
 			public const string YomiFullName = "yomifullname";
 			public const string YomiLastName = "yomilastname";
 			public const string YomiMiddleName = "yomimiddlename";
 		}
 		
-		[System.Diagnostics.DebuggerNonUserCode()]
-		public Contact(System.Guid id) : 
-				base(EntityLogicalName, id)
-		{
-		}
-		
-		[System.Diagnostics.DebuggerNonUserCode()]
-		public Contact(string keyName, object keyValue) : 
-				base(EntityLogicalName, keyName, keyValue)
-		{
-		}
-		
-		[System.Diagnostics.DebuggerNonUserCode()]
-		public Contact(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
-				base(EntityLogicalName, keyAttributes)
-		{
-		}
+		public const string AlternateKeys = "universe_auth0id";
 		
 		/// <summary>
 		/// Default Constructor.
@@ -921,6 +909,28 @@ namespace Libraries.Dynamics.DynamicsClient
 		
 		public const string EntitySetName = "contacts";
 		
+		public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+		
+		public event System.ComponentModel.PropertyChangingEventHandler PropertyChanging;
+		
+		[System.Diagnostics.DebuggerNonUserCode()]
+		private void OnPropertyChanged(string propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		[System.Diagnostics.DebuggerNonUserCode()]
+		private void OnPropertyChanging(string propertyName)
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, new System.ComponentModel.PropertyChangingEventArgs(propertyName));
+			}
+		}
+		
 		/// <summary>
 		/// Unique identifier of the account with which the contact is associated.
 		/// </summary>
@@ -931,6 +941,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("accountid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("AccountId");
+				this.SetAttributeValue("accountid", value);
+				this.OnPropertyChanged("AccountId");
 			}
 		}
 		
@@ -949,6 +966,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("AccountIdName");
+				this.SetAttributeValue("accountidname", value);
+				this.OnPropertyChanged("AccountIdName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("accountidyominame")]
@@ -966,6 +990,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("AccountIdYomiName");
+				this.SetAttributeValue("accountidyominame", value);
+				this.OnPropertyChanged("AccountIdYomiName");
+			}
 		}
 		
 		/// <summary>
@@ -982,12 +1013,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("AccountRoleCode");
 				this.SetAttributeValue("accountrolecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("AccountRoleCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("accountrolecodename")]
-		public string AccountRoleCodename
+		public string AccountRoleCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1000,6 +1033,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("AccountRoleCodeName");
+				this.SetAttributeValue("accountrolecodename", value);
+				this.OnPropertyChanged("AccountRoleCodeName");
 			}
 		}
 		
@@ -1017,7 +1057,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_AddressId");
 				this.SetAttributeValue("address1_addressid", value);
+				this.OnPropertyChanged("Address1_AddressId");
 			}
 		}
 		
@@ -1035,12 +1077,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_AddressTypeCode");
 				this.SetAttributeValue("address1_addresstypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("Address1_AddressTypeCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_addresstypecodename")]
-		public string Address1_AddressTypeCodename
+		public string Address1_AddressTypeCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1053,6 +1097,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Address1_AddressTypeCodeName");
+				this.SetAttributeValue("address1_addresstypecodename", value);
+				this.OnPropertyChanged("Address1_AddressTypeCodeName");
 			}
 		}
 		
@@ -1070,7 +1121,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_City");
 				this.SetAttributeValue("address1_city", value);
+				this.OnPropertyChanged("Address1_City");
 			}
 		}
 		
@@ -1084,6 +1137,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<string>("address1_composite");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Address1_Composite");
+				this.SetAttributeValue("address1_composite", value);
+				this.OnPropertyChanged("Address1_Composite");
 			}
 		}
 		
@@ -1101,7 +1161,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_Country");
 				this.SetAttributeValue("address1_country", value);
+				this.OnPropertyChanged("Address1_Country");
 			}
 		}
 		
@@ -1119,7 +1181,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_County");
 				this.SetAttributeValue("address1_county", value);
+				this.OnPropertyChanged("Address1_County");
 			}
 		}
 		
@@ -1137,7 +1201,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_Fax");
 				this.SetAttributeValue("address1_fax", value);
+				this.OnPropertyChanged("Address1_Fax");
 			}
 		}
 		
@@ -1155,12 +1221,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_FreightTermsCode");
 				this.SetAttributeValue("address1_freighttermscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("Address1_FreightTermsCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_freighttermscodename")]
-		public string Address1_FreightTermsCodename
+		public string Address1_FreightTermsCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1173,6 +1241,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Address1_FreightTermsCodeName");
+				this.SetAttributeValue("address1_freighttermscodename", value);
+				this.OnPropertyChanged("Address1_FreightTermsCodeName");
 			}
 		}
 		
@@ -1190,7 +1265,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_Latitude");
 				this.SetAttributeValue("address1_latitude", value);
+				this.OnPropertyChanged("Address1_Latitude");
 			}
 		}
 		
@@ -1208,7 +1285,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_Line1");
 				this.SetAttributeValue("address1_line1", value);
+				this.OnPropertyChanged("Address1_Line1");
 			}
 		}
 		
@@ -1226,7 +1305,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_Line2");
 				this.SetAttributeValue("address1_line2", value);
+				this.OnPropertyChanged("Address1_Line2");
 			}
 		}
 		
@@ -1244,7 +1325,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_Line3");
 				this.SetAttributeValue("address1_line3", value);
+				this.OnPropertyChanged("Address1_Line3");
 			}
 		}
 		
@@ -1262,7 +1345,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_Longitude");
 				this.SetAttributeValue("address1_longitude", value);
+				this.OnPropertyChanged("Address1_Longitude");
 			}
 		}
 		
@@ -1280,7 +1365,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_Name");
 				this.SetAttributeValue("address1_name", value);
+				this.OnPropertyChanged("Address1_Name");
 			}
 		}
 		
@@ -1298,7 +1385,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_PostalCode");
 				this.SetAttributeValue("address1_postalcode", value);
+				this.OnPropertyChanged("Address1_PostalCode");
 			}
 		}
 		
@@ -1306,7 +1395,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Type the post office box number of the primary address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_postofficebox")]
-		public string Address1_PostofficeBox
+		public string Address1_PostOfficeBox
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1316,7 +1405,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_PostOfficeBox");
 				this.SetAttributeValue("address1_postofficebox", value);
+				this.OnPropertyChanged("Address1_PostOfficeBox");
 			}
 		}
 		
@@ -1334,7 +1425,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_PrimaryContactName");
 				this.SetAttributeValue("address1_primarycontactname", value);
+				this.OnPropertyChanged("Address1_PrimaryContactName");
 			}
 		}
 		
@@ -1352,12 +1445,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_ShippingMethodCode");
 				this.SetAttributeValue("address1_shippingmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("Address1_ShippingMethodCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_shippingmethodcodename")]
-		public string Address1_ShippingMethodCodename
+		public string Address1_ShippingMethodCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1370,6 +1465,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Address1_ShippingMethodCodeName");
+				this.SetAttributeValue("address1_shippingmethodcodename", value);
+				this.OnPropertyChanged("Address1_ShippingMethodCodeName");
 			}
 		}
 		
@@ -1387,7 +1489,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_StateOrProvince");
 				this.SetAttributeValue("address1_stateorprovince", value);
+				this.OnPropertyChanged("Address1_StateOrProvince");
 			}
 		}
 		
@@ -1405,7 +1509,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_Telephone1");
 				this.SetAttributeValue("address1_telephone1", value);
+				this.OnPropertyChanged("Address1_Telephone1");
 			}
 		}
 		
@@ -1423,7 +1529,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_Telephone2");
 				this.SetAttributeValue("address1_telephone2", value);
+				this.OnPropertyChanged("Address1_Telephone2");
 			}
 		}
 		
@@ -1441,7 +1549,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_Telephone3");
 				this.SetAttributeValue("address1_telephone3", value);
+				this.OnPropertyChanged("Address1_Telephone3");
 			}
 		}
 		
@@ -1449,7 +1559,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Type the UPS zone of the primary address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_upszone")]
-		public string Address1_UpsZone
+		public string Address1_UPSZone
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1459,7 +1569,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_UPSZone");
 				this.SetAttributeValue("address1_upszone", value);
+				this.OnPropertyChanged("Address1_UPSZone");
 			}
 		}
 		
@@ -1467,7 +1579,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Select the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address1_utcoffset")]
-		public System.Nullable<int> Address1_UtcOffset
+		public System.Nullable<int> Address1_UTCOffset
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1477,7 +1589,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address1_UTCOffset");
 				this.SetAttributeValue("address1_utcoffset", value);
+				this.OnPropertyChanged("Address1_UTCOffset");
 			}
 		}
 		
@@ -1495,7 +1609,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_AddressId");
 				this.SetAttributeValue("address2_addressid", value);
+				this.OnPropertyChanged("Address2_AddressId");
 			}
 		}
 		
@@ -1513,12 +1629,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_AddressTypeCode");
 				this.SetAttributeValue("address2_addresstypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("Address2_AddressTypeCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_addresstypecodename")]
-		public string Address2_AddressTypeCodename
+		public string Address2_AddressTypeCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1531,6 +1649,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Address2_AddressTypeCodeName");
+				this.SetAttributeValue("address2_addresstypecodename", value);
+				this.OnPropertyChanged("Address2_AddressTypeCodeName");
 			}
 		}
 		
@@ -1548,7 +1673,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_City");
 				this.SetAttributeValue("address2_city", value);
+				this.OnPropertyChanged("Address2_City");
 			}
 		}
 		
@@ -1562,6 +1689,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<string>("address2_composite");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Address2_Composite");
+				this.SetAttributeValue("address2_composite", value);
+				this.OnPropertyChanged("Address2_Composite");
 			}
 		}
 		
@@ -1579,7 +1713,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_Country");
 				this.SetAttributeValue("address2_country", value);
+				this.OnPropertyChanged("Address2_Country");
 			}
 		}
 		
@@ -1597,7 +1733,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_County");
 				this.SetAttributeValue("address2_county", value);
+				this.OnPropertyChanged("Address2_County");
 			}
 		}
 		
@@ -1615,7 +1753,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_Fax");
 				this.SetAttributeValue("address2_fax", value);
+				this.OnPropertyChanged("Address2_Fax");
 			}
 		}
 		
@@ -1633,12 +1773,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_FreightTermsCode");
 				this.SetAttributeValue("address2_freighttermscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("Address2_FreightTermsCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_freighttermscodename")]
-		public string Address2_FreightTermsCodename
+		public string Address2_FreightTermsCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1651,6 +1793,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Address2_FreightTermsCodeName");
+				this.SetAttributeValue("address2_freighttermscodename", value);
+				this.OnPropertyChanged("Address2_FreightTermsCodeName");
 			}
 		}
 		
@@ -1668,7 +1817,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_Latitude");
 				this.SetAttributeValue("address2_latitude", value);
+				this.OnPropertyChanged("Address2_Latitude");
 			}
 		}
 		
@@ -1686,7 +1837,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_Line1");
 				this.SetAttributeValue("address2_line1", value);
+				this.OnPropertyChanged("Address2_Line1");
 			}
 		}
 		
@@ -1704,7 +1857,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_Line2");
 				this.SetAttributeValue("address2_line2", value);
+				this.OnPropertyChanged("Address2_Line2");
 			}
 		}
 		
@@ -1722,7 +1877,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_Line3");
 				this.SetAttributeValue("address2_line3", value);
+				this.OnPropertyChanged("Address2_Line3");
 			}
 		}
 		
@@ -1740,7 +1897,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_Longitude");
 				this.SetAttributeValue("address2_longitude", value);
+				this.OnPropertyChanged("Address2_Longitude");
 			}
 		}
 		
@@ -1758,7 +1917,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_Name");
 				this.SetAttributeValue("address2_name", value);
+				this.OnPropertyChanged("Address2_Name");
 			}
 		}
 		
@@ -1776,7 +1937,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_PostalCode");
 				this.SetAttributeValue("address2_postalcode", value);
+				this.OnPropertyChanged("Address2_PostalCode");
 			}
 		}
 		
@@ -1784,7 +1947,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Type the post office box number of the secondary address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_postofficebox")]
-		public string Address2_PostofficeBox
+		public string Address2_PostOfficeBox
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1794,7 +1957,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_PostOfficeBox");
 				this.SetAttributeValue("address2_postofficebox", value);
+				this.OnPropertyChanged("Address2_PostOfficeBox");
 			}
 		}
 		
@@ -1812,7 +1977,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_PrimaryContactName");
 				this.SetAttributeValue("address2_primarycontactname", value);
+				this.OnPropertyChanged("Address2_PrimaryContactName");
 			}
 		}
 		
@@ -1830,12 +1997,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_ShippingMethodCode");
 				this.SetAttributeValue("address2_shippingmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("Address2_ShippingMethodCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_shippingmethodcodename")]
-		public string Address2_ShippingMethodCodename
+		public string Address2_ShippingMethodCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1848,6 +2017,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Address2_ShippingMethodCodeName");
+				this.SetAttributeValue("address2_shippingmethodcodename", value);
+				this.OnPropertyChanged("Address2_ShippingMethodCodeName");
 			}
 		}
 		
@@ -1865,7 +2041,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_StateOrProvince");
 				this.SetAttributeValue("address2_stateorprovince", value);
+				this.OnPropertyChanged("Address2_StateOrProvince");
 			}
 		}
 		
@@ -1883,7 +2061,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_Telephone1");
 				this.SetAttributeValue("address2_telephone1", value);
+				this.OnPropertyChanged("Address2_Telephone1");
 			}
 		}
 		
@@ -1901,7 +2081,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_Telephone2");
 				this.SetAttributeValue("address2_telephone2", value);
+				this.OnPropertyChanged("Address2_Telephone2");
 			}
 		}
 		
@@ -1919,7 +2101,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_Telephone3");
 				this.SetAttributeValue("address2_telephone3", value);
+				this.OnPropertyChanged("Address2_Telephone3");
 			}
 		}
 		
@@ -1927,7 +2111,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Type the UPS zone of the secondary address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_upszone")]
-		public string Address2_UpsZone
+		public string Address2_UPSZone
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1937,7 +2121,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_UPSZone");
 				this.SetAttributeValue("address2_upszone", value);
+				this.OnPropertyChanged("Address2_UPSZone");
 			}
 		}
 		
@@ -1945,7 +2131,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Select the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address2_utcoffset")]
-		public System.Nullable<int> Address2_UtcOffset
+		public System.Nullable<int> Address2_UTCOffset
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -1955,7 +2141,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address2_UTCOffset");
 				this.SetAttributeValue("address2_utcoffset", value);
+				this.OnPropertyChanged("Address2_UTCOffset");
 			}
 		}
 		
@@ -1973,7 +2161,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_AddressId");
 				this.SetAttributeValue("address3_addressid", value);
+				this.OnPropertyChanged("Address3_AddressId");
 			}
 		}
 		
@@ -1991,12 +2181,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_AddressTypeCode");
 				this.SetAttributeValue("address3_addresstypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("Address3_AddressTypeCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_addresstypecodename")]
-		public string Address3_AddressTypeCodename
+		public string Address3_AddressTypeCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2009,6 +2201,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Address3_AddressTypeCodeName");
+				this.SetAttributeValue("address3_addresstypecodename", value);
+				this.OnPropertyChanged("Address3_AddressTypeCodeName");
 			}
 		}
 		
@@ -2026,7 +2225,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_City");
 				this.SetAttributeValue("address3_city", value);
+				this.OnPropertyChanged("Address3_City");
 			}
 		}
 		
@@ -2040,6 +2241,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<string>("address3_composite");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Address3_Composite");
+				this.SetAttributeValue("address3_composite", value);
+				this.OnPropertyChanged("Address3_Composite");
 			}
 		}
 		
@@ -2057,7 +2265,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_Country");
 				this.SetAttributeValue("address3_country", value);
+				this.OnPropertyChanged("Address3_Country");
 			}
 		}
 		
@@ -2075,7 +2285,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_County");
 				this.SetAttributeValue("address3_county", value);
+				this.OnPropertyChanged("Address3_County");
 			}
 		}
 		
@@ -2093,7 +2305,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_Fax");
 				this.SetAttributeValue("address3_fax", value);
+				this.OnPropertyChanged("Address3_Fax");
 			}
 		}
 		
@@ -2111,12 +2325,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_FreightTermsCode");
 				this.SetAttributeValue("address3_freighttermscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("Address3_FreightTermsCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_freighttermscodename")]
-		public string Address3_FreightTermsCodename
+		public string Address3_FreightTermsCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2129,6 +2345,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Address3_FreightTermsCodeName");
+				this.SetAttributeValue("address3_freighttermscodename", value);
+				this.OnPropertyChanged("Address3_FreightTermsCodeName");
 			}
 		}
 		
@@ -2146,7 +2369,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_Latitude");
 				this.SetAttributeValue("address3_latitude", value);
+				this.OnPropertyChanged("Address3_Latitude");
 			}
 		}
 		
@@ -2164,7 +2389,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_Line1");
 				this.SetAttributeValue("address3_line1", value);
+				this.OnPropertyChanged("Address3_Line1");
 			}
 		}
 		
@@ -2182,7 +2409,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_Line2");
 				this.SetAttributeValue("address3_line2", value);
+				this.OnPropertyChanged("Address3_Line2");
 			}
 		}
 		
@@ -2200,7 +2429,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_Line3");
 				this.SetAttributeValue("address3_line3", value);
+				this.OnPropertyChanged("Address3_Line3");
 			}
 		}
 		
@@ -2218,7 +2449,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_Longitude");
 				this.SetAttributeValue("address3_longitude", value);
+				this.OnPropertyChanged("Address3_Longitude");
 			}
 		}
 		
@@ -2236,7 +2469,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_Name");
 				this.SetAttributeValue("address3_name", value);
+				this.OnPropertyChanged("Address3_Name");
 			}
 		}
 		
@@ -2254,7 +2489,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_PostalCode");
 				this.SetAttributeValue("address3_postalcode", value);
+				this.OnPropertyChanged("Address3_PostalCode");
 			}
 		}
 		
@@ -2262,7 +2499,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// the post office box number of the 3rd address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_postofficebox")]
-		public string Address3_PostofficeBox
+		public string Address3_PostOfficeBox
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2272,7 +2509,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_PostOfficeBox");
 				this.SetAttributeValue("address3_postofficebox", value);
+				this.OnPropertyChanged("Address3_PostOfficeBox");
 			}
 		}
 		
@@ -2290,7 +2529,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_PrimaryContactName");
 				this.SetAttributeValue("address3_primarycontactname", value);
+				this.OnPropertyChanged("Address3_PrimaryContactName");
 			}
 		}
 		
@@ -2308,12 +2549,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_ShippingMethodCode");
 				this.SetAttributeValue("address3_shippingmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("Address3_ShippingMethodCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_shippingmethodcodename")]
-		public string Address3_ShippingMethodCodename
+		public string Address3_ShippingMethodCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2326,6 +2569,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Address3_ShippingMethodCodeName");
+				this.SetAttributeValue("address3_shippingmethodcodename", value);
+				this.OnPropertyChanged("Address3_ShippingMethodCodeName");
 			}
 		}
 		
@@ -2343,7 +2593,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_StateOrProvince");
 				this.SetAttributeValue("address3_stateorprovince", value);
+				this.OnPropertyChanged("Address3_StateOrProvince");
 			}
 		}
 		
@@ -2361,7 +2613,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_Telephone1");
 				this.SetAttributeValue("address3_telephone1", value);
+				this.OnPropertyChanged("Address3_Telephone1");
 			}
 		}
 		
@@ -2379,7 +2633,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_Telephone2");
 				this.SetAttributeValue("address3_telephone2", value);
+				this.OnPropertyChanged("Address3_Telephone2");
 			}
 		}
 		
@@ -2397,7 +2653,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_Telephone3");
 				this.SetAttributeValue("address3_telephone3", value);
+				this.OnPropertyChanged("Address3_Telephone3");
 			}
 		}
 		
@@ -2405,7 +2663,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Type the UPS zone of the third address to make sure shipping charges are calculated correctly and deliveries are made promptly, if shipped by UPS.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_upszone")]
-		public string Address3_UpsZone
+		public string Address3_UPSZone
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2415,7 +2673,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_UPSZone");
 				this.SetAttributeValue("address3_upszone", value);
+				this.OnPropertyChanged("Address3_UPSZone");
 			}
 		}
 		
@@ -2423,7 +2683,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Select the time zone, or UTC offset, for this address so that other people can reference it when they contact someone at this address.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("address3_utcoffset")]
-		public System.Nullable<int> Address3_UtcOffset
+		public System.Nullable<int> Address3_UTCOffset
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2433,12 +2693,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Address3_UTCOffset");
 				this.SetAttributeValue("address3_utcoffset", value);
+				this.OnPropertyChanged("Address3_UTCOffset");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_confirmremovepassword")]
-		public System.Nullable<bool> AdX_ConfirmRemovePassword
+		public System.Nullable<bool> adx_ConfirmRemovePassword
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2448,12 +2710,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_ConfirmRemovePassword");
 				this.SetAttributeValue("adx_confirmremovepassword", value);
+				this.OnPropertyChanged("adx_ConfirmRemovePassword");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_confirmremovepasswordname")]
-		public string AdX_ConfirmRemovePasswordName
+		public string adx_confirmremovepasswordName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2467,10 +2731,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("adx_confirmremovepasswordName");
+				this.SetAttributeValue("adx_confirmremovepasswordname", value);
+				this.OnPropertyChanged("adx_confirmremovepasswordName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_createdbyipaddress")]
-		public string AdX_CreatedByIpAddress
+		public string Adx_CreatedByIPAddress
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2480,12 +2751,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Adx_CreatedByIPAddress");
 				this.SetAttributeValue("adx_createdbyipaddress", value);
+				this.OnPropertyChanged("Adx_CreatedByIPAddress");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_createdbyusername")]
-		public string AdX_CreatedByUsername
+		public string Adx_CreatedByUsername
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2495,7 +2768,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Adx_CreatedByUsername");
 				this.SetAttributeValue("adx_createdbyusername", value);
+				this.OnPropertyChanged("Adx_CreatedByUsername");
 			}
 		}
 		
@@ -2503,7 +2778,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Shows the current count of failed password attempts for the contact.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_accessfailedcount")]
-		public System.Nullable<int> AdX_Identity_AccessFailedCount
+		public System.Nullable<int> adx_identity_accessfailedcount
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2513,7 +2788,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_identity_accessfailedcount");
 				this.SetAttributeValue("adx_identity_accessfailedcount", value);
+				this.OnPropertyChanged("adx_identity_accessfailedcount");
 			}
 		}
 		
@@ -2521,7 +2798,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Determines if the email is confirmed by the contact.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_emailaddress1confirmed")]
-		public System.Nullable<bool> AdX_Identity_EmailAddress1Confirmed
+		public System.Nullable<bool> adx_identity_emailaddress1confirmed
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2531,12 +2808,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_identity_emailaddress1confirmed");
 				this.SetAttributeValue("adx_identity_emailaddress1confirmed", value);
+				this.OnPropertyChanged("adx_identity_emailaddress1confirmed");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_emailaddress1confirmedname")]
-		public string AdX_Identity_EmailAddress1ConfirmedName
+		public string adx_identity_emailaddress1confirmedName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2550,13 +2829,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("adx_identity_emailaddress1confirmedName");
+				this.SetAttributeValue("adx_identity_emailaddress1confirmedname", value);
+				this.OnPropertyChanged("adx_identity_emailaddress1confirmedName");
+			}
 		}
 		
 		/// <summary>
 		/// Indicates the last date and time the user successfully signed in to a portal.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_lastsuccessfullogin")]
-		public System.Nullable<System.DateTime> AdX_Identity_LastSuccessfulLogin
+		public System.Nullable<System.DateTime> adx_identity_lastsuccessfullogin
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2566,7 +2852,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_identity_lastsuccessfullogin");
 				this.SetAttributeValue("adx_identity_lastsuccessfullogin", value);
+				this.OnPropertyChanged("adx_identity_lastsuccessfullogin");
 			}
 		}
 		
@@ -2574,7 +2862,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Indicates that the contact can no longer sign in to the portal using the local account.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_locallogindisabled")]
-		public System.Nullable<bool> AdX_Identity_LocalLoginDisabled
+		public System.Nullable<bool> adx_identity_locallogindisabled
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2584,12 +2872,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_identity_locallogindisabled");
 				this.SetAttributeValue("adx_identity_locallogindisabled", value);
+				this.OnPropertyChanged("adx_identity_locallogindisabled");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_locallogindisabledname")]
-		public string AdX_Identity_LocalLoginDisabledName
+		public string adx_identity_locallogindisabledName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2603,13 +2893,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("adx_identity_locallogindisabledName");
+				this.SetAttributeValue("adx_identity_locallogindisabledname", value);
+				this.OnPropertyChanged("adx_identity_locallogindisabledName");
+			}
 		}
 		
 		/// <summary>
 		/// Determines if this contact will track failed access attempts and become locked after too many failed attempts. To prevent the contact from becoming locked, you can disable this setting.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_lockoutenabled")]
-		public System.Nullable<bool> AdX_Identity_LockoutEnabled
+		public System.Nullable<bool> adx_identity_lockoutenabled
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2619,12 +2916,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_identity_lockoutenabled");
 				this.SetAttributeValue("adx_identity_lockoutenabled", value);
+				this.OnPropertyChanged("adx_identity_lockoutenabled");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_lockoutenabledname")]
-		public string AdX_Identity_LockoutEnabledName
+		public string adx_identity_lockoutenabledName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2638,13 +2937,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("adx_identity_lockoutenabledName");
+				this.SetAttributeValue("adx_identity_lockoutenabledname", value);
+				this.OnPropertyChanged("adx_identity_lockoutenabledName");
+			}
 		}
 		
 		/// <summary>
 		/// Shows the moment in time when the locked contact becomes unlocked again.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_lockoutenddate")]
-		public System.Nullable<System.DateTime> AdX_Identity_LockoutEndDate
+		public System.Nullable<System.DateTime> adx_identity_lockoutenddate
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2654,7 +2960,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_identity_lockoutenddate");
 				this.SetAttributeValue("adx_identity_lockoutenddate", value);
+				this.OnPropertyChanged("adx_identity_lockoutenddate");
 			}
 		}
 		
@@ -2662,7 +2970,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Determines if web authentication is enabled for the contact.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_logonenabled")]
-		public System.Nullable<bool> AdX_Identity_LogOnEnabled
+		public System.Nullable<bool> adx_identity_logonenabled
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2672,12 +2980,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_identity_logonenabled");
 				this.SetAttributeValue("adx_identity_logonenabled", value);
+				this.OnPropertyChanged("adx_identity_logonenabled");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_logonenabledname")]
-		public string AdX_Identity_LogOnEnabledName
+		public string adx_identity_logonenabledName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2691,13 +3001,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("adx_identity_logonenabledName");
+				this.SetAttributeValue("adx_identity_logonenabledname", value);
+				this.OnPropertyChanged("adx_identity_logonenabledName");
+			}
 		}
 		
 		/// <summary>
 		/// Determines if the phone number is confirmed by the contact.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_mobilephoneconfirmed")]
-		public System.Nullable<bool> AdX_Identity_MobilePhoneConfirmed
+		public System.Nullable<bool> adx_identity_mobilephoneconfirmed
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2707,12 +3024,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_identity_mobilephoneconfirmed");
 				this.SetAttributeValue("adx_identity_mobilephoneconfirmed", value);
+				this.OnPropertyChanged("adx_identity_mobilephoneconfirmed");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_mobilephoneconfirmedname")]
-		public string AdX_Identity_MobilePhoneConfirmedName
+		public string adx_identity_mobilephoneconfirmedName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2726,10 +3045,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("adx_identity_mobilephoneconfirmedName");
+				this.SetAttributeValue("adx_identity_mobilephoneconfirmedname", value);
+				this.OnPropertyChanged("adx_identity_mobilephoneconfirmedName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_newpassword")]
-		public string AdX_Identity_NewPassword
+		public string adx_identity_newpassword
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2739,12 +3065,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_identity_newpassword");
 				this.SetAttributeValue("adx_identity_newpassword", value);
+				this.OnPropertyChanged("adx_identity_newpassword");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_passwordhash")]
-		public string AdX_Identity_PasswordHash
+		public string adx_identity_passwordhash
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2754,7 +3082,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_identity_passwordhash");
 				this.SetAttributeValue("adx_identity_passwordhash", value);
+				this.OnPropertyChanged("adx_identity_passwordhash");
 			}
 		}
 		
@@ -2762,7 +3092,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// A token used to manage the web authentication session.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_securitystamp")]
-		public string AdX_Identity_SecurityStamp
+		public string adx_identity_securitystamp
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2772,7 +3102,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_identity_securitystamp");
 				this.SetAttributeValue("adx_identity_securitystamp", value);
+				this.OnPropertyChanged("adx_identity_securitystamp");
 			}
 		}
 		
@@ -2780,7 +3112,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Determines if two-factor authentication is enabled for the contact.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_twofactorenabled")]
-		public System.Nullable<bool> AdX_Identity_TwoFactorEnabled
+		public System.Nullable<bool> adx_identity_twofactorenabled
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2790,12 +3122,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_identity_twofactorenabled");
 				this.SetAttributeValue("adx_identity_twofactorenabled", value);
+				this.OnPropertyChanged("adx_identity_twofactorenabled");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_twofactorenabledname")]
-		public string AdX_Identity_TwoFactorEnabledName
+		public string adx_identity_twofactorenabledName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2809,13 +3143,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("adx_identity_twofactorenabledName");
+				this.SetAttributeValue("adx_identity_twofactorenabledname", value);
+				this.OnPropertyChanged("adx_identity_twofactorenabledName");
+			}
 		}
 		
 		/// <summary>
 		/// Shows the user identity for local web authentication.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_identity_username")]
-		public string AdX_Identity_Username
+		public string adx_identity_username
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2825,12 +3166,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_identity_username");
 				this.SetAttributeValue("adx_identity_username", value);
+				this.OnPropertyChanged("adx_identity_username");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_modifiedbyipaddress")]
-		public string AdX_ModifiedByIpAddress
+		public string Adx_ModifiedByIPAddress
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2840,12 +3183,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Adx_ModifiedByIPAddress");
 				this.SetAttributeValue("adx_modifiedbyipaddress", value);
+				this.OnPropertyChanged("Adx_ModifiedByIPAddress");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_modifiedbyusername")]
-		public string AdX_ModifiedByUsername
+		public string Adx_ModifiedByUsername
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2855,12 +3200,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Adx_ModifiedByUsername");
 				this.SetAttributeValue("adx_modifiedbyusername", value);
+				this.OnPropertyChanged("Adx_ModifiedByUsername");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_organizationname")]
-		public string AdX_OrganizationName
+		public string Adx_OrganizationName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2870,7 +3217,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Adx_OrganizationName");
 				this.SetAttributeValue("adx_organizationname", value);
+				this.OnPropertyChanged("Adx_OrganizationName");
 			}
 		}
 		
@@ -2878,7 +3227,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// User’s preferred portal LCID
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_preferredlcid")]
-		public System.Nullable<int> AdX_PreferredLcId
+		public System.Nullable<int> adx_preferredlcid
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2888,12 +3237,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_preferredlcid");
 				this.SetAttributeValue("adx_preferredlcid", value);
+				this.OnPropertyChanged("adx_preferredlcid");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_profilealert")]
-		public System.Nullable<bool> AdX_ProfileAlert
+		public System.Nullable<bool> adx_profilealert
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2903,12 +3254,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_profilealert");
 				this.SetAttributeValue("adx_profilealert", value);
+				this.OnPropertyChanged("adx_profilealert");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_profilealertdate")]
-		public System.Nullable<System.DateTime> AdX_ProfileAlertDate
+		public System.Nullable<System.DateTime> adx_profilealertdate
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2918,12 +3271,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_profilealertdate");
 				this.SetAttributeValue("adx_profilealertdate", value);
+				this.OnPropertyChanged("adx_profilealertdate");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_profilealertinstructions")]
-		public string AdX_ProfileAlertInstructions
+		public string adx_profilealertinstructions
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2933,12 +3288,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_profilealertinstructions");
 				this.SetAttributeValue("adx_profilealertinstructions", value);
+				this.OnPropertyChanged("adx_profilealertinstructions");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_profilealertname")]
-		public string AdX_ProfileAlertName
+		public string adx_profilealertName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2952,10 +3309,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("adx_profilealertName");
+				this.SetAttributeValue("adx_profilealertname", value);
+				this.OnPropertyChanged("adx_profilealertName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_profileisanonymous")]
-		public System.Nullable<bool> AdX_ProfileIsAnonymous
+		public System.Nullable<bool> Adx_ProfileIsAnonymous
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2965,12 +3329,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Adx_ProfileIsAnonymous");
 				this.SetAttributeValue("adx_profileisanonymous", value);
+				this.OnPropertyChanged("Adx_ProfileIsAnonymous");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_profileisanonymousname")]
-		public string AdX_ProfileIsAnonymousName
+		public string adx_profileisanonymousName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2984,10 +3350,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("adx_profileisanonymousName");
+				this.SetAttributeValue("adx_profileisanonymousname", value);
+				this.OnPropertyChanged("adx_profileisanonymousName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_profilelastactivity")]
-		public System.Nullable<System.DateTime> AdX_ProfileLastActivity
+		public System.Nullable<System.DateTime> Adx_ProfileLastActivity
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -2997,12 +3370,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Adx_ProfileLastActivity");
 				this.SetAttributeValue("adx_profilelastactivity", value);
+				this.OnPropertyChanged("Adx_ProfileLastActivity");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_profilemodifiedon")]
-		public System.Nullable<System.DateTime> AdX_ProfileModifiedOn
+		public System.Nullable<System.DateTime> adx_profilemodifiedon
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3012,12 +3387,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_profilemodifiedon");
 				this.SetAttributeValue("adx_profilemodifiedon", value);
+				this.OnPropertyChanged("adx_profilemodifiedon");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_publicprofilecopy")]
-		public string AdX_PublicProfileCopy
+		public string adx_PublicProfileCopy
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3027,12 +3404,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("adx_PublicProfileCopy");
 				this.SetAttributeValue("adx_publicprofilecopy", value);
+				this.OnPropertyChanged("adx_PublicProfileCopy");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("adx_timezone")]
-		public System.Nullable<int> AdX_TimeZone
+		public System.Nullable<int> Adx_TimeZone
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3042,7 +3421,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Adx_TimeZone");
 				this.SetAttributeValue("adx_timezone", value);
+				this.OnPropertyChanged("Adx_TimeZone");
 			}
 		}
 		
@@ -3057,6 +3438,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging30");
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Aging30");
+				this.SetAttributeValue("aging30", value);
+				this.OnPropertyChanged("Aging30");
+			}
 		}
 		
 		/// <summary>
@@ -3069,6 +3457,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging30_base");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Aging30_Base");
+				this.SetAttributeValue("aging30_base", value);
+				this.OnPropertyChanged("Aging30_Base");
 			}
 		}
 		
@@ -3083,6 +3478,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging60");
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Aging60");
+				this.SetAttributeValue("aging60", value);
+				this.OnPropertyChanged("Aging60");
+			}
 		}
 		
 		/// <summary>
@@ -3095,6 +3497,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging60_base");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Aging60_Base");
+				this.SetAttributeValue("aging60_base", value);
+				this.OnPropertyChanged("Aging60_Base");
 			}
 		}
 		
@@ -3109,6 +3518,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging90");
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Aging90");
+				this.SetAttributeValue("aging90", value);
+				this.OnPropertyChanged("Aging90");
+			}
 		}
 		
 		/// <summary>
@@ -3121,6 +3537,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("aging90_base");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Aging90_Base");
+				this.SetAttributeValue("aging90_base", value);
+				this.OnPropertyChanged("Aging90_Base");
 			}
 		}
 		
@@ -3138,7 +3561,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Anniversary");
 				this.SetAttributeValue("anniversary", value);
+				this.OnPropertyChanged("Anniversary");
 			}
 		}
 		
@@ -3156,7 +3581,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("AnnualIncome");
 				this.SetAttributeValue("annualincome", value);
+				this.OnPropertyChanged("AnnualIncome");
 			}
 		}
 		
@@ -3170,6 +3597,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("annualincome_base");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("AnnualIncome_Base");
+				this.SetAttributeValue("annualincome_base", value);
+				this.OnPropertyChanged("AnnualIncome_Base");
 			}
 		}
 		
@@ -3187,7 +3621,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("AssistantName");
 				this.SetAttributeValue("assistantname", value);
+				this.OnPropertyChanged("AssistantName");
 			}
 		}
 		
@@ -3205,7 +3641,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("AssistantPhone");
 				this.SetAttributeValue("assistantphone", value);
+				this.OnPropertyChanged("AssistantPhone");
 			}
 		}
 		
@@ -3213,7 +3651,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Enter the contact's birthday for use in customer gift programs or other communications.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("birthdate")]
-		public System.Nullable<System.DateTime> Birthdate
+		public System.Nullable<System.DateTime> BirthDate
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3223,7 +3661,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("BirthDate");
 				this.SetAttributeValue("birthdate", value);
+				this.OnPropertyChanged("BirthDate");
 			}
 		}
 		
@@ -3241,7 +3681,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Business2");
 				this.SetAttributeValue("business2", value);
+				this.OnPropertyChanged("Business2");
 			}
 		}
 		
@@ -3259,7 +3701,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("BusinessCard");
 				this.SetAttributeValue("businesscard", value);
+				this.OnPropertyChanged("BusinessCard");
 			}
 		}
 		
@@ -3277,7 +3721,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("BusinessCardAttributes");
 				this.SetAttributeValue("businesscardattributes", value);
+				this.OnPropertyChanged("BusinessCardAttributes");
 			}
 		}
 		
@@ -3295,7 +3741,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Callback");
 				this.SetAttributeValue("callback", value);
+				this.OnPropertyChanged("Callback");
 			}
 		}
 		
@@ -3313,7 +3761,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("ChildrensNames");
 				this.SetAttributeValue("childrensnames", value);
+				this.OnPropertyChanged("ChildrensNames");
 			}
 		}
 		
@@ -3331,7 +3781,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Company");
 				this.SetAttributeValue("company", value);
+				this.OnPropertyChanged("Company");
 			}
 		}
 		
@@ -3349,6 +3801,7 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("ContactId");
 				this.SetAttributeValue("contactid", value);
 				if (value.HasValue)
 				{
@@ -3358,6 +3811,7 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					base.Id = System.Guid.Empty;
 				}
+				this.OnPropertyChanged("ContactId");
 			}
 		}
 		
@@ -3387,6 +3841,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdby");
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("CreatedBy");
+				this.SetAttributeValue("createdby", value);
+				this.OnPropertyChanged("CreatedBy");
+			}
 		}
 		
 		/// <summary>
@@ -3399,6 +3860,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("createdbyexternalparty");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("CreatedByExternalParty");
+				this.SetAttributeValue("createdbyexternalparty", value);
+				this.OnPropertyChanged("CreatedByExternalParty");
 			}
 		}
 		
@@ -3417,6 +3885,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("CreatedByExternalPartyName");
+				this.SetAttributeValue("createdbyexternalpartyname", value);
+				this.OnPropertyChanged("CreatedByExternalPartyName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyexternalpartyyominame")]
@@ -3433,6 +3908,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("CreatedByExternalPartyYomiName");
+				this.SetAttributeValue("createdbyexternalpartyyominame", value);
+				this.OnPropertyChanged("CreatedByExternalPartyYomiName");
 			}
 		}
 		
@@ -3451,6 +3933,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("CreatedByName");
+				this.SetAttributeValue("createdbyname", value);
+				this.OnPropertyChanged("CreatedByName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdbyyominame")]
@@ -3468,6 +3957,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("CreatedByYomiName");
+				this.SetAttributeValue("createdbyyominame", value);
+				this.OnPropertyChanged("CreatedByYomiName");
+			}
 		}
 		
 		/// <summary>
@@ -3480,6 +3976,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("createdon");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("CreatedOn");
+				this.SetAttributeValue("createdon", value);
+				this.OnPropertyChanged("CreatedOn");
 			}
 		}
 		
@@ -3497,7 +4000,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("CreatedOnBehalfBy");
 				this.SetAttributeValue("createdonbehalfby", value);
+				this.OnPropertyChanged("CreatedOnBehalfBy");
 			}
 		}
 		
@@ -3516,6 +4021,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("CreatedOnBehalfByName");
+				this.SetAttributeValue("createdonbehalfbyname", value);
+				this.OnPropertyChanged("CreatedOnBehalfByName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("createdonbehalfbyyominame")]
@@ -3533,6 +4045,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("CreatedOnBehalfByYomiName");
+				this.SetAttributeValue("createdonbehalfbyyominame", value);
+				this.OnPropertyChanged("CreatedOnBehalfByYomiName");
+			}
 		}
 		
 		/// <summary>
@@ -3549,7 +4068,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("CreditLimit");
 				this.SetAttributeValue("creditlimit", value);
+				this.OnPropertyChanged("CreditLimit");
 			}
 		}
 		
@@ -3563,6 +4084,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.Money>("creditlimit_base");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("CreditLimit_Base");
+				this.SetAttributeValue("creditlimit_base", value);
+				this.OnPropertyChanged("CreditLimit_Base");
 			}
 		}
 		
@@ -3580,7 +4108,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("CreditOnHold");
 				this.SetAttributeValue("creditonhold", value);
+				this.OnPropertyChanged("CreditOnHold");
 			}
 		}
 		
@@ -3599,6 +4129,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("CreditOnHoldName");
+				this.SetAttributeValue("creditonholdname", value);
+				this.OnPropertyChanged("CreditOnHoldName");
+			}
 		}
 		
 		/// <summary>
@@ -3615,12 +4152,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("CustomerSizeCode");
 				this.SetAttributeValue("customersizecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("CustomerSizeCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("customersizecodename")]
-		public string CustomerSizeCodename
+		public string CustomerSizeCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3633,6 +4172,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("CustomerSizeCodeName");
+				this.SetAttributeValue("customersizecodename", value);
+				this.OnPropertyChanged("CustomerSizeCodeName");
 			}
 		}
 		
@@ -3650,12 +4196,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("CustomerTypeCode");
 				this.SetAttributeValue("customertypecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("CustomerTypeCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("customertypecodename")]
-		public string CustomerTypeCodename
+		public string CustomerTypeCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3668,6 +4216,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("CustomerTypeCodeName");
+				this.SetAttributeValue("customertypecodename", value);
+				this.OnPropertyChanged("CustomerTypeCodeName");
 			}
 		}
 		
@@ -3685,7 +4240,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("DefaultPriceLevelId");
 				this.SetAttributeValue("defaultpricelevelid", value);
+				this.OnPropertyChanged("DefaultPriceLevelId");
 			}
 		}
 		
@@ -3704,6 +4261,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("DefaultPriceLevelIdName");
+				this.SetAttributeValue("defaultpricelevelidname", value);
+				this.OnPropertyChanged("DefaultPriceLevelIdName");
+			}
 		}
 		
 		/// <summary>
@@ -3720,7 +4284,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Department");
 				this.SetAttributeValue("department", value);
+				this.OnPropertyChanged("Department");
 			}
 		}
 		
@@ -3738,7 +4304,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Description");
 				this.SetAttributeValue("description", value);
+				this.OnPropertyChanged("Description");
 			}
 		}
 		
@@ -3746,7 +4314,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Select whether the contact accepts bulk email sent through marketing campaigns or quick campaigns. If Do Not Allow is selected, the contact can be added to marketing lists, but will be excluded from the email.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotbulkemail")]
-		public System.Nullable<bool> DoNotBulkEmail
+		public System.Nullable<bool> DoNotBulkEMail
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3756,12 +4324,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("DoNotBulkEMail");
 				this.SetAttributeValue("donotbulkemail", value);
+				this.OnPropertyChanged("DoNotBulkEMail");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotbulkemailname")]
-		public string DoNotBulkEmailName
+		public string DoNotBulkEMailName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3774,6 +4344,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("DoNotBulkEMailName");
+				this.SetAttributeValue("donotbulkemailname", value);
+				this.OnPropertyChanged("DoNotBulkEMailName");
 			}
 		}
 		
@@ -3791,7 +4368,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("DoNotBulkPostalMail");
 				this.SetAttributeValue("donotbulkpostalmail", value);
+				this.OnPropertyChanged("DoNotBulkPostalMail");
 			}
 		}
 		
@@ -3810,13 +4389,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("DoNotBulkPostalMailName");
+				this.SetAttributeValue("donotbulkpostalmailname", value);
+				this.OnPropertyChanged("DoNotBulkPostalMailName");
+			}
 		}
 		
 		/// <summary>
 		/// Select whether the contact allows direct email sent from Microsoft Dynamics 365. If Do Not Allow is selected, Microsoft Dynamics 365 will not send the email.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotemail")]
-		public System.Nullable<bool> DoNotEmail
+		public System.Nullable<bool> DoNotEMail
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3826,12 +4412,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("DoNotEMail");
 				this.SetAttributeValue("donotemail", value);
+				this.OnPropertyChanged("DoNotEMail");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotemailname")]
-		public string DoNotEmailName
+		public string DoNotEMailName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3844,6 +4432,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("DoNotEMailName");
+				this.SetAttributeValue("donotemailname", value);
+				this.OnPropertyChanged("DoNotEMailName");
 			}
 		}
 		
@@ -3861,7 +4456,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("DoNotFax");
 				this.SetAttributeValue("donotfax", value);
+				this.OnPropertyChanged("DoNotFax");
 			}
 		}
 		
@@ -3880,6 +4477,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("DoNotFaxName");
+				this.SetAttributeValue("donotfaxname", value);
+				this.OnPropertyChanged("DoNotFaxName");
+			}
 		}
 		
 		/// <summary>
@@ -3896,7 +4500,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("DoNotPhone");
 				this.SetAttributeValue("donotphone", value);
+				this.OnPropertyChanged("DoNotPhone");
 			}
 		}
 		
@@ -3915,6 +4521,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("DoNotPhoneName");
+				this.SetAttributeValue("donotphonename", value);
+				this.OnPropertyChanged("DoNotPhoneName");
+			}
 		}
 		
 		/// <summary>
@@ -3931,7 +4544,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("DoNotPostalMail");
 				this.SetAttributeValue("donotpostalmail", value);
+				this.OnPropertyChanged("DoNotPostalMail");
 			}
 		}
 		
@@ -3950,6 +4565,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("DoNotPostalMailName");
+				this.SetAttributeValue("donotpostalmailname", value);
+				this.OnPropertyChanged("DoNotPostalMailName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotsendmarketingmaterialname")]
@@ -3967,13 +4589,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("DoNotSendMarketingMaterialName");
+				this.SetAttributeValue("donotsendmarketingmaterialname", value);
+				this.OnPropertyChanged("DoNotSendMarketingMaterialName");
+			}
 		}
 		
 		/// <summary>
 		/// Select whether the contact accepts marketing materials, such as brochures or catalogs. Contacts that opt out can be excluded from marketing initiatives.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("donotsendmm")]
-		public System.Nullable<bool> DoNotSendMm
+		public System.Nullable<bool> DoNotSendMM
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -3983,7 +4612,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("DoNotSendMM");
 				this.SetAttributeValue("donotsendmm", value);
+				this.OnPropertyChanged("DoNotSendMM");
 			}
 		}
 		
@@ -4001,12 +4632,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("EducationCode");
 				this.SetAttributeValue("educationcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("EducationCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("educationcodename")]
-		public string EducationCodename
+		public string EducationCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4020,13 +4653,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("EducationCodeName");
+				this.SetAttributeValue("educationcodename", value);
+				this.OnPropertyChanged("EducationCodeName");
+			}
 		}
 		
 		/// <summary>
 		/// Type the primary email address for the contact.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress1")]
-		public string EmailAddress1
+		public string EMailAddress1
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4036,7 +4676,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("EMailAddress1");
 				this.SetAttributeValue("emailaddress1", value);
+				this.OnPropertyChanged("EMailAddress1");
 			}
 		}
 		
@@ -4044,7 +4686,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Type the secondary email address for the contact.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress2")]
-		public string EmailAddress2
+		public string EMailAddress2
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4054,7 +4696,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("EMailAddress2");
 				this.SetAttributeValue("emailaddress2", value);
+				this.OnPropertyChanged("EMailAddress2");
 			}
 		}
 		
@@ -4062,7 +4706,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Type an alternate email address for the contact.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("emailaddress3")]
-		public string EmailAddress3
+		public string EMailAddress3
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4072,7 +4716,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("EMailAddress3");
 				this.SetAttributeValue("emailaddress3", value);
+				this.OnPropertyChanged("EMailAddress3");
 			}
 		}
 		
@@ -4090,7 +4736,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("EmployeeId");
 				this.SetAttributeValue("employeeid", value);
+				this.OnPropertyChanged("EmployeeId");
 			}
 		}
 		
@@ -4108,7 +4756,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("EntityImage");
 				this.SetAttributeValue("entityimage", value);
+				this.OnPropertyChanged("EntityImage");
 			}
 		}
 		
@@ -4120,15 +4770,29 @@ namespace Libraries.Dynamics.DynamicsClient
 			{
 				return this.GetAttributeValue<System.Nullable<long>>("entityimage_timestamp");
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("EntityImage_Timestamp");
+				this.SetAttributeValue("entityimage_timestamp", value);
+				this.OnPropertyChanged("EntityImage_Timestamp");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("entityimage_url")]
-		public string EntityImage_Url
+		public string EntityImage_URL
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
 				return this.GetAttributeValue<string>("entityimage_url");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("EntityImage_URL");
+				this.SetAttributeValue("entityimage_url", value);
+				this.OnPropertyChanged("EntityImage_URL");
 			}
 		}
 		
@@ -4143,18 +4807,32 @@ namespace Libraries.Dynamics.DynamicsClient
 			{
 				return this.GetAttributeValue<System.Nullable<System.Guid>>("entityimageid");
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("EntityImageId");
+				this.SetAttributeValue("entityimageid", value);
+				this.OnPropertyChanged("EntityImageId");
+			}
 		}
 		
 		/// <summary>
 		/// Shows the conversion rate of the record's currency. The exchange rate is used to convert all money fields in the record from the local currency to the system's default currency.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("exchangerate")]
-		public System.Nullable<decimal> ExchangerAte
+		public System.Nullable<decimal> ExchangeRate
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<decimal>>("exchangerate");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ExchangeRate");
+				this.SetAttributeValue("exchangerate", value);
+				this.OnPropertyChanged("ExchangeRate");
 			}
 		}
 		
@@ -4172,7 +4850,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("ExternalUserIdentifier");
 				this.SetAttributeValue("externaluseridentifier", value);
+				this.OnPropertyChanged("ExternalUserIdentifier");
 			}
 		}
 		
@@ -4190,12 +4870,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("FamilyStatusCode");
 				this.SetAttributeValue("familystatuscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("FamilyStatusCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("familystatuscodename")]
-		public string FamilyStatusCodename
+		public string FamilyStatusCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4208,6 +4890,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("FamilyStatusCodeName");
+				this.SetAttributeValue("familystatuscodename", value);
+				this.OnPropertyChanged("FamilyStatusCodeName");
 			}
 		}
 		
@@ -4225,7 +4914,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Fax");
 				this.SetAttributeValue("fax", value);
+				this.OnPropertyChanged("Fax");
 			}
 		}
 		
@@ -4243,7 +4934,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("FirstName");
 				this.SetAttributeValue("firstname", value);
+				this.OnPropertyChanged("FirstName");
 			}
 		}
 		
@@ -4261,7 +4954,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("FollowEmail");
 				this.SetAttributeValue("followemail", value);
+				this.OnPropertyChanged("FollowEmail");
 			}
 		}
 		
@@ -4280,6 +4975,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("FollowEmailName");
+				this.SetAttributeValue("followemailname", value);
+				this.OnPropertyChanged("FollowEmailName");
+			}
 		}
 		
 		/// <summary>
@@ -4296,7 +4998,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("FtpSiteUrl");
 				this.SetAttributeValue("ftpsiteurl", value);
+				this.OnPropertyChanged("FtpSiteUrl");
 			}
 		}
 		
@@ -4310,6 +5014,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<string>("fullname");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("FullName");
+				this.SetAttributeValue("fullname", value);
+				this.OnPropertyChanged("FullName");
 			}
 		}
 		
@@ -4327,12 +5038,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("GenderCode");
 				this.SetAttributeValue("gendercode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("GenderCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("gendercodename")]
-		public string GenderCodename
+		public string GenderCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4345,6 +5058,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("GenderCodeName");
+				this.SetAttributeValue("gendercodename", value);
+				this.OnPropertyChanged("GenderCodeName");
 			}
 		}
 		
@@ -4362,7 +5082,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("GovernmentId");
 				this.SetAttributeValue("governmentid", value);
+				this.OnPropertyChanged("GovernmentId");
 			}
 		}
 		
@@ -4380,12 +5102,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("HasChildrenCode");
 				this.SetAttributeValue("haschildrencode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("HasChildrenCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("haschildrencodename")]
-		public string HasChildrenCodename
+		public string HasChildrenCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4398,6 +5122,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("HasChildrenCodeName");
+				this.SetAttributeValue("haschildrencodename", value);
+				this.OnPropertyChanged("HasChildrenCodeName");
 			}
 		}
 		
@@ -4415,7 +5146,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Home2");
 				this.SetAttributeValue("home2", value);
+				this.OnPropertyChanged("Home2");
 			}
 		}
 		
@@ -4433,7 +5166,29 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("ImportSequenceNumber");
 				this.SetAttributeValue("importsequencenumber", value);
+				this.OnPropertyChanged("ImportSequenceNumber");
+			}
+		}
+		
+		/// <summary>
+		/// Information about whether the contact was auto-created when promoting an email or an appointment.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isautocreate")]
+		public System.Nullable<bool> IsAutoCreate
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("isautocreate");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("IsAutoCreate");
+				this.SetAttributeValue("isautocreate", value);
+				this.OnPropertyChanged("IsAutoCreate");
 			}
 		}
 		
@@ -4441,7 +5196,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Select whether the contact exists in a separate accounting or other system, such as Microsoft Dynamics GP or another ERP database, for use in integration processes.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isbackofficecustomer")]
-		public System.Nullable<bool> IsBackOfficeCustomer
+		public System.Nullable<bool> IsBackofficeCustomer
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4451,12 +5206,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("IsBackofficeCustomer");
 				this.SetAttributeValue("isbackofficecustomer", value);
+				this.OnPropertyChanged("IsBackofficeCustomer");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isbackofficecustomername")]
-		public string IsBackOfficeCustomerName
+		public string IsBackofficeCustomerName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4469,6 +5226,30 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("IsBackofficeCustomerName");
+				this.SetAttributeValue("isbackofficecustomername", value);
+				this.OnPropertyChanged("IsBackofficeCustomerName");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("isprivate")]
+		public System.Nullable<bool> IsPrivate
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<bool>>("isprivate");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("IsPrivate");
+				this.SetAttributeValue("isprivate", value);
+				this.OnPropertyChanged("IsPrivate");
 			}
 		}
 		
@@ -4487,6 +5268,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("IsPrivateName");
+				this.SetAttributeValue("isprivatename", value);
+				this.OnPropertyChanged("IsPrivateName");
+			}
 		}
 		
 		/// <summary>
@@ -4503,7 +5291,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("JobTitle");
 				this.SetAttributeValue("jobtitle", value);
+				this.OnPropertyChanged("JobTitle");
 			}
 		}
 		
@@ -4521,7 +5311,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("LastName");
 				this.SetAttributeValue("lastname", value);
+				this.OnPropertyChanged("LastName");
 			}
 		}
 		
@@ -4539,7 +5331,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("LastOnHoldTime");
 				this.SetAttributeValue("lastonholdtime", value);
+				this.OnPropertyChanged("LastOnHoldTime");
 			}
 		}
 		
@@ -4557,7 +5351,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("LastUsedInCampaign");
 				this.SetAttributeValue("lastusedincampaign", value);
+				this.OnPropertyChanged("LastUsedInCampaign");
 			}
 		}
 		
@@ -4575,12 +5371,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("LeadSourceCode");
 				this.SetAttributeValue("leadsourcecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("LeadSourceCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("leadsourcecodename")]
-		public string LeadSourceCodename
+		public string LeadSourceCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4593,6 +5391,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("LeadSourceCodeName");
+				this.SetAttributeValue("leadsourcecodename", value);
+				this.OnPropertyChanged("LeadSourceCodeName");
 			}
 		}
 		
@@ -4610,7 +5415,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("ManagerName");
 				this.SetAttributeValue("managername", value);
+				this.OnPropertyChanged("ManagerName");
 			}
 		}
 		
@@ -4628,7 +5435,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("ManagerPhone");
 				this.SetAttributeValue("managerphone", value);
+				this.OnPropertyChanged("ManagerPhone");
 			}
 		}
 		
@@ -4646,7 +5455,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("MarketingOnly");
 				this.SetAttributeValue("marketingonly", value);
+				this.OnPropertyChanged("MarketingOnly");
 			}
 		}
 		
@@ -4665,6 +5476,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("MarketingOnlyName");
+				this.SetAttributeValue("marketingonlyname", value);
+				this.OnPropertyChanged("MarketingOnlyName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("mastercontactidname")]
@@ -4681,6 +5499,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("MasterContactIdName");
+				this.SetAttributeValue("mastercontactidname", value);
+				this.OnPropertyChanged("MasterContactIdName");
 			}
 		}
 		
@@ -4699,6 +5524,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("MasterContactIdYomiName");
+				this.SetAttributeValue("mastercontactidyominame", value);
+				this.OnPropertyChanged("MasterContactIdYomiName");
+			}
 		}
 		
 		/// <summary>
@@ -4712,6 +5544,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("masterid");
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("MasterId");
+				this.SetAttributeValue("masterid", value);
+				this.OnPropertyChanged("MasterId");
+			}
 		}
 		
 		/// <summary>
@@ -4724,6 +5563,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<bool>>("merged");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Merged");
+				this.SetAttributeValue("merged", value);
+				this.OnPropertyChanged("Merged");
 			}
 		}
 		
@@ -4742,6 +5588,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("MergedName");
+				this.SetAttributeValue("mergedname", value);
+				this.OnPropertyChanged("MergedName");
+			}
 		}
 		
 		/// <summary>
@@ -4758,7 +5611,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("MiddleName");
 				this.SetAttributeValue("middlename", value);
+				this.OnPropertyChanged("MiddleName");
 			}
 		}
 		
@@ -4776,7 +5631,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("MobilePhone");
 				this.SetAttributeValue("mobilephone", value);
+				this.OnPropertyChanged("MobilePhone");
 			}
 		}
 		
@@ -4791,6 +5648,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedby");
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ModifiedBy");
+				this.SetAttributeValue("modifiedby", value);
+				this.OnPropertyChanged("ModifiedBy");
+			}
 		}
 		
 		/// <summary>
@@ -4803,6 +5667,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("modifiedbyexternalparty");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ModifiedByExternalParty");
+				this.SetAttributeValue("modifiedbyexternalparty", value);
+				this.OnPropertyChanged("ModifiedByExternalParty");
 			}
 		}
 		
@@ -4821,6 +5692,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ModifiedByExternalPartyName");
+				this.SetAttributeValue("modifiedbyexternalpartyname", value);
+				this.OnPropertyChanged("ModifiedByExternalPartyName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyexternalpartyyominame")]
@@ -4837,6 +5715,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ModifiedByExternalPartyYomiName");
+				this.SetAttributeValue("modifiedbyexternalpartyyominame", value);
+				this.OnPropertyChanged("ModifiedByExternalPartyYomiName");
 			}
 		}
 		
@@ -4855,6 +5740,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ModifiedByName");
+				this.SetAttributeValue("modifiedbyname", value);
+				this.OnPropertyChanged("ModifiedByName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedbyyominame")]
@@ -4872,6 +5764,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ModifiedByYomiName");
+				this.SetAttributeValue("modifiedbyyominame", value);
+				this.OnPropertyChanged("ModifiedByYomiName");
+			}
 		}
 		
 		/// <summary>
@@ -4884,6 +5783,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<System.DateTime>>("modifiedon");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ModifiedOn");
+				this.SetAttributeValue("modifiedon", value);
+				this.OnPropertyChanged("ModifiedOn");
 			}
 		}
 		
@@ -4901,7 +5807,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("ModifiedOnBehalfBy");
 				this.SetAttributeValue("modifiedonbehalfby", value);
+				this.OnPropertyChanged("ModifiedOnBehalfBy");
 			}
 		}
 		
@@ -4920,6 +5828,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ModifiedOnBehalfByName");
+				this.SetAttributeValue("modifiedonbehalfbyname", value);
+				this.OnPropertyChanged("ModifiedOnBehalfByName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("modifiedonbehalfbyyominame")]
@@ -4937,13 +5852,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ModifiedOnBehalfByYomiName");
+				this.SetAttributeValue("modifiedonbehalfbyyominame", value);
+				this.OnPropertyChanged("ModifiedOnBehalfByYomiName");
+			}
 		}
 		
 		/// <summary>
 		/// Unique identifier for Account associated with Contact.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msa_managingpartnerid")]
-		public Microsoft.Xrm.Sdk.EntityReference MSa_ManagingPartnerId
+		public Microsoft.Xrm.Sdk.EntityReference msa_managingpartnerid
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4953,12 +5875,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msa_managingpartnerid");
 				this.SetAttributeValue("msa_managingpartnerid", value);
+				this.OnPropertyChanged("msa_managingpartnerid");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msa_managingpartneridname")]
-		public string MsA_ManagingPartnerIdName
+		public string msa_managingpartneridName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4972,10 +5896,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msa_managingpartneridName");
+				this.SetAttributeValue("msa_managingpartneridname", value);
+				this.OnPropertyChanged("msa_managingpartneridName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msa_managingpartneridyominame")]
-		public string MsA_ManagingPartnerIdYomiName
+		public string msa_managingpartneridYomiName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -4988,6 +5919,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msa_managingpartneridYomiName");
+				this.SetAttributeValue("msa_managingpartneridyominame", value);
+				this.OnPropertyChanged("msa_managingpartneridYomiName");
 			}
 		}
 		
@@ -4995,7 +5933,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Maps to contact KPI records
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_contactkpiid")]
-		public Microsoft.Xrm.Sdk.EntityReference Msdyn_ContactKPiId
+		public Microsoft.Xrm.Sdk.EntityReference msdyn_contactkpiid
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5005,12 +5943,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyn_contactkpiid");
 				this.SetAttributeValue("msdyn_contactkpiid", value);
+				this.OnPropertyChanged("msdyn_contactkpiid");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_contactkpiidname")]
-		public string Msdyn_ContactKPiIdName
+		public string msdyn_contactkpiidName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5024,28 +5964,37 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_contactkpiidName");
+				this.SetAttributeValue("msdyn_contactkpiidname", value);
+				this.OnPropertyChanged("msdyn_contactkpiidName");
+			}
 		}
 		
 		/// <summary>
 		/// Indicate buying influence using labels
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_decisioninfluencetag")]
-		public virtual Contact_Msdyn_DecisionInfluenceTag? Msdyn_DecisionInfluenceTag
+		public virtual Contact_msdyn_decisioninfluencetag? msdyn_decisioninfluencetag
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((Contact_Msdyn_DecisionInfluenceTag?)(EntityOptionSetEnum.GetEnum(this, "msdyn_decisioninfluencetag")));
+				return ((Contact_msdyn_decisioninfluencetag?)(EntityOptionSetEnum.GetEnum(this, "msdyn_decisioninfluencetag")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyn_decisioninfluencetag");
 				this.SetAttributeValue("msdyn_decisioninfluencetag", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("msdyn_decisioninfluencetag");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_decisioninfluencetagname")]
-		public string Msdyn_DecisionInfluenceTagName
+		public string msdyn_decisioninfluencetagName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5059,13 +6008,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_decisioninfluencetagName");
+				this.SetAttributeValue("msdyn_decisioninfluencetagname", value);
+				this.OnPropertyChanged("msdyn_decisioninfluencetagName");
+			}
 		}
 		
 		/// <summary>
 		/// Indicates that the contact has opted out of web tracking.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_disablewebtracking")]
-		public System.Nullable<bool> Msdyn_DisableWebTracking
+		public System.Nullable<bool> msdyn_disablewebtracking
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5075,12 +6031,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyn_disablewebtracking");
 				this.SetAttributeValue("msdyn_disablewebtracking", value);
+				this.OnPropertyChanged("msdyn_disablewebtracking");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_disablewebtrackingname")]
-		public string Msdyn_DisableWebTrackingName
+		public string msdyn_disablewebtrackingName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5094,13 +6052,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_disablewebtrackingName");
+				this.SetAttributeValue("msdyn_disablewebtrackingname", value);
+				this.OnPropertyChanged("msdyn_disablewebtrackingName");
+			}
 		}
 		
 		/// <summary>
 		/// Describes whether contact is opted out or not
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_gdproptout")]
-		public System.Nullable<bool> Msdyn_GdPrOptOut
+		public System.Nullable<bool> msdyn_gdproptout
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5110,12 +6075,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyn_gdproptout");
 				this.SetAttributeValue("msdyn_gdproptout", value);
+				this.OnPropertyChanged("msdyn_gdproptout");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_gdproptoutname")]
-		public string Msdyn_GdPrOptOutName
+		public string msdyn_gdproptoutName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5129,13 +6096,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_gdproptoutName");
+				this.SetAttributeValue("msdyn_gdproptoutname", value);
+				this.OnPropertyChanged("msdyn_gdproptoutName");
+			}
 		}
 		
 		/// <summary>
 		/// Describes if the contact is an assistant in org chart
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_isassistantinorgchart")]
-		public System.Nullable<bool> Msdyn_IsAssistantInorgChart
+		public System.Nullable<bool> msdyn_isassistantinorgchart
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5145,12 +6119,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyn_isassistantinorgchart");
 				this.SetAttributeValue("msdyn_isassistantinorgchart", value);
+				this.OnPropertyChanged("msdyn_isassistantinorgchart");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_isassistantinorgchartname")]
-		public string Msdyn_IsAssistantInorgChartName
+		public string msdyn_isassistantinorgchartName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5164,13 +6140,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_isassistantinorgchartName");
+				this.SetAttributeValue("msdyn_isassistantinorgchartname", value);
+				this.OnPropertyChanged("msdyn_isassistantinorgchartName");
+			}
 		}
 		
 		/// <summary>
 		/// Indicates that the contact is considered a minor in their jurisdiction.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_isminor")]
-		public System.Nullable<bool> Msdyn_IsMinor
+		public System.Nullable<bool> msdyn_isminor
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5180,12 +6163,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyn_isminor");
 				this.SetAttributeValue("msdyn_isminor", value);
+				this.OnPropertyChanged("msdyn_isminor");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_isminorname")]
-		public string Msdyn_IsMinorName
+		public string msdyn_isminorName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5199,13 +6184,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_isminorName");
+				this.SetAttributeValue("msdyn_isminorname", value);
+				this.OnPropertyChanged("msdyn_isminorName");
+			}
 		}
 		
 		/// <summary>
 		/// Indicates that the contact is considered a minor in their jurisdiction and has parental consent.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_isminorwithparentalconsent")]
-		public System.Nullable<bool> Msdyn_IsMinorWithParentalConsent
+		public System.Nullable<bool> msdyn_isminorwithparentalconsent
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5215,12 +6207,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyn_isminorwithparentalconsent");
 				this.SetAttributeValue("msdyn_isminorwithparentalconsent", value);
+				this.OnPropertyChanged("msdyn_isminorwithparentalconsent");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_isminorwithparentalconsentname")]
-		public string Msdyn_IsMinorWithParentalConsentName
+		public string msdyn_isminorwithparentalconsentName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5234,28 +6228,37 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_isminorwithparentalconsentName");
+				this.SetAttributeValue("msdyn_isminorwithparentalconsentname", value);
+				this.OnPropertyChanged("msdyn_isminorwithparentalconsentName");
+			}
 		}
 		
 		/// <summary>
 		/// Whether or not the contact belongs to the associated account
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_orgchangestatus")]
-		public virtual Contact_Msdyn_OrgChangeStatus? Msdyn_OrgChangeStatus
+		public virtual Contact_msdyn_orgchangestatus? msdyn_orgchangestatus
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((Contact_Msdyn_OrgChangeStatus?)(EntityOptionSetEnum.GetEnum(this, "msdyn_orgchangestatus")));
+				return ((Contact_msdyn_orgchangestatus?)(EntityOptionSetEnum.GetEnum(this, "msdyn_orgchangestatus")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyn_orgchangestatus");
 				this.SetAttributeValue("msdyn_orgchangestatus", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("msdyn_orgchangestatus");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_orgchangestatusname")]
-		public string Msdyn_OrgChangeStatusName
+		public string msdyn_orgchangestatusName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5269,13 +6272,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_orgchangestatusName");
+				this.SetAttributeValue("msdyn_orgchangestatusname", value);
+				this.OnPropertyChanged("msdyn_orgchangestatusName");
+			}
 		}
 		
 		/// <summary>
 		/// Indicates the date and time that the person agreed to the portal terms and conditions.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_portaltermsagreementdate")]
-		public System.Nullable<System.DateTime> Msdyn_PortalTermsAgreementDate
+		public System.Nullable<System.DateTime> msdyn_portaltermsagreementdate
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5285,7 +6295,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyn_portaltermsagreementdate");
 				this.SetAttributeValue("msdyn_portaltermsagreementdate", value);
+				this.OnPropertyChanged("msdyn_portaltermsagreementdate");
 			}
 		}
 		
@@ -5293,7 +6305,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Indicates the primary time zone that the contact works on.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_primarytimezone")]
-		public System.Nullable<int> Msdyn_PrimaryTimeZone
+		public System.Nullable<int> msdyn_PrimaryTimeZone
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5303,7 +6315,53 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyn_PrimaryTimeZone");
 				this.SetAttributeValue("msdyn_primarytimezone", value);
+				this.OnPropertyChanged("msdyn_PrimaryTimeZone");
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for Segment associated with contact.
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_segmentid")]
+		public Microsoft.Xrm.Sdk.EntityReference msdyn_segmentid
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("msdyn_segmentid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_segmentid");
+				this.SetAttributeValue("msdyn_segmentid", value);
+				this.OnPropertyChanged("msdyn_segmentid");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyn_segmentidname")]
+		public string msdyn_segmentidName
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				if (this.FormattedValues.Contains("msdyn_segmentid"))
+				{
+					return this.FormattedValues["msdyn_segmentid"];
+				}
+				else
+				{
+					return default(string);
+				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyn_segmentidName");
+				this.SetAttributeValue("msdyn_segmentidname", value);
+				this.OnPropertyChanged("msdyn_segmentidName");
 			}
 		}
 		
@@ -5311,7 +6369,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Unique identifier for Quick Send Email associated with Contact.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyncrm_contactid")]
-		public Microsoft.Xrm.Sdk.EntityReference MsdynCrm_ContactId
+		public Microsoft.Xrm.Sdk.EntityReference msdyncrm_ContactId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5321,12 +6379,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyncrm_ContactId");
 				this.SetAttributeValue("msdyncrm_contactid", value);
+				this.OnPropertyChanged("msdyncrm_ContactId");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyncrm_contactidname")]
-		public string MsdynCrm_ContactIdName
+		public string msdyncrm_ContactIdName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5340,10 +6400,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyncrm_ContactIdName");
+				this.SetAttributeValue("msdyncrm_contactidname", value);
+				this.OnPropertyChanged("msdyncrm_ContactIdName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyncrm_customerjourneyid")]
-		public Microsoft.Xrm.Sdk.EntityReference MsdynCrm_CustomerJourneyId
+		public Microsoft.Xrm.Sdk.EntityReference msdyncrm_customerjourneyid
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5353,12 +6420,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyncrm_customerjourneyid");
 				this.SetAttributeValue("msdyncrm_customerjourneyid", value);
+				this.OnPropertyChanged("msdyncrm_customerjourneyid");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyncrm_customerjourneyidname")]
-		public string MsdynCrm_CustomerJourneyIdName
+		public string msdyncrm_customerjourneyidName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5372,10 +6441,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyncrm_customerjourneyidName");
+				this.SetAttributeValue("msdyncrm_customerjourneyidname", value);
+				this.OnPropertyChanged("msdyncrm_customerjourneyidName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyncrm_emailid")]
-		public Microsoft.Xrm.Sdk.EntityReference MsdynCrm_EmailId
+		public Microsoft.Xrm.Sdk.EntityReference msdyncrm_emailid
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5385,12 +6461,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyncrm_emailid");
 				this.SetAttributeValue("msdyncrm_emailid", value);
+				this.OnPropertyChanged("msdyncrm_emailid");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyncrm_emailidname")]
-		public string MsdynCrm_EmailIdName
+		public string msdyncrm_emailidName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5404,10 +6482,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyncrm_emailidName");
+				this.SetAttributeValue("msdyncrm_emailidname", value);
+				this.OnPropertyChanged("msdyncrm_emailidName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyncrm_insights_placeholder")]
-		public string MsdynCrm_Insights_Placeholder
+		public string msdyncrm_insights_placeholder
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5417,12 +6502,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyncrm_insights_placeholder");
 				this.SetAttributeValue("msdyncrm_insights_placeholder", value);
+				this.OnPropertyChanged("msdyncrm_insights_placeholder");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyncrm_marketingformid")]
-		public Microsoft.Xrm.Sdk.EntityReference MsdynCrm_MarketingFormId
+		public Microsoft.Xrm.Sdk.EntityReference msdyncrm_marketingformid
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5432,12 +6519,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyncrm_marketingformid");
 				this.SetAttributeValue("msdyncrm_marketingformid", value);
+				this.OnPropertyChanged("msdyncrm_marketingformid");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyncrm_marketingformidname")]
-		public string MsdynCrm_MarketingFormIdName
+		public string msdyncrm_marketingformidName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5451,10 +6540,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyncrm_marketingformidName");
+				this.SetAttributeValue("msdyncrm_marketingformidname", value);
+				this.OnPropertyChanged("msdyncrm_marketingformidName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyncrm_marketingformsubmissiondateprecise")]
-		public string MsdynCrm_MarketingFormSubmissionDatePrecise
+		public string msdyncrm_marketingformsubmissiondateprecise
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5464,12 +6560,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyncrm_marketingformsubmissiondateprecise");
 				this.SetAttributeValue("msdyncrm_marketingformsubmissiondateprecise", value);
+				this.OnPropertyChanged("msdyncrm_marketingformsubmissiondateprecise");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyncrm_marketingpageid")]
-		public Microsoft.Xrm.Sdk.EntityReference MsdynCrm_MarketingPageId
+		public Microsoft.Xrm.Sdk.EntityReference msdyncrm_marketingpageid
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5479,12 +6577,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyncrm_marketingpageid");
 				this.SetAttributeValue("msdyncrm_marketingpageid", value);
+				this.OnPropertyChanged("msdyncrm_marketingpageid");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyncrm_marketingpageidname")]
-		public string MsdynCrm_MarketingPageIdName
+		public string msdyncrm_marketingpageidName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5498,10 +6598,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyncrm_marketingpageidName");
+				this.SetAttributeValue("msdyncrm_marketingpageidname", value);
+				this.OnPropertyChanged("msdyncrm_marketingpageidName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyncrm_rememberme")]
-		public System.Nullable<bool> MsdynCrm_RememberMe
+		public System.Nullable<bool> msdyncrm_rememberMe
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5511,12 +6618,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyncrm_rememberMe");
 				this.SetAttributeValue("msdyncrm_rememberme", value);
+				this.OnPropertyChanged("msdyncrm_rememberMe");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyncrm_remembermename")]
-		public string MsdynCrm_RememberMeName
+		public string msdyncrm_remembermeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5530,13 +6639,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyncrm_remembermeName");
+				this.SetAttributeValue("msdyncrm_remembermename", value);
+				this.OnPropertyChanged("msdyncrm_remembermeName");
+			}
 		}
 		
 		/// <summary>
 		/// Unique identifier for Segment associated with Contact.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyncrm_segmentmemberid")]
-		public Microsoft.Xrm.Sdk.EntityReference MsdynCrm_SegmentMemberId
+		public Microsoft.Xrm.Sdk.EntityReference msdyncrm_SegmentMemberId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5546,12 +6662,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdyncrm_SegmentMemberId");
 				this.SetAttributeValue("msdyncrm_segmentmemberid", value);
+				this.OnPropertyChanged("msdyncrm_SegmentMemberId");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdyncrm_segmentmemberidname")]
-		public string MsdynCrm_SegmentMemberIdName
+		public string msdyncrm_SegmentMemberIdName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5565,10 +6683,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdyncrm_SegmentMemberIdName");
+				this.SetAttributeValue("msdyncrm_segmentmemberidname", value);
+				this.OnPropertyChanged("msdyncrm_SegmentMemberIdName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdynmkt_customerjourneyid")]
-		public Microsoft.Xrm.Sdk.EntityReference MsDynMkt_CustomerJourneyId
+		public Microsoft.Xrm.Sdk.EntityReference msdynmkt_customerjourneyid
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5578,12 +6703,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdynmkt_customerjourneyid");
 				this.SetAttributeValue("msdynmkt_customerjourneyid", value);
+				this.OnPropertyChanged("msdynmkt_customerjourneyid");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdynmkt_customerjourneyidname")]
-		public string MsDynMkt_CustomerJourneyIdName
+		public string msdynmkt_customerjourneyidName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5597,10 +6724,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdynmkt_customerjourneyidName");
+				this.SetAttributeValue("msdynmkt_customerjourneyidname", value);
+				this.OnPropertyChanged("msdynmkt_customerjourneyidName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdynmkt_emailid")]
-		public Microsoft.Xrm.Sdk.EntityReference MsDynMkt_EmailId
+		public Microsoft.Xrm.Sdk.EntityReference msdynmkt_emailid
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5610,12 +6744,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdynmkt_emailid");
 				this.SetAttributeValue("msdynmkt_emailid", value);
+				this.OnPropertyChanged("msdynmkt_emailid");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdynmkt_emailidname")]
-		public string MsDynMkt_EmailIdName
+		public string msdynmkt_emailidName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5629,10 +6765,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdynmkt_emailidName");
+				this.SetAttributeValue("msdynmkt_emailidname", value);
+				this.OnPropertyChanged("msdynmkt_emailidName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdynmkt_marketingformid")]
-		public Microsoft.Xrm.Sdk.EntityReference MsDynMkt_MarketingFormId
+		public Microsoft.Xrm.Sdk.EntityReference msdynmkt_marketingformid
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5642,12 +6785,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msdynmkt_marketingformid");
 				this.SetAttributeValue("msdynmkt_marketingformid", value);
+				this.OnPropertyChanged("msdynmkt_marketingformid");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msdynmkt_marketingformidname")]
-		public string MsDynMkt_MarketingFormIdName
+		public string msdynmkt_marketingformidName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5661,10 +6806,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msdynmkt_marketingformidName");
+				this.SetAttributeValue("msdynmkt_marketingformidname", value);
+				this.OnPropertyChanged("msdynmkt_marketingformidName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msevtmgt_aadobjectid")]
-		public string MSeVTmGt_AAdObjectId
+		public string msevtmgt_aadobjectid
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5674,7 +6826,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msevtmgt_aadobjectid");
 				this.SetAttributeValue("msevtmgt_aadobjectid", value);
+				this.OnPropertyChanged("msevtmgt_aadobjectid");
 			}
 		}
 		
@@ -5682,7 +6836,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Unique identifier for the check-in associated with the contact
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msevtmgt_contactid")]
-		public Microsoft.Xrm.Sdk.EntityReference MSeVTmGt_ContactId
+		public Microsoft.Xrm.Sdk.EntityReference msevtmgt_ContactId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5692,12 +6846,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msevtmgt_ContactId");
 				this.SetAttributeValue("msevtmgt_contactid", value);
+				this.OnPropertyChanged("msevtmgt_ContactId");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msevtmgt_contactidname")]
-		public string MSeVTmGt_ContactIdName
+		public string msevtmgt_ContactIdName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5711,13 +6867,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msevtmgt_ContactIdName");
+				this.SetAttributeValue("msevtmgt_contactidname", value);
+				this.OnPropertyChanged("msevtmgt_ContactIdName");
+			}
 		}
 		
 		/// <summary>
 		/// For contacts created by registering for an event in Microsoft Dynamics 365, this identifies the relevant event. This is used to relate the contact to the data on the originating event.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msevtmgt_originatingeventid")]
-		public Microsoft.Xrm.Sdk.EntityReference MSeVTmGt_OriginatingEventId
+		public Microsoft.Xrm.Sdk.EntityReference msevtmgt_originatingeventid
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5727,12 +6890,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msevtmgt_originatingeventid");
 				this.SetAttributeValue("msevtmgt_originatingeventid", value);
+				this.OnPropertyChanged("msevtmgt_originatingeventid");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msevtmgt_originatingeventidname")]
-		public string MSeVTmGt_OriginatingEventIdName
+		public string msevtmgt_originatingeventidName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5746,10 +6911,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msevtmgt_originatingeventidName");
+				this.SetAttributeValue("msevtmgt_originatingeventidname", value);
+				this.OnPropertyChanged("msevtmgt_originatingeventidName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msgdpr_consentchangesourceformid")]
-		public Microsoft.Xrm.Sdk.EntityReference MsGdPr_ConsentChangeSourceFormId
+		public Microsoft.Xrm.Sdk.EntityReference msgdpr_consentchangesourceformId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5759,12 +6931,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msgdpr_consentchangesourceformId");
 				this.SetAttributeValue("msgdpr_consentchangesourceformid", value);
+				this.OnPropertyChanged("msgdpr_consentchangesourceformId");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msgdpr_consentchangesourceformidname")]
-		public string MsGdPr_ConsentChangeSourceForMidName
+		public string msgdpr_consentchangesourceformIdName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5778,13 +6952,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msgdpr_consentchangesourceformIdName");
+				this.SetAttributeValue("msgdpr_consentchangesourceformidname", value);
+				this.OnPropertyChanged("msgdpr_consentchangesourceformIdName");
+			}
 		}
 		
 		/// <summary>
 		/// Select whether contact allows tracking interaction data. If Do Not Allow is selected, Microsoft Dynamics 365 will not save interaction data for the contact.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msgdpr_donottrack")]
-		public System.Nullable<bool> MsGdPr_DoNotTrack
+		public System.Nullable<bool> msgdpr_donottrack
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5794,12 +6975,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msgdpr_donottrack");
 				this.SetAttributeValue("msgdpr_donottrack", value);
+				this.OnPropertyChanged("msgdpr_donottrack");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msgdpr_donottrackname")]
-		public string MsGdPr_DoNotTrackName
+		public string msgdpr_donottrackName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5813,25 +6996,34 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msgdpr_donottrackName");
+				this.SetAttributeValue("msgdpr_donottrackname", value);
+				this.OnPropertyChanged("msgdpr_donottrackName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msgdpr_gdprconsent")]
-		public virtual MsGdPr_GdPr_Consent_Option_Set? MsGdPr_GdPrConsent
+		public virtual msgdpr_gdpr_Consent_option_set? msgdpr_gdprconsent
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((MsGdPr_GdPr_Consent_Option_Set?)(EntityOptionSetEnum.GetEnum(this, "msgdpr_gdprconsent")));
+				return ((msgdpr_gdpr_Consent_option_set?)(EntityOptionSetEnum.GetEnum(this, "msgdpr_gdprconsent")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msgdpr_gdprconsent");
 				this.SetAttributeValue("msgdpr_gdprconsent", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("msgdpr_gdprconsent");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msgdpr_gdprconsentname")]
-		public string MsGdPr_GdPrConsentName
+		public string msgdpr_gdprconsentName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5845,10 +7037,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msgdpr_gdprconsentName");
+				this.SetAttributeValue("msgdpr_gdprconsentname", value);
+				this.OnPropertyChanged("msgdpr_gdprconsentName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msgdpr_gdprischild")]
-		public System.Nullable<bool> MsGdPr_GdPrIsChild
+		public System.Nullable<bool> msgdpr_gdprischild
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5858,12 +7057,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msgdpr_gdprischild");
 				this.SetAttributeValue("msgdpr_gdprischild", value);
+				this.OnPropertyChanged("msgdpr_gdprischild");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msgdpr_gdprischildname")]
-		public string MsGdPr_GdPrIsChildName
+		public string msgdpr_gdprischildName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5877,13 +7078,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msgdpr_gdprischildName");
+				this.SetAttributeValue("msgdpr_gdprischildname", value);
+				this.OnPropertyChanged("msgdpr_gdprischildName");
+			}
 		}
 		
 		/// <summary>
 		/// Unique identifier for the contact associated with the contact
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msgdpr_gdprparentid")]
-		public Microsoft.Xrm.Sdk.EntityReference MsGdPr_GdPrParentId
+		public Microsoft.Xrm.Sdk.EntityReference msgdpr_GDPRParentId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5893,12 +7101,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msgdpr_GDPRParentId");
 				this.SetAttributeValue("msgdpr_gdprparentid", value);
+				this.OnPropertyChanged("msgdpr_GDPRParentId");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msgdpr_gdprparentidname")]
-		public string MsGdPr_GdPrParentIdName
+		public string msgdpr_GDPRParentIdName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5912,10 +7122,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msgdpr_GDPRParentIdName");
+				this.SetAttributeValue("msgdpr_gdprparentidname", value);
+				this.OnPropertyChanged("msgdpr_GDPRParentIdName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msgdpr_gdprparentidyominame")]
-		public string MsGdPr_GdPrParentIdYomiName
+		public string msgdpr_GDPRParentIdYomiName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5928,6 +7145,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("msgdpr_GDPRParentIdYomiName");
+				this.SetAttributeValue("msgdpr_gdprparentidyominame", value);
+				this.OnPropertyChanged("msgdpr_GDPRParentIdYomiName");
 			}
 		}
 		
@@ -5935,22 +7159,24 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// User’s preferred portal language
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("mspp_userpreferredlcid")]
-		public virtual PowerPageLanguages? MsPp_UserPreferredLcId
+		public virtual powerpagelanguages? mspp_userpreferredlcid
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((PowerPageLanguages?)(EntityOptionSetEnum.GetEnum(this, "mspp_userpreferredlcid")));
+				return ((powerpagelanguages?)(EntityOptionSetEnum.GetEnum(this, "mspp_userpreferredlcid")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("mspp_userpreferredlcid");
 				this.SetAttributeValue("mspp_userpreferredlcid", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("mspp_userpreferredlcid");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("mspp_userpreferredlcidname")]
-		public string MsPp_UserPreferredLcIdName
+		public string mspp_userpreferredlcidName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5964,20 +7190,12 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("new_auth0id")]
-		public string New_Auth0Id
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("new_auth0id");
-			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("new_auth0id", value);
+				this.OnPropertyChanging("mspp_userpreferredlcidName");
+				this.SetAttributeValue("mspp_userpreferredlcidname", value);
+				this.OnPropertyChanged("mspp_userpreferredlcidName");
 			}
 		}
 		
@@ -5985,7 +7203,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Type the contact's nickname.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("nickname")]
-		public string Nickname
+		public string NickName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -5995,7 +7213,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("NickName");
 				this.SetAttributeValue("nickname", value);
+				this.OnPropertyChanged("NickName");
 			}
 		}
 		
@@ -6013,7 +7233,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("NumberOfChildren");
 				this.SetAttributeValue("numberofchildren", value);
+				this.OnPropertyChanged("NumberOfChildren");
 			}
 		}
 		
@@ -6027,6 +7249,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<System.Nullable<int>>("onholdtime");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("OnHoldTime");
+				this.SetAttributeValue("onholdtime", value);
+				this.OnPropertyChanged("OnHoldTime");
 			}
 		}
 		
@@ -6044,7 +7273,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("OriginatingLeadId");
 				this.SetAttributeValue("originatingleadid", value);
+				this.OnPropertyChanged("OriginatingLeadId");
 			}
 		}
 		
@@ -6063,6 +7294,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("OriginatingLeadIdName");
+				this.SetAttributeValue("originatingleadidname", value);
+				this.OnPropertyChanged("OriginatingLeadIdName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("originatingleadidyominame")]
@@ -6080,6 +7318,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("OriginatingLeadIdYomiName");
+				this.SetAttributeValue("originatingleadidyominame", value);
+				this.OnPropertyChanged("OriginatingLeadIdYomiName");
+			}
 		}
 		
 		/// <summary>
@@ -6096,7 +7341,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("OverriddenCreatedOn");
 				this.SetAttributeValue("overriddencreatedon", value);
+				this.OnPropertyChanged("OverriddenCreatedOn");
 			}
 		}
 		
@@ -6114,7 +7361,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("OwnerId");
 				this.SetAttributeValue("ownerid", value);
+				this.OnPropertyChanged("OwnerId");
 			}
 		}
 		
@@ -6133,6 +7382,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("OwnerIdName");
+				this.SetAttributeValue("owneridname", value);
+				this.OnPropertyChanged("OwnerIdName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("owneridyominame")]
@@ -6150,6 +7406,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("OwnerIdYomiName");
+				this.SetAttributeValue("owneridyominame", value);
+				this.OnPropertyChanged("OwnerIdYomiName");
+			}
 		}
 		
 		/// <summary>
@@ -6162,6 +7425,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningbusinessunit");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("OwningBusinessUnit");
+				this.SetAttributeValue("owningbusinessunit", value);
+				this.OnPropertyChanged("OwningBusinessUnit");
 			}
 		}
 		
@@ -6180,6 +7450,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("OwningBusinessUnitName");
+				this.SetAttributeValue("owningbusinessunitname", value);
+				this.OnPropertyChanged("OwningBusinessUnitName");
+			}
 		}
 		
 		/// <summary>
@@ -6193,6 +7470,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owningteam");
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("OwningTeam");
+				this.SetAttributeValue("owningteam", value);
+				this.OnPropertyChanged("OwningTeam");
+			}
 		}
 		
 		/// <summary>
@@ -6205,6 +7489,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("owninguser");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("OwningUser");
+				this.SetAttributeValue("owninguser", value);
+				this.OnPropertyChanged("OwningUser");
 			}
 		}
 		
@@ -6222,7 +7513,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Pager");
 				this.SetAttributeValue("pager", value);
+				this.OnPropertyChanged("Pager");
 			}
 		}
 		
@@ -6236,6 +7529,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("parentcontactid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ParentContactId");
+				this.SetAttributeValue("parentcontactid", value);
+				this.OnPropertyChanged("ParentContactId");
 			}
 		}
 		
@@ -6254,6 +7554,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ParentContactIdName");
+				this.SetAttributeValue("parentcontactidname", value);
+				this.OnPropertyChanged("ParentContactIdName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentcontactidyominame")]
@@ -6271,6 +7578,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ParentContactIdYomiName");
+				this.SetAttributeValue("parentcontactidyominame", value);
+				this.OnPropertyChanged("ParentContactIdYomiName");
+			}
 		}
 		
 		/// <summary>
@@ -6287,7 +7601,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("ParentCustomerId");
 				this.SetAttributeValue("parentcustomerid", value);
+				this.OnPropertyChanged("ParentCustomerId");
 			}
 		}
 		
@@ -6306,6 +7622,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ParentCustomerIdName");
+				this.SetAttributeValue("parentcustomeridname", value);
+				this.OnPropertyChanged("ParentCustomerIdName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentcustomeridyominame")]
@@ -6323,6 +7646,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ParentCustomerIdYomiName");
+				this.SetAttributeValue("parentcustomeridyominame", value);
+				this.OnPropertyChanged("ParentCustomerIdYomiName");
+			}
 		}
 		
 		/// <summary>
@@ -6339,7 +7669,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("ParticipatesInWorkflow");
 				this.SetAttributeValue("participatesinworkflow", value);
+				this.OnPropertyChanged("ParticipatesInWorkflow");
 			}
 		}
 		
@@ -6358,6 +7690,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ParticipatesInWorkflowName");
+				this.SetAttributeValue("participatesinworkflowname", value);
+				this.OnPropertyChanged("ParticipatesInWorkflowName");
+			}
 		}
 		
 		/// <summary>
@@ -6374,12 +7713,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("PaymentTermsCode");
 				this.SetAttributeValue("paymenttermscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("PaymentTermsCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("paymenttermscodename")]
-		public string PaymentTermsCodename
+		public string PaymentTermsCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -6392,6 +7733,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("PaymentTermsCodeName");
+				this.SetAttributeValue("paymenttermscodename", value);
+				this.OnPropertyChanged("PaymentTermsCodeName");
 			}
 		}
 		
@@ -6409,12 +7757,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("PreferredAppointmentDayCode");
 				this.SetAttributeValue("preferredappointmentdaycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("PreferredAppointmentDayCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredappointmentdaycodename")]
-		public string PreferredAppointmentDayCodename
+		public string PreferredAppointmentDayCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -6427,6 +7777,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("PreferredAppointmentDayCodeName");
+				this.SetAttributeValue("preferredappointmentdaycodename", value);
+				this.OnPropertyChanged("PreferredAppointmentDayCodeName");
 			}
 		}
 		
@@ -6444,12 +7801,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("PreferredAppointmentTimeCode");
 				this.SetAttributeValue("preferredappointmenttimecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("PreferredAppointmentTimeCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredappointmenttimecodename")]
-		public string PreferredAppointmentTimeCodename
+		public string PreferredAppointmentTimeCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -6462,6 +7821,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("PreferredAppointmentTimeCodeName");
+				this.SetAttributeValue("preferredappointmenttimecodename", value);
+				this.OnPropertyChanged("PreferredAppointmentTimeCodeName");
 			}
 		}
 		
@@ -6479,12 +7845,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("PreferredContactMethodCode");
 				this.SetAttributeValue("preferredcontactmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("PreferredContactMethodCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredcontactmethodcodename")]
-		public string PreferredContactMethodCodename
+		public string PreferredContactMethodCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -6497,6 +7865,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("PreferredContactMethodCodeName");
+				this.SetAttributeValue("preferredcontactmethodcodename", value);
+				this.OnPropertyChanged("PreferredContactMethodCodeName");
 			}
 		}
 		
@@ -6514,7 +7889,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("PreferredEquipmentId");
 				this.SetAttributeValue("preferredequipmentid", value);
+				this.OnPropertyChanged("PreferredEquipmentId");
 			}
 		}
 		
@@ -6533,6 +7910,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("PreferredEquipmentIdName");
+				this.SetAttributeValue("preferredequipmentidname", value);
+				this.OnPropertyChanged("PreferredEquipmentIdName");
+			}
 		}
 		
 		/// <summary>
@@ -6549,7 +7933,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("PreferredServiceId");
 				this.SetAttributeValue("preferredserviceid", value);
+				this.OnPropertyChanged("PreferredServiceId");
 			}
 		}
 		
@@ -6568,6 +7954,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("PreferredServiceIdName");
+				this.SetAttributeValue("preferredserviceidname", value);
+				this.OnPropertyChanged("PreferredServiceIdName");
+			}
 		}
 		
 		/// <summary>
@@ -6584,7 +7977,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("PreferredSystemUserId");
 				this.SetAttributeValue("preferredsystemuserid", value);
+				this.OnPropertyChanged("PreferredSystemUserId");
 			}
 		}
 		
@@ -6603,6 +7998,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("PreferredSystemUserIdName");
+				this.SetAttributeValue("preferredsystemuseridname", value);
+				this.OnPropertyChanged("PreferredSystemUserIdName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("preferredsystemuseridyominame")]
@@ -6620,6 +8022,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("PreferredSystemUserIdYomiName");
+				this.SetAttributeValue("preferredsystemuseridyominame", value);
+				this.OnPropertyChanged("PreferredSystemUserIdYomiName");
+			}
 		}
 		
 		/// <summary>
@@ -6636,7 +8045,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("ProcessId");
 				this.SetAttributeValue("processid", value);
+				this.OnPropertyChanged("ProcessId");
 			}
 		}
 		
@@ -6654,7 +8065,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Salutation");
 				this.SetAttributeValue("salutation", value);
+				this.OnPropertyChanged("Salutation");
 			}
 		}
 		
@@ -6672,12 +8085,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("ShippingMethodCode");
 				this.SetAttributeValue("shippingmethodcode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("ShippingMethodCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("shippingmethodcodename")]
-		public string ShippingMethodCodename
+		public string ShippingMethodCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -6691,13 +8106,20 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("ShippingMethodCodeName");
+				this.SetAttributeValue("shippingmethodcodename", value);
+				this.OnPropertyChanged("ShippingMethodCodeName");
+			}
 		}
 		
 		/// <summary>
 		/// Choose the service level agreement (SLA) that you want to apply to the Contact record.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaid")]
-		public Microsoft.Xrm.Sdk.EntityReference SlaId
+		public Microsoft.Xrm.Sdk.EntityReference SLAId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -6707,7 +8129,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("SLAId");
 				this.SetAttributeValue("slaid", value);
+				this.OnPropertyChanged("SLAId");
 			}
 		}
 		
@@ -6715,17 +8139,24 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Last SLA that was applied to this case. This field is for internal use only.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedid")]
-		public Microsoft.Xrm.Sdk.EntityReference SlaInvokedId
+		public Microsoft.Xrm.Sdk.EntityReference SLAInvokedId
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
 				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("slainvokedid");
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("SLAInvokedId");
+				this.SetAttributeValue("slainvokedid", value);
+				this.OnPropertyChanged("SLAInvokedId");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slainvokedidname")]
-		public string SlaInvokedIdName
+		public string SLAInvokedIdName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -6739,10 +8170,17 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("SLAInvokedIdName");
+				this.SetAttributeValue("slainvokedidname", value);
+				this.OnPropertyChanged("SLAInvokedIdName");
+			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("slaname")]
-		public string SlaName
+		public string SLAName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -6755,6 +8193,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("SLAName");
+				this.SetAttributeValue("slaname", value);
+				this.OnPropertyChanged("SLAName");
 			}
 		}
 		
@@ -6772,7 +8217,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("SpousesName");
 				this.SetAttributeValue("spousesname", value);
+				this.OnPropertyChanged("SpousesName");
 			}
 		}
 		
@@ -6790,7 +8237,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("StageId");
 				this.SetAttributeValue("stageid", value);
+				this.OnPropertyChanged("StageId");
 			}
 		}
 		
@@ -6798,22 +8247,24 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Shows whether the contact is active or inactive. Inactive contacts are read-only and can't be edited unless they are reactivated.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
-		public virtual Contact_StateCode? StateCode
+		public virtual contact_statecode? StateCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((Contact_StateCode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
+				return ((contact_statecode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("StateCode");
 				this.SetAttributeValue("statecode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("StateCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecodename")]
-		public string StateCodename
+		public string StateCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -6826,6 +8277,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("StateCodeName");
+				this.SetAttributeValue("statecodename", value);
+				this.OnPropertyChanged("StateCodeName");
 			}
 		}
 		
@@ -6843,12 +8301,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("StatusCode");
 				this.SetAttributeValue("statuscode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("StatusCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscodename")]
-		public string StatusCodename
+		public string StatusCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -6861,6 +8321,13 @@ namespace Libraries.Dynamics.DynamicsClient
 				{
 					return default(string);
 				}
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("StatusCodeName");
+				this.SetAttributeValue("statuscodename", value);
+				this.OnPropertyChanged("StatusCodeName");
 			}
 		}
 		
@@ -6878,7 +8345,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("SubscriptionId");
 				this.SetAttributeValue("subscriptionid", value);
+				this.OnPropertyChanged("SubscriptionId");
 			}
 		}
 		
@@ -6896,7 +8365,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Suffix");
 				this.SetAttributeValue("suffix", value);
+				this.OnPropertyChanged("Suffix");
 			}
 		}
 		
@@ -6914,7 +8385,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("TeamsFollowed");
 				this.SetAttributeValue("teamsfollowed", value);
+				this.OnPropertyChanged("TeamsFollowed");
 			}
 		}
 		
@@ -6932,7 +8405,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Telephone1");
 				this.SetAttributeValue("telephone1", value);
+				this.OnPropertyChanged("Telephone1");
 			}
 		}
 		
@@ -6950,7 +8425,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Telephone2");
 				this.SetAttributeValue("telephone2", value);
+				this.OnPropertyChanged("Telephone2");
 			}
 		}
 		
@@ -6968,7 +8445,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Telephone3");
 				this.SetAttributeValue("telephone3", value);
+				this.OnPropertyChanged("Telephone3");
 			}
 		}
 		
@@ -6986,12 +8465,14 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("TerritoryCode");
 				this.SetAttributeValue("territorycode", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
+				this.OnPropertyChanged("TerritoryCode");
 			}
 		}
 		
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("territorycodename")]
-		public string TerritoryCodename
+		public string TerritoryCodeName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -7005,6 +8486,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("TerritoryCodeName");
+				this.SetAttributeValue("territorycodename", value);
+				this.OnPropertyChanged("TerritoryCodeName");
+			}
 		}
 		
 		/// <summary>
@@ -7017,6 +8505,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<string>("timespentbymeonemailandmeetings");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("TimeSpentByMeOnEmailAndMeetings");
+				this.SetAttributeValue("timespentbymeonemailandmeetings", value);
+				this.OnPropertyChanged("TimeSpentByMeOnEmailAndMeetings");
 			}
 		}
 		
@@ -7034,7 +8529,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("TimeZoneRuleVersionNumber");
 				this.SetAttributeValue("timezoneruleversionnumber", value);
+				this.OnPropertyChanged("TimeZoneRuleVersionNumber");
 			}
 		}
 		
@@ -7052,7 +8549,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("TransactionCurrencyId");
 				this.SetAttributeValue("transactioncurrencyid", value);
+				this.OnPropertyChanged("TransactionCurrencyId");
 			}
 		}
 		
@@ -7071,6 +8570,13 @@ namespace Libraries.Dynamics.DynamicsClient
 					return default(string);
 				}
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("TransactionCurrencyIdName");
+				this.SetAttributeValue("transactioncurrencyidname", value);
+				this.OnPropertyChanged("TransactionCurrencyIdName");
+			}
 		}
 		
 		/// <summary>
@@ -7087,7 +8593,26 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("TraversedPath");
 				this.SetAttributeValue("traversedpath", value);
+				this.OnPropertyChanged("TraversedPath");
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("universe_auth0id")]
+		public string universe_Auth0ID
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("universe_auth0id");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("universe_Auth0ID");
+				this.SetAttributeValue("universe_auth0id", value);
+				this.OnPropertyChanged("universe_Auth0ID");
 			}
 		}
 		
@@ -7095,7 +8620,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// Time zone code that was in use when the record was created.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("utcconversiontimezonecode")]
-		public System.Nullable<int> UtcConversionTimeZoneCode
+		public System.Nullable<int> UTCConversionTimeZoneCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -7105,7 +8630,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("UTCConversionTimeZoneCode");
 				this.SetAttributeValue("utcconversiontimezonecode", value);
+				this.OnPropertyChanged("UTCConversionTimeZoneCode");
 			}
 		}
 		
@@ -7120,13 +8647,20 @@ namespace Libraries.Dynamics.DynamicsClient
 			{
 				return this.GetAttributeValue<System.Nullable<long>>("versionnumber");
 			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("VersionNumber");
+				this.SetAttributeValue("versionnumber", value);
+				this.OnPropertyChanged("VersionNumber");
+			}
 		}
 		
 		/// <summary>
 		/// Type the contact's professional or personal website or blog URL.
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("websiteurl")]
-		public string WebsiteUrl
+		public string WebSiteUrl
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -7136,7 +8670,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("WebSiteUrl");
 				this.SetAttributeValue("websiteurl", value);
+				this.OnPropertyChanged("WebSiteUrl");
 			}
 		}
 		
@@ -7154,7 +8690,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("YomiFirstName");
 				this.SetAttributeValue("yomifirstname", value);
+				this.OnPropertyChanged("YomiFirstName");
 			}
 		}
 		
@@ -7168,6 +8706,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			get
 			{
 				return this.GetAttributeValue<string>("yomifullname");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("YomiFullName");
+				this.SetAttributeValue("yomifullname", value);
+				this.OnPropertyChanged("YomiFullName");
 			}
 		}
 		
@@ -7185,7 +8730,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("YomiLastName");
 				this.SetAttributeValue("yomilastname", value);
+				this.OnPropertyChanged("YomiLastName");
 			}
 		}
 		
@@ -7203,7 +8750,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("YomiMiddleName");
 				this.SetAttributeValue("yomimiddlename", value);
+				this.OnPropertyChanged("YomiMiddleName");
 			}
 		}
 		
@@ -7211,7 +8760,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// 1:N account_primary_contact
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("account_primary_contact")]
-		public System.Collections.Generic.IEnumerable<Libraries.Dynamics.DynamicsClient.Account> Account_Primary_Contact
+		public System.Collections.Generic.IEnumerable<Libraries.Dynamics.DynamicsClient.Account> account_primary_contact
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -7221,7 +8770,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("account_primary_contact");
 				this.SetRelatedEntities<Libraries.Dynamics.DynamicsClient.Account>("account_primary_contact", null, value);
+				this.OnPropertyChanged("account_primary_contact");
 			}
 		}
 		
@@ -7229,7 +8780,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// 1:N contact_customer_contacts
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_customer_contacts", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<Libraries.Dynamics.DynamicsClient.Contact> ReferencedContact_Customer_Contacts
+		public System.Collections.Generic.IEnumerable<Libraries.Dynamics.DynamicsClient.Contact> Referencedcontact_customer_contacts
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -7239,7 +8790,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Referencedcontact_customer_contacts");
 				this.SetRelatedEntities<Libraries.Dynamics.DynamicsClient.Contact>("contact_customer_contacts", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				this.OnPropertyChanged("Referencedcontact_customer_contacts");
 			}
 		}
 		
@@ -7247,7 +8800,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// 1:N contact_master_contact
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_master_contact", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<Libraries.Dynamics.DynamicsClient.Contact> ReferencedContact_Master_Contact
+		public System.Collections.Generic.IEnumerable<Libraries.Dynamics.DynamicsClient.Contact> Referencedcontact_master_contact
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -7257,7 +8810,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Referencedcontact_master_contact");
 				this.SetRelatedEntities<Libraries.Dynamics.DynamicsClient.Contact>("contact_master_contact", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				this.OnPropertyChanged("Referencedcontact_master_contact");
 			}
 		}
 		
@@ -7265,7 +8820,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// 1:N msgdpr_contact_msgdpr_gdprparent
 		/// </summary>
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msgdpr_contact_msgdpr_gdprparent", Microsoft.Xrm.Sdk.EntityRole.Referenced)]
-		public System.Collections.Generic.IEnumerable<Libraries.Dynamics.DynamicsClient.Contact> ReferencedMsGdPr_Contact_MsGdPr_GdPrParent
+		public System.Collections.Generic.IEnumerable<Libraries.Dynamics.DynamicsClient.Contact> Referencedmsgdpr_contact_msgdpr_gdprparent
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -7275,7 +8830,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Referencedmsgdpr_contact_msgdpr_gdprparent");
 				this.SetRelatedEntities<Libraries.Dynamics.DynamicsClient.Contact>("msgdpr_contact_msgdpr_gdprparent", Microsoft.Xrm.Sdk.EntityRole.Referenced, value);
+				this.OnPropertyChanged("Referencedmsgdpr_contact_msgdpr_gdprparent");
 			}
 		}
 		
@@ -7284,7 +8841,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentcustomerid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_customer_accounts")]
-		public Libraries.Dynamics.DynamicsClient.Account Contact_Customer_Accounts
+		public Libraries.Dynamics.DynamicsClient.Account contact_customer_accounts
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -7294,7 +8851,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("contact_customer_accounts");
 				this.SetRelatedEntity<Libraries.Dynamics.DynamicsClient.Account>("contact_customer_accounts", null, value);
+				this.OnPropertyChanged("contact_customer_accounts");
 			}
 		}
 		
@@ -7303,7 +8862,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("parentcustomerid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_customer_contacts", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
-		public Libraries.Dynamics.DynamicsClient.Contact ReferencingContact_Customer_Contacts
+		public Libraries.Dynamics.DynamicsClient.Contact Referencingcontact_customer_contacts
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -7313,7 +8872,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Referencingcontact_customer_contacts");
 				this.SetRelatedEntity<Libraries.Dynamics.DynamicsClient.Contact>("contact_customer_contacts", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
+				this.OnPropertyChanged("Referencingcontact_customer_contacts");
 			}
 		}
 		
@@ -7322,12 +8883,19 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("masterid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("contact_master_contact", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
-		public Libraries.Dynamics.DynamicsClient.Contact ReferencingContact_Master_Contact
+		public Libraries.Dynamics.DynamicsClient.Contact Referencingcontact_master_contact
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
 				return this.GetRelatedEntity<Libraries.Dynamics.DynamicsClient.Contact>("contact_master_contact", Microsoft.Xrm.Sdk.EntityRole.Referencing);
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.OnPropertyChanging("Referencingcontact_master_contact");
+				this.SetRelatedEntity<Libraries.Dynamics.DynamicsClient.Contact>("contact_master_contact", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
+				this.OnPropertyChanged("Referencingcontact_master_contact");
 			}
 		}
 		
@@ -7336,7 +8904,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msa_managingpartnerid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msa_contact_managingpartner")]
-		public Libraries.Dynamics.DynamicsClient.Account MSa_Contact_ManagingPartner
+		public Libraries.Dynamics.DynamicsClient.Account msa_contact_managingpartner
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -7346,7 +8914,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("msa_contact_managingpartner");
 				this.SetRelatedEntity<Libraries.Dynamics.DynamicsClient.Account>("msa_contact_managingpartner", null, value);
+				this.OnPropertyChanged("msa_contact_managingpartner");
 			}
 		}
 		
@@ -7355,7 +8925,7 @@ namespace Libraries.Dynamics.DynamicsClient
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("msgdpr_gdprparentid")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("msgdpr_contact_msgdpr_gdprparent", Microsoft.Xrm.Sdk.EntityRole.Referencing)]
-		public Libraries.Dynamics.DynamicsClient.Contact ReferencingMsGdPr_Contact_MsGdPr_GdPrParent
+		public Libraries.Dynamics.DynamicsClient.Contact Referencingmsgdpr_contact_msgdpr_gdprparent
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
@@ -7365,7 +8935,9 @@ namespace Libraries.Dynamics.DynamicsClient
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
+				this.OnPropertyChanging("Referencingmsgdpr_contact_msgdpr_gdprparent");
 				this.SetRelatedEntity<Libraries.Dynamics.DynamicsClient.Contact>("msgdpr_contact_msgdpr_gdprparent", Microsoft.Xrm.Sdk.EntityRole.Referencing, value);
+				this.OnPropertyChanged("Referencingmsgdpr_contact_msgdpr_gdprparent");
 			}
 		}
 		

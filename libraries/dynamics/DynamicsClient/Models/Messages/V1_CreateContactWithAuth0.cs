@@ -14,38 +14,18 @@ namespace Libraries.Dynamics.DynamicsClient
 	
 	[System.Runtime.Serialization.DataContractAttribute(Namespace="http://schemas.microsoft.com/xrm/2011/new/")]
 	[Microsoft.Xrm.Sdk.Client.RequestProxyAttribute("v1_CreateContactWithAuth0")]
-	public partial class V1_CreateContactWithAuth0Request : Microsoft.Xrm.Sdk.OrganizationRequest
+	public partial class v1_CreateContactWithAuth0Request : Microsoft.Xrm.Sdk.OrganizationRequest
 	{
 		
 		public static class Fields
 		{
-			public const string Auth0Id = "Auth0Id";
-			public const string Email = "Email";
-			public const string Mobile = "Mobile";
+			public const string email = "email";
+			public const string auth0Id = "auth0Id";
 		}
 		
 		public const string ActionLogicalName = "v1_CreateContactWithAuth0";
 		
-		public string Auth0Id
-		{
-			get
-			{
-				if (this.Parameters.Contains("auth0Id"))
-				{
-					return ((string)(this.Parameters["auth0Id"]));
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-			set
-			{
-				this.Parameters["auth0Id"] = value;
-			}
-		}
-		
-		public string Email
+		public string email
 		{
 			get
 			{
@@ -64,13 +44,13 @@ namespace Libraries.Dynamics.DynamicsClient
 			}
 		}
 		
-		public string Mobile
+		public string auth0Id
 		{
 			get
 			{
-				if (this.Parameters.Contains("mobile"))
+				if (this.Parameters.Contains("auth0Id"))
 				{
-					return ((string)(this.Parameters["mobile"]));
+					return ((string)(this.Parameters["auth0Id"]));
 				}
 				else
 				{
@@ -79,36 +59,35 @@ namespace Libraries.Dynamics.DynamicsClient
 			}
 			set
 			{
-				this.Parameters["mobile"] = value;
+				this.Parameters["auth0Id"] = value;
 			}
 		}
 		
-		public V1_CreateContactWithAuth0Request()
+		public v1_CreateContactWithAuth0Request()
 		{
 			this.RequestName = "v1_CreateContactWithAuth0";
-			this.Auth0Id = default(string);
-			this.Email = default(string);
-			this.Mobile = default(string);
+			this.email = default(string);
+			this.auth0Id = default(string);
 		}
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute(Namespace="http://schemas.microsoft.com/xrm/2011/new/")]
 	[Microsoft.Xrm.Sdk.Client.ResponseProxyAttribute("v1_CreateContactWithAuth0")]
-	public partial class V1_CreateContactWithAuth0Response : Microsoft.Xrm.Sdk.OrganizationResponse
+	public partial class v1_CreateContactWithAuth0Response : Microsoft.Xrm.Sdk.OrganizationResponse
 	{
 		
 		public static class Fields
 		{
-			public const string ContactId = "ContactId";
+			public const string contactId = "contactId";
 		}
 		
 		public const string ActionLogicalName = "v1_CreateContactWithAuth0";
 		
-		public V1_CreateContactWithAuth0Response()
+		public v1_CreateContactWithAuth0Response()
 		{
 		}
 		
-		public System.Guid ContactId
+		public System.Guid contactId
 		{
 			get
 			{
@@ -123,7 +102,7 @@ namespace Libraries.Dynamics.DynamicsClient
 			}
 			set
 			{
-				this.Results["ContactId"] = value;
+				this.Results["contactId"] = value;
 			}
 		}
 	}

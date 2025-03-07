@@ -1,0 +1,12 @@
+<customapirequestparameter uniquename="auth0Id">
+  <description default="auth0Id">
+    <label description="auth0Id" languagecode="1033" />
+  </description>
+  <displayname default="auth0Id">
+    <label description="auth0Id" languagecode="1033" />
+  </displayname>
+  <iscustomizable>1</iscustomizable>
+  <isoptional>0</isoptional>
+  <name>auth0Id</name>
+  <type>10</type>
+</customapirequestparameter>
