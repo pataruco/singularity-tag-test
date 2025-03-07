@@ -30,7 +30,7 @@ jobs:
       - name: 🏗️ Get applications to build
         id: get-applications
         run: |
-          applications=$(pnpm nx show projects --json --affected --type app)
+          pnpm nx show projects --json --affected --type app --exclude="auth0-*"
           echo "applications=$applications" >> $GITHUB_OUTPUT
 
   build-and-push:
