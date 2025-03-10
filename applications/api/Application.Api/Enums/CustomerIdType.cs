@@ -1,8 +1,0 @@
-namespace Application.Api.Enums;
-
-public enum CustomerIdType
-{
-    GraphQLNode = 1,
-    User = 2,
-    Contact = 3
-}
