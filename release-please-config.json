@@ -1,0 +1,22 @@
+{
+  "always-update": true,
+  "draft-pull-request": true,
+  "packages": {
+    "applications/customerApi": {
+      "changelog-path": "CHANGELOG.md",
+      "versioning": "default",
+      "release-type": "simple",
+      "package-name": "customer-api"
+    },
+    "applications/nba": {
+      "changelog-path": "CHANGELOG.md",
+      "release-type": "simple",
+      "versioning": "default",
+      "package-name": "next-best-action-api"
+    }
+  },
+  "pull-request-title-pattern": "chore: release${component} ${version}",
+  "pull-request-header": "🚀 Release",
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "separate-pull-requests": true
+}

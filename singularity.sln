@@ -7,17 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libraries", "libraries", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "applications", "applications", "{A10A91C2-6485-6656-963B-F6FCBC812542}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{54E71332-9A43-69DD-DDDE-CC502F7E29D4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "customerApi", "customerApi", "{54E71332-9A43-69DD-DDDE-CC502F7E29D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustDirect.Applications.CustomerApi", "applications\api\JustDirect.Applications.CustomerApi\JustDirect.Applications.CustomerApi.csproj", "{02FC7659-252A-46D9-AE49-C95E1D2D8D2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustDirect.Applications.CustomerApi", "applications\customerApi\JustDirect.Applications.CustomerApi\JustDirect.Applications.CustomerApi.csproj", "{02FC7659-252A-46D9-AE49-C95E1D2D8D2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustDirect.Applications.CustomerApi.IntegrationTests", "applications\api\JustDirect.Applications.CustomerApi.IntegrationTests\JustDirect.Applications.CustomerApi.IntegrationTests.csproj", "{BC479843-5034-99A0-061B-6D4A2CF63D78}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustDirect.Applications.CustomerApi.IntegrationTests", "applications\customerApi\JustDirect.Applications.CustomerApi.IntegrationTests\JustDirect.Applications.CustomerApi.IntegrationTests.csproj", "{BC479843-5034-99A0-061B-6D4A2CF63D78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustDirect.Applications.Domain", "applications\api\JustDirect.Applications.Domain\JustDirect.Applications.Domain.csproj", "{13645BEA-610B-406B-AA40-224532926B2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustDirect.Applications.Domain", "applications\customerApi\JustDirect.Applications.Domain\JustDirect.Applications.Domain.csproj", "{13645BEA-610B-406B-AA40-224532926B2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustDirect.Applications.Infrastructure", "applications\api\JustDirect.Applications.Infrastructure\JustDirect.Applications.Infrastructure.csproj", "{FAF59F50-A715-4EB8-B14D-0AB36AEFBDA9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustDirect.Applications.Infrastructure", "applications\customerApi\JustDirect.Applications.Infrastructure\JustDirect.Applications.Infrastructure.csproj", "{FAF59F50-A715-4EB8-B14D-0AB36AEFBDA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustDirect.Applications.Core", "applications\api\JustDirect.Applications.Core\JustDirect.Applications.Core.csproj", "{576EF0AD-58DA-4E72-8792-7BAD8A5FA4BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustDirect.Applications.Core", "applications\customerApi\JustDirect.Applications.Core\JustDirect.Applications.Core.csproj", "{576EF0AD-58DA-4E72-8792-7BAD8A5FA4BB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dynamics", "dynamics", "{3B7DB3A4-8AF9-4ED8-8124-1798FF1815C1}"
 EndProject
@@ -27,11 +27,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libraries.Dynamics.Dynamics
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libraries.Dynamics.DynamicsClient.Integration.Tests", "libraries\dynamics\DynamicsClient.Integration\Libraries.Dynamics.DynamicsClient.Integration.Tests.csproj", "{FFF56C3E-DF5A-4B63-9C31-3594C0DB36FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustDirect.Applications.Infrastructure.UnitTests", "applications\api\JustDirect.Applications.Infrastructure.UnitTests\JustDirect.Applications.Infrastructure.UnitTests.csproj", "{5BAD7B2A-B6E2-4F5B-844B-DAA7FCEAB4B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustDirect.Applications.Infrastructure.UnitTests", "applications\customerApi\JustDirect.Applications.Infrastructure.UnitTests\JustDirect.Applications.Infrastructure.UnitTests.csproj", "{5BAD7B2A-B6E2-4F5B-844B-DAA7FCEAB4B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustDirect.Applications.Infrastructure.IntegrationTests", "applications\api\JustDirect.Applications.Infrastructure.IntegrationTests\JustDirect.Applications.Infrastructure.IntegrationTests.csproj", "{EEC308DE-6736-46BE-A4F0-A5B94021FA50}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustDirect.Applications.Infrastructure.IntegrationTests", "applications\customerApi\JustDirect.Applications.Infrastructure.IntegrationTests\JustDirect.Applications.Infrastructure.IntegrationTests.csproj", "{EEC308DE-6736-46BE-A4F0-A5B94021FA50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustDirect.Applications.Core.UnitTests", "applications\api\JustDirect.Applications.Core.UnitTests\JustDirect.Applications.Core.UnitTests.csproj", "{8A58E617-62A8-4F3C-8FCB-9227B9472698}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustDirect.Applications.Core.UnitTests", "applications\customerApi\JustDirect.Applications.Core.UnitTests\JustDirect.Applications.Core.UnitTests.csproj", "{8A58E617-62A8-4F3C-8FCB-9227B9472698}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nba", "nba", "{923D242F-B841-4309-B7DB-6BA42184126C}"
 EndProject

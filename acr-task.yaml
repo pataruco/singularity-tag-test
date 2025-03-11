@@ -3,4 +3,3 @@ steps:
   - build: -t $Registry/{{.Values.imagelocation}}:{{.Values.version}} -f {{.Values.dockerfile}} .
   - push:
       - $Registry/{{.Values.imagelocation}}:{{.Values.version}}
-      - $Registry/{{.Values.imagelocation}}:latest

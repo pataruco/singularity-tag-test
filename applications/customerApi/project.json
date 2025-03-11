@@ -1,7 +1,7 @@
 {
   "name": "customer-api",
   "projectType": "application",
-  "sourceRoot": "applications/api",
+  "sourceRoot": "applications/customerApi",
   "targets": {
     "serve-container": {
       "executor": "nx:run-commands",
@@ -16,7 +16,7 @@
     "build-container": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "docker build . --tag customer-graph-api:latest -f ./applications/api/Dockerfile"
+        "command": "docker build . --tag customer-graph-api:latest -f ./applications/customerApi/Dockerfile"
       },
       "dependsOn": ["build"],
       "metadata": {

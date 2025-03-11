@@ -30,7 +30,7 @@ jobs:
       - name: 🏗️ Get applications to build
         id: get-applications
         run: |
-          pnpm nx show projects --json --affected --type app --exclude="auth0-*"
+          applications=$(pnpm nx show projects --json --affected --type app --exclude=auth0-post-login-trigger)
           echo "applications=$applications" >> $GITHUB_OUTPUT
 
   build-and-push:
@@ -67,3 +67,4 @@ jobs:
           SELF_HOSTED_CDP_RUNNER_ROOT: ${{ vars.SELF_HOSTED_CDP_RUNNER_ROOT }}
         with:
           application: ${{ matrix.application }}
+          version: $(git rev-parse --short ${{ github.sha }})

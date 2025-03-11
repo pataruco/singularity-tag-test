@@ -16,7 +16,7 @@ You must have a Node version equal or greater than `22.13.0` with `pnmp` as pack
 
 ### Node
 
-We are assuming you are usig [NVM](https://github.com/nvm-sh/nvm) as node version manager
+We are assuming you are using [NVM](https://github.com/nvm-sh/nvm) as node version manager
 
 ```sh
 nvm install lts/jod
