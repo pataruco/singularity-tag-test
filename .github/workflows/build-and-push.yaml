@@ -1,6 +1,16 @@
 name: Build and push image(s) to Azure Container Registry
 run-name: ${{ github.actor }} is running build and push image(s)
 on:
+  # pull_request:
+  #   types: [opened, synchronize, reopened]
+  #   branches:
+  #     - main
+  #   paths:
+  #     - .github/workflows/build-and-push.yaml
+  #     - applications/**/*
+  #     - libraries/**/*
+  # merge_group:
+  #   types: [checks_requested]
   pull_request:
     types: [opened, synchronize, reopened]
     branches:
