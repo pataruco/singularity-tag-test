@@ -85,8 +85,8 @@ jobs:
           application: ${{ matrix.application }}
           version: $(git rev-parse --short ${{ github.sha }})
 
-  pre_release:
-    name: Prepare version bumps and changelogs
+  prepare_releases:
+    name: Prepare releases PRs, version bumps and changelogs
     runs-on: self-hosted-cdp
     needs: build-and-push
     permissions:
@@ -107,7 +107,6 @@ jobs:
           private_key: ${{ secrets.DEPLOY_GITHUB_APP_PRIVATE_KEY }}
 
       - uses: googleapis/release-please-action@v4
-        name: 🏷️ Create pre release artefacts
-        id: pre_release
+        name: 🏷️ Prepare version bumps and changelogs
         with:
           token: ${{ steps.create_token.outputs.token }}
