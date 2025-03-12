@@ -1,4 +1,4 @@
 {
-  "applications/api": "0.0.0",
+  "applications/customerApi": "0.0.0",
   "applications/nba": "0.0.0"
 }

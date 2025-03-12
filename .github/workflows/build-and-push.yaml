@@ -1,12 +1,27 @@
 name: Build and push image(s) to Azure Container Registry
+run-name: ${{ github.actor }} is running build and push image(s)
 on:
-  push:
+  # pull_request:
+  #   types: [opened, synchronize, reopened]
+  #   branches:
+  #     - main
+  #   paths:
+  #     - .github/workflows/build-and-push.yaml
+  #     - applications/**/*
+  #     - libraries/**/*
+  # merge_group:
+  #   types: [checks_requested]
+  pull_request:
+    types: [opened, synchronize, reopened]
     branches:
       - main
     paths:
+      - .github/workflows/build-and-push.yaml
       - applications/**/*
-      - '!applications/auth0-post-login-trigger/**/*'
       - libraries/**/*
+  merge_group:
+    types: [checks_requested]
+
 jobs:
   get-applications-to-build:
     name: Get applications to build
@@ -33,10 +48,21 @@ jobs:
           applications=$(pnpm nx show projects --json --affected --type app --exclude=auth0-post-login-trigger)
           echo "applications=$applications" >> $GITHUB_OUTPUT
 
+  nothing-to-build:
+    runs-on: ubuntu-latest
+    name: Nothing to build
+    needs: get-applications-to-build
+    if: ${{ needs.get-applications-to-build.outputs.applications == '[]' ||  needs.get-applications-to-build.outputs.applications == '' }}
+    steps:
+      - name: Nothing to build
+        run: |
+          echo "# 🤷 Nothing to build" >>  $GITHUB_STEP_SUMMARY
+
   build-and-push:
     name: Build and push application
     runs-on: self-hosted-cdp
     needs: get-applications-to-build
+    if: ${{ needs.get-applications-to-build.outputs.applications != '[]' && needs.get-applications-to-build.outputs.applications != '' }}
     strategy:
       fail-fast: true
       max-parallel: 3 # We have a limited number of runners
@@ -68,3 +94,29 @@ jobs:
         with:
           application: ${{ matrix.application }}
           version: $(git rev-parse --short ${{ github.sha }})
+
+  prepare_releases:
+    name: Prepare releases PRs, version bumps and changelogs
+    runs-on: self-hosted-cdp
+    needs: build-and-push
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: 🛎️ Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🤖 Create GitHub application token
+        id: create_token
+        uses: tibdex/github-app-token@v2
+        with:
+          app_id: ${{ vars.DEPLOY_GITHUB_APP_ID }}
+          private_key: ${{ secrets.DEPLOY_GITHUB_APP_PRIVATE_KEY }}
+
+      - uses: googleapis/release-please-action@v4
+        name: 🏷️ Prepare version bumps and changelogs
+        with:
+          token: ${{ steps.create_token.outputs.token }}

@@ -53,16 +53,16 @@ sequenceDiagram
     participant SVC
     participant GitHub Action release-please
     Developer->>SVC: Merge commit/PR
-    SVC->>GitHub Action release-please: Commit Merged
+    SVC->>GitHub Action release-please: Commit merged
     GitHub Action release-please->>SVC: Open/update release PR per application affected
     loop
         SVC->>GitHub Action release-please: New commit/PR changes
         GitHub Action release-please->>SVC: Update release(s) PR(s)
     end
     Developer->>SVC: Review/Merge Release PR
-    SVC->>GitHub Action release-please: Release PR Mmrged
+    SVC->>GitHub Action release-please: Release PR merged
     GitHub Action release-please->>SVC: Create GitHub release (optional)
-    GitHub Action release-please->>SVC: Create Git tagsx
+    GitHub Action release-please->>SVC: Create Git tags
 ```
 
 ## Consequences

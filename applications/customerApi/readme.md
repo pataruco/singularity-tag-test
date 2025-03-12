@@ -53,4 +53,5 @@ For testing, this project uses NUnit, Moq and Snapshooter. In order to run the t
 
 ```sh
 dotnet test
+
 ```
