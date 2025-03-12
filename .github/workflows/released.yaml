@@ -8,6 +8,10 @@ on:
       - applications/customerApi/version.txt
       - applications/nba/version.txt
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   release:
     name: Prepare releases PRs, version bumps and changelogs
