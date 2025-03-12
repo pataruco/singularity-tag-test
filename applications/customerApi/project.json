@@ -34,7 +34,7 @@
         }
       },
       "metadata": {
-        "description": "Build Customer API in the root ./dist folder "
+        "description": "Build Customer API in the root ./dist folder"
       }
     }
   }
