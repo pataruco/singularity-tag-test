@@ -30,11 +30,12 @@ jobs:
       #     app_id: ${{ vars.DEPLOY_GITHUB_APP_ID }}
       #     private_key: ${{ secrets.DEPLOY_GITHUB_APP_PRIVATE_KEY }}
 
-      - uses: googleapis/release-please-action@v4
+      - uses: googleapis/release-please-action@v3.7.6
         name: 🏷️ Prepare version bumps and changelogs
         id: release
         with:
           token: ${{ secrets.RELEASE_PLEASE_GH_TOKEN }}
+          release-type: simple
 
       - name: tag major and minor versions
         if: steps.release.outputs.releases_created == 'true'
